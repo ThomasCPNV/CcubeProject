@@ -1,0 +1,5 @@
+C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\bin\Debug\model.dll
+C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\bin\Debug\model.pdb
+C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.dll
+C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.pdb
