@@ -28,93 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnSignIn = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSignUp = new System.Windows.Forms.Button();
+            this.lblLoginEmail = new System.Windows.Forms.Label();
+            this.lblLoginPassword = new System.Windows.Forms.Label();
+            this.txtLoginEmail = new System.Windows.Forms.TextBox();
+            this.txtLoginPassword = new System.Windows.Forms.TextBox();
+            this.btnLoginSignIn = new System.Windows.Forms.Button();
+            this.btnLoginCancel = new System.Windows.Forms.Button();
+            this.btnLoginSignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblEmail
+            // lblLoginEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(333, 174);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Email";
+            this.lblLoginEmail.AutoSize = true;
+            this.lblLoginEmail.Location = new System.Drawing.Point(333, 174);
+            this.lblLoginEmail.Name = "lblLoginEmail";
+            this.lblLoginEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblLoginEmail.TabIndex = 0;
+            this.lblLoginEmail.Text = "Email";
             // 
-            // lblPassword
+            // lblLoginPassword
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(312, 204);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
-            this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "Password";
+            this.lblLoginPassword.AutoSize = true;
+            this.lblLoginPassword.Location = new System.Drawing.Point(312, 204);
+            this.lblLoginPassword.Name = "lblLoginPassword";
+            this.lblLoginPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblLoginPassword.TabIndex = 1;
+            this.lblLoginPassword.Text = "Password";
             // 
-            // txtEmail
+            // txtLoginEmail
             // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Location = new System.Drawing.Point(371, 174);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 13);
-            this.txtEmail.TabIndex = 2;
+            this.txtLoginEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLoginEmail.Location = new System.Drawing.Point(371, 174);
+            this.txtLoginEmail.Name = "txtLoginEmail";
+            this.txtLoginEmail.Size = new System.Drawing.Size(100, 13);
+            this.txtLoginEmail.TabIndex = 2;
             // 
-            // txtPassword
+            // txtLoginPassword
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Location = new System.Drawing.Point(371, 204);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 13);
-            this.txtPassword.TabIndex = 3;
+            this.txtLoginPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLoginPassword.Location = new System.Drawing.Point(371, 204);
+            this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.Size = new System.Drawing.Size(100, 13);
+            this.txtLoginPassword.TabIndex = 3;
             // 
-            // btnSignIn
+            // btnLoginSignIn
             // 
-            this.btnSignIn.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Location = new System.Drawing.Point(411, 288);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(75, 23);
-            this.btnSignIn.TabIndex = 4;
-            this.btnSignIn.Text = "Sign In";
-            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnLoginSignIn.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLoginSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginSignIn.Location = new System.Drawing.Point(411, 288);
+            this.btnLoginSignIn.Name = "btnLoginSignIn";
+            this.btnLoginSignIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLoginSignIn.TabIndex = 4;
+            this.btnLoginSignIn.Text = "Sign In";
+            this.btnLoginSignIn.UseVisualStyleBackColor = false;
             // 
-            // btnCancel
+            // btnLoginCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(330, 288);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnLoginCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginCancel.Location = new System.Drawing.Point(330, 288);
+            this.btnLoginCancel.Name = "btnLoginCancel";
+            this.btnLoginCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnLoginCancel.TabIndex = 5;
+            this.btnLoginCancel.Text = "Cancel";
+            this.btnLoginCancel.UseVisualStyleBackColor = false;
             // 
-            // btnSignUp
+            // btnLoginSignUp
             // 
-            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.Location = new System.Drawing.Point(713, 12);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(75, 23);
-            this.btnSignUp.TabIndex = 6;
-            this.btnSignUp.Text = "Sign Up";
-            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnLoginSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginSignUp.Location = new System.Drawing.Point(713, 12);
+            this.btnLoginSignUp.Name = "btnLoginSignUp";
+            this.btnLoginSignUp.Size = new System.Drawing.Size(75, 23);
+            this.btnLoginSignUp.TabIndex = 6;
+            this.btnLoginSignUp.Text = "Sign Up";
+            this.btnLoginSignUp.UseVisualStyleBackColor = true;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSignUp);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.btnLoginSignUp);
+            this.Controls.Add(this.btnLoginCancel);
+            this.Controls.Add(this.btnLoginSignIn);
+            this.Controls.Add(this.txtLoginPassword);
+            this.Controls.Add(this.txtLoginEmail);
+            this.Controls.Add(this.lblLoginPassword);
+            this.Controls.Add(this.lblLoginEmail);
             this.Name = "FormLogin";
             this.Text = "Car Cost Calculator - Login";
             this.ResumeLayout(false);
@@ -124,13 +124,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnSignIn;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Label lblLoginEmail;
+        private System.Windows.Forms.Label lblLoginPassword;
+        private System.Windows.Forms.TextBox txtLoginEmail;
+        private System.Windows.Forms.TextBox txtLoginPassword;
+        private System.Windows.Forms.Button btnLoginSignIn;
+        private System.Windows.Forms.Button btnLoginCancel;
+        private System.Windows.Forms.Button btnLoginSignUp;
     }
 }
 
