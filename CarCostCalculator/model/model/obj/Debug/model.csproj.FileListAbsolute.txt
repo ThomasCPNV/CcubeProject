@@ -3,3 +3,10 @@ C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCost
 C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.csprojAssemblyReference.cache
 C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.dll
 C:\Users\Shown\OneDrive\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.pdb
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\bin\Debug\model.xml
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\bin\Debug\model.dll
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\bin\Debug\model.pdb
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.csproj.CoreCompileInputs.cache
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.dll
+C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\model\model\obj\Debug\model.pdb
