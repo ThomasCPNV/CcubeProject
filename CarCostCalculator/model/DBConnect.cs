@@ -42,17 +42,20 @@ namespace model
         /// <param name="pseudo"></param>
         public void InsertUser(string email, string passwordHashed)
         {
+            OpenConnection();
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into players (email, password, type) values ({email}, {passwordHashed},{1})";
+            cmd.CommandText = $"insert into users (email, password, type) values ('{email}', '{passwordHashed}',{1})";
 
             // use of the pseudo string, parameter of the method AddPlayer
             cmd.Parameters.AddWithValue("@email", email);
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
+
+            CloseConnection();
         }
 
         /// <summary>
@@ -64,10 +67,11 @@ namespace model
         {
             string passwordUser = "";
 
+            OpenConnection();
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = "select password from USERS where email =" + email;
+            cmd.CommandText = $"select password from users where email = '{email}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -82,6 +86,8 @@ namespace model
                 reader.Close();
                 return passwordUser;
             }
+
+            CloseConnection();
 
             return passwordUser;
         }
