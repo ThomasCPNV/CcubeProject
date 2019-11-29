@@ -60,14 +60,14 @@ namespace model
         /// </summary>
         /// <param name="id">id of the player</param>
         /// <returns></returns>
-        public string CheckLogin(string email, string password)
+        public string GetPasswordUser(string email)
         {
-            string name = "";
+            string passwordUser = "";
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = "select email from USERS where email = " + email + "and password =" + password;
+            cmd.CommandText = "select password from USERS where email =" + email;
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -77,13 +77,13 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    name = reader.GetString(0);
+                    passwordUser = reader.GetString(0);
                 }
                 reader.Close();
-                return name;
+                return passwordUser;
             }
 
-            return name;
+            return passwordUser;
         }
 
 
