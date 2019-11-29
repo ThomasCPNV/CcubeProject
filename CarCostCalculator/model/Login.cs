@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
-using CryptSharp;
+using System.Web.Helpers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +18,7 @@ namespace model
 
             string passwordUser = dBConnect.GetPasswordUser(email);
 
-            bool passwordVerify = Crypter.CheckPassword(password, passwordUser);
+            bool passwordVerify = Crypto.VerifyHashedPassword(password, passwordUser);
 
             if (passwordVerify)
             {
