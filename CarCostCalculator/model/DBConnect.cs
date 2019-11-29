@@ -40,16 +40,16 @@ namespace model
         /// add a player in the table "players"
         /// </summary>
         /// <param name="pseudo"></param>
-        public void InsertUser(string pseudo)
+        public void InsertUser(string email, string passwordHashed)
         {
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = "insert into players (pseudo) values (@name)";
+            cmd.CommandText = $"insert into players (email, password, type) values ({email}, {passwordHashed},{1})";
 
             // use of the pseudo string, parameter of the method AddPlayer
-            cmd.Parameters.AddWithValue("@name", pseudo);
+            cmd.Parameters.AddWithValue("@email", email);
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
