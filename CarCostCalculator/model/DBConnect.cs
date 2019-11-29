@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    class DBConnect
+    public class DBConnect
     {
         private MySqlConnection connection;
 
