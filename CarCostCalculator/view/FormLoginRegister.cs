@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using model;
+
 namespace view
 {
     public partial class FormLoginRegister : Form
@@ -18,7 +20,6 @@ namespace view
         }
 
         int count = 0;
-        DBConnect dbconnect = new DBConnect();
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
         {
             if (lblConfirm.Visible == true)
@@ -59,12 +60,18 @@ namespace view
         {
             if(lblConfirm.Visible == false)
             {
-                dbconnect.CheckLogin(txtEmail.Text, txtPassword.PasswordChar);
+                Login login = new Login();
+                if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                {
+                    MessageBox.Show("You are connected !");
+                }
             }
             else
             {
-                if (txtPassword.Text == txtConfirm.Text)
+                Register register = new Register();
+                if(register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
                 {
+                    MessageBox.Show("You are registred !");
                 }
             }
         }
