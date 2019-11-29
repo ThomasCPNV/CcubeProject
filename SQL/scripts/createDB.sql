@@ -14,7 +14,7 @@ USE `CcubeProject`;
 CREATE TABLE IF NOT EXISTS `USERS` (
   `id` int(15) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` varchar(30) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(258) NOT NULL,
   `type` int(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)

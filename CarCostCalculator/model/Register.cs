@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.Helpers;
 using System.Threading.Tasks;
 
 namespace model
@@ -14,7 +15,7 @@ namespace model
         {
             bool isRegisterOK = false;
 
-            string passwordHashed = "";
+            string passwordHashed = Crypto.HashPassword(password);
 
             if (passwordConfirmation == password)
             {
