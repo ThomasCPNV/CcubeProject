@@ -7,3 +7,4 @@ P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\ob
 P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\obj\Debug\view.csproj.CoreCompileInputs.cache
 P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\obj\Debug\view.exe
 P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\obj\Debug\view.pdb
+P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\obj\Debug\view.FormLoginRegister.resources
