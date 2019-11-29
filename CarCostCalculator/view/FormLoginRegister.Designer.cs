@@ -37,6 +37,7 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblConfirm = new System.Windows.Forms.Label();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -81,6 +82,7 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSubmit
             // 
@@ -118,11 +120,22 @@
             this.lblConfirm.TabIndex = 7;
             this.lblConfirm.Text = "Confirm";
             // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(12, 415);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.TabIndex = 9;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // FormLoginRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lblConfirm);
             this.Controls.Add(this.btnChange);
@@ -150,6 +163,7 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblConfirm;
+        private System.Windows.Forms.Button btnQuit;
     }
 }
 

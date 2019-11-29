@@ -37,5 +37,17 @@ namespace view
                 btnChange.Text = "Sign In";
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+            txtConfirm.Text = "";
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
