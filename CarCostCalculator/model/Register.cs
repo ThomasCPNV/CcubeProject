@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    class Register
+    public class Register
     {
         private DBConnect dbConnect = new DBConnect();
 
