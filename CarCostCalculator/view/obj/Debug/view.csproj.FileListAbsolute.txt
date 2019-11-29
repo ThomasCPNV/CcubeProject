@@ -21,29 +21,3 @@ P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\bi
 P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\bin\Debug\Google.Protobuf.xml
 P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\bin\Debug\Renci.SshNet.xml
 P:\SI-C3b 2019-2020\Trimestre 2\Projet C#\CcubeProject\CarCostCalculator\view\obj\Debug\view.csproj.CopyComplete
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\view.exe.config
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\view.exe
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\view.pdb
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\model.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\MySql.Data.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\System.Web.Helpers.Crypto.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Google.Protobuf.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Renci.SshNet.dll
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\model.pdb
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\model.dll.config
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\MySql.Data.xml
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\System.Web.Helpers.Crypto.pdb
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Google.Protobuf.pdb
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Google.Protobuf.xml
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\bin\Debug\Renci.SshNet.xml
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.csprojAssemblyReference.cache
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.FormLoginRegister.resources
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.Properties.Resources.resources
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.csproj.GenerateResource.cache
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.csproj.CoreCompileInputs.cache
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.csproj.CopyComplete
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.exe
-C:\Users\Thomas.Huguet\Documents\GitHub\Projet_CSharp-CarCostCalculator\CarCostCalculator\view\obj\Debug\view.pdb
