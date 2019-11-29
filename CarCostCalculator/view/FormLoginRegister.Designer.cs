@@ -38,6 +38,7 @@
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblConfirm = new System.Windows.Forms.Label();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -71,6 +72,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Location = new System.Drawing.Point(369, 208);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 13);
             this.txtPassword.TabIndex = 3;
             // 
@@ -90,8 +92,9 @@
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 5;
-            this.btnSubmit.Text = "Sign Up";
+            this.btnSubmit.Text = "Sign In";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnChange
             // 
@@ -99,7 +102,7 @@
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(75, 23);
             this.btnChange.TabIndex = 6;
-            this.btnChange.Text = "Sign In";
+            this.btnChange.Text = "Sign Up";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnLoginRegisterChange_Click);
             // 
@@ -108,8 +111,10 @@
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirm.Location = new System.Drawing.Point(369, 227);
             this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(100, 13);
             this.txtConfirm.TabIndex = 8;
+            this.txtConfirm.Visible = false;
             // 
             // lblConfirm
             // 
@@ -119,6 +124,7 @@
             this.lblConfirm.Size = new System.Drawing.Size(42, 13);
             this.lblConfirm.TabIndex = 7;
             this.lblConfirm.Text = "Confirm";
+            this.lblConfirm.Visible = false;
             // 
             // btnQuit
             // 
@@ -130,11 +136,22 @@
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(353, 66);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(96, 37);
+            this.lblTitle.TabIndex = 10;
+            this.lblTitle.Text = "Login";
+            // 
             // FormLoginRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lblConfirm);
@@ -164,6 +181,7 @@
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 

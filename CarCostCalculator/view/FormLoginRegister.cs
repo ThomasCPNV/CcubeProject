@@ -18,10 +18,13 @@ namespace view
         }
 
         int count = 0;
+        DBConnect dbconnect = new DBConnect();
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
         {
             if (lblConfirm.Visible == true)
             {
+                Text = "Car Cost Calculator - Login";
+                lblTitle.Text = "Login";
                 lblConfirm.Visible = false;
                 txtConfirm.Visible = false;
 
@@ -30,6 +33,8 @@ namespace view
             }
             else
             {
+                Text = "Car Cost Calculator - Register";
+                lblTitle.Text = "Register";
                 lblConfirm.Visible = true;
                 txtConfirm.Visible = true;
 
@@ -48,6 +53,20 @@ namespace view
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if(lblConfirm.Visible == false)
+            {
+                dbconnect.CheckLogin(txtEmail.Text, txtPassword.PasswordChar);
+            }
+            else
+            {
+                if (txtPassword.Text == txtConfirm.Text)
+                {
+                }
+            }
         }
     }
 }
