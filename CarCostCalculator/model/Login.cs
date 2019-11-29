@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
+using CryptSharp;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,23 +10,23 @@ namespace model
 {
     public class Login
     {
-        private string email;
-        private string password;
-        private DBConnect dbconnect = new DBConnect();
+        private DBConnect dBConnect = new DBConnect();
 
-        public bool isLoginCorrect(string email, string password)
+        public bool IsLoginCorrect(string email, string password)
         {
             bool isLoginCorrect = false;
 
-            string checkLogin = dbconnect.CheckLogin(email, password);
+            string passwordUser = dBConnect.GetPasswordUser(email);
 
-            if (checkLogin == "")
+            bool passwordVerify = Crypter.CheckPassword(password, passwordUser);
+
+            if (passwordVerify)
             {
-                isLoginCorrect = false;
+                isLoginCorrect = true;
             }
             else
             {
-                isLoginCorrect = true;
+                isLoginCorrect = false;
             }
 
             return isLoginCorrect;
