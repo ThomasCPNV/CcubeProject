@@ -56,15 +56,31 @@ namespace view
             if(txtConfirm.Visible == false)
             {
                 Login login = new Login();
-                login.IsLoginCorrect(txtEmail.Text, txtPassword.Text);
+                if(login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                {
+                    //Application.Run(new FormCarCostCalculator());
+                    MessageBox.Show("Vous êtes connectés !");
+                }
+                else
+                {
+                    MessageBox.Show("Erreur : L'adresse mail ou le mot de passe est invalide !");
+                }
             }else if(txtConfirm.Visible == true)
             {
                 Register register = new Register();
-                register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text);
+                if(register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                {
+                    //Application.Run(new FormCarCostCalculator());
+                    MessageBox.Show("Vous êtes enregistrés !");
+                }
+                else
+                {
+                    MessageBox.Show("Erreur : L'adresse mail n'est pas valide ou la confirmation de mot de passe n'est pas identique à celui-ci !");
+                }
             }
             else
             {
-                MessageBox.Show("Une erreur s'est produite !");
+                MessageBox.Show("Erreur : Une erreur s'est produite !");
             }
         }
     }
