@@ -68,11 +68,12 @@ namespace view
                 if(login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
                 {
                     //Application.Run(new FormCarCostCalculator());
-                    MessageBox.Show("Vous êtes connectés !");
+                    WriteEmailInJson(txtEmail.Text);
+                    MessageBox.Show("You are connected !");
                 }
                 else
                 {
-                    MessageBox.Show("Erreur : L'adresse mail ou le mot de passe est invalide !");
+                    MessageBox.Show("Error : Your email or your password is false !");
                 }
             }else if(txtConfirm.Visible == true)
             {
@@ -80,16 +81,17 @@ namespace view
                 if(register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
                 {
                     //Application.Run(new FormCarCostCalculator());
-                    MessageBox.Show("Vous êtes enregistrés !");
+                    WriteEmailInJson(txtEmail.Text);
+                    MessageBox.Show("You are registred !");
                 }
                 else
                 {
-                    MessageBox.Show("Erreur : L'adresse mail n'est pas valide ou la confirmation de mot de passe n'est pas identique à celui-ci !");
+                    MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
                 }
             }
             else
             {
-                MessageBox.Show("Erreur : Une erreur s'est produite !");
+                MessageBox.Show("Error : An error has occurred !");
             }
         }
 
