@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using model;
+
 namespace view
 {
     public partial class FormLoginRegister : Form
@@ -17,7 +19,6 @@ namespace view
             InitializeComponent();
         }
 
-        int count = 0;
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
         {
             if (lblConfirm.Visible == true)
@@ -48,6 +49,23 @@ namespace view
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            if(txtConfirm.Visible == false)
+            {
+                Login login = new Login();
+                login.IsLoginCorrect(txtEmail.Text, txtPassword.Text);
+            }else if(txtConfirm.Visible == true)
+            {
+                Register register = new Register();
+                register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text);
+            }
+            else
+            {
+                MessageBox.Show("Une erreur s'est produite !");
+            }
         }
     }
 }

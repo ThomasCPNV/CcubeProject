@@ -71,6 +71,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Location = new System.Drawing.Point(369, 208);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 13);
             this.txtPassword.TabIndex = 3;
             // 
@@ -92,6 +93,7 @@
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Sign Up";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // btnChange
             // 
@@ -108,6 +110,7 @@
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirm.Location = new System.Drawing.Point(369, 227);
             this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(100, 13);
             this.txtConfirm.TabIndex = 8;
             // 
