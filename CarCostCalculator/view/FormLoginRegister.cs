@@ -16,13 +16,17 @@ namespace view
 {
     public partial class FormLoginRegister : Form
     {
+        string dataStringPath = @"..\..\..\data";
+        string emailStringFileName = @"..\..\..\data\email.json";
+
         public FormLoginRegister()
         {
             InitializeComponent();
-            txtEmail.Text = ReadEmailInJson();
+            if (File.Exists(emailStringFileName))
+            {
+                txtEmail.Text = ReadEmailInJson();
+            }
         }
-
-        string dataStringPath = @"..\..\..\data";
 
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
         {
@@ -62,7 +66,8 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if(txtConfirm.Visible == false)
+            WriteEmailInJson(txtEmail.Text);
+            if (txtConfirm.Visible == false)
             {
                 Login login = new Login();
                 if(login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
@@ -100,19 +105,16 @@ namespace view
             if (!Directory.Exists(dataStringPath))
             {
                 Directory.CreateDirectory(dataStringPath);
+                File.Create(emailStringFileName);
             }
+
             string jsonEmail = JsonConvert.SerializeObject(email);
             File.WriteAllText(@"..\..\..\data\email.json", jsonEmail);
         }
 
         private string ReadEmailInJson()
         {
-            if (!Directory.Exists(dataStringPath))
-            {
-                Directory.CreateDirectory(dataStringPath);
-            }
             string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
-
             return email;
         }
     }
