@@ -63,7 +63,7 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Location = new System.Drawing.Point(369, 174);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 13);
+            this.txtEmail.Size = new System.Drawing.Size(156, 13);
             this.txtEmail.TabIndex = 2;
             // 
             // txtPassword
