@@ -42,6 +42,8 @@ namespace model
         /// <param name="pseudo"></param>
         public void InsertUser(string email, string passwordHashed)
         {
+            OpenConnection();
+
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
@@ -53,6 +55,8 @@ namespace model
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
+
+            CloseConnection();
         }
 
         /// <summary>
@@ -63,6 +67,8 @@ namespace model
         public string GetPasswordUser(string email)
         {
             string passwordUser = "";
+
+            OpenConnection();
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
@@ -82,6 +88,8 @@ namespace model
                 reader.Close();
                 return passwordUser;
             }
+
+            CloseConnection();
 
             return passwordUser;
         }
