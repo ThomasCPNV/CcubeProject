@@ -18,7 +18,7 @@ namespace model
 
             string passwordUser = dBConnect.GetPasswordUser(email);
 
-            bool passwordVerify = Crypto.VerifyHashedPassword(password, passwordUser);
+            bool passwordVerify = Crypto.VerifyHashedPassword(passwordUser, password);
 
             if (passwordVerify)
             {
