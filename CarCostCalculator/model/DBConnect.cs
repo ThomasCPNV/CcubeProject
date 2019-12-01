@@ -46,7 +46,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into players (email, password, type) values ({email}, {passwordHashed},{1})";
+            cmd.CommandText = $"insert into users (email, password, type) values ('{email}', '{passwordHashed}',{1})";
 
             // use of the pseudo string, parameter of the method AddPlayer
             cmd.Parameters.AddWithValue("@email", email);
@@ -67,7 +67,7 @@ namespace model
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = "select password from USERS where email =" + email;
+            cmd.CommandText = $"select password from users where email = '{email}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
