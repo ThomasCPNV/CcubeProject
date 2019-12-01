@@ -91,7 +91,7 @@
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 5;
-            this.btnSubmit.Text = "Sign Up";
+            this.btnSubmit.Text = "Sign In";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
@@ -101,7 +101,7 @@
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(75, 23);
             this.btnChange.TabIndex = 6;
-            this.btnChange.Text = "Sign In";
+            this.btnChange.Text = "Sign Up";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnLoginRegisterChange_Click);
             // 
@@ -113,6 +113,7 @@
             this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(100, 13);
             this.txtConfirm.TabIndex = 8;
+            this.txtConfirm.Visible = false;
             // 
             // lblConfirm
             // 
@@ -122,6 +123,7 @@
             this.lblConfirm.Size = new System.Drawing.Size(42, 13);
             this.lblConfirm.TabIndex = 7;
             this.lblConfirm.Text = "Confirm";
+            this.lblConfirm.Visible = false;
             // 
             // btnQuit
             // 

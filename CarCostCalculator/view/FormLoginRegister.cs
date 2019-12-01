@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 using model;
 
@@ -17,7 +19,10 @@ namespace view
         public FormLoginRegister()
         {
             InitializeComponent();
+            txtEmail.Text = ReadEmailInJson();
         }
+
+        string dataStringPath = @"..\..\..\data";
 
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
         {
@@ -28,6 +33,8 @@ namespace view
 
                 btnSubmit.Text = "Sign In";
                 btnChange.Text = "Sign Up";
+
+                Text = "CarCostCalculator - Login";
             }
             else
             {
@@ -36,6 +43,8 @@ namespace view
 
                 btnSubmit.Text = "Sign Up";
                 btnChange.Text = "Sign In";
+
+                Text = "CarCostCalculator - Register";
             }
         }
 
@@ -82,6 +91,27 @@ namespace view
             {
                 MessageBox.Show("Erreur : Une erreur s'est produite !");
             }
+        }
+
+        private void WriteEmailInJson(string email)
+        {
+            if (!Directory.Exists(dataStringPath))
+            {
+                Directory.CreateDirectory(dataStringPath);
+            }
+            string jsonEmail = JsonConvert.SerializeObject(email);
+            File.WriteAllText(@"..\..\..\data\email.json", jsonEmail);
+        }
+
+        private string ReadEmailInJson()
+        {
+            if (!Directory.Exists(dataStringPath))
+            {
+                Directory.CreateDirectory(dataStringPath);
+            }
+            string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
+
+            return email;
         }
     }
 }
