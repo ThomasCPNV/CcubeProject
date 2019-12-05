@@ -24,7 +24,20 @@ namespace view
             InitializeComponent();
             if (File.Exists(emailStringFileName))
             {
-                txtEmail.Text = ReadEmailInJson();
+                long fileWeight = new FileInfo(emailStringFileName).Length;
+                if (fileWeight > 0)
+                {
+                    txtEmail.Text = ReadEmailInJson();
+                }
+            }
+            else
+            {
+                if (!Directory.Exists(dataStringPath))
+                {
+                    Directory.CreateDirectory(dataStringPath);
+                    File.Create(emailStringFileName).Close();
+                    File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
+                }
             }
         }
 
@@ -66,7 +79,6 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            WriteEmailInJson(txtEmail.Text);
             if (txtConfirm.Visible == false)
             {
                 Login login = new Login();
@@ -102,20 +114,21 @@ namespace view
 
         private void WriteEmailInJson(string email)
         {
-            if (!Directory.Exists(dataStringPath))
+            if (txtEmail.Text != null)
             {
-                Directory.CreateDirectory(dataStringPath);
-                File.Create(emailStringFileName);
+                string jsonEmail = JsonConvert.SerializeObject(email);
+                File.WriteAllText(@"..\..\..\data\email.json", jsonEmail);
             }
-
-            string jsonEmail = JsonConvert.SerializeObject(email);
-            File.WriteAllText(@"..\..\..\data\email.json", jsonEmail);
         }
 
         private string ReadEmailInJson()
         {
             string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
             return email;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
