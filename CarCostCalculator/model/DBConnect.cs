@@ -42,8 +42,15 @@ namespace model
         /// <param name="pseudo"></param>
         public void InsertUser(string email, string passwordHashed)
         {
-            OpenConnection();
-
+            try
+            {
+                OpenConnection();
+            }
+            catch
+            {
+                throw new Exception("Impossible de se connecter à la base de données !");
+            }
+           
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
@@ -68,7 +75,14 @@ namespace model
         {
             string passwordUser = "";
 
-            OpenConnection();
+            try
+            {
+                OpenConnection();
+            }
+            catch
+            {
+                throw new Exception("Impossible de se connecter à la base de données !");
+            }
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
