@@ -138,7 +138,7 @@ namespace view
 
         string realPassword = "";
         string passwordOut = "";
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        /*private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length - 1].ToString();
             realPassword += lastPasswordLetter;
@@ -151,12 +151,7 @@ namespace view
             string passwordOut = hiddingPasswordPart + lastPasswordLetter;
             tmrPassword.Enabled = true;
             txtPassword.Text = passwordOut;
-        }
-
-        private void TxtPassword_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        }*/
 
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
