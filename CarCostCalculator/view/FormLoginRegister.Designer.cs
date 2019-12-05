@@ -139,7 +139,7 @@
             // 
             // tmrPassword
             // 
-            this.tmrPassword.Enabled = true;
+            this.tmrPassword.Interval = 1000;
             this.tmrPassword.Tick += new System.EventHandler(this.tmrPassword_Tick);
             // 
             // FormLoginRegister
@@ -176,7 +176,7 @@
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Timer tmrPassword;
+        public System.Windows.Forms.Timer tmrPassword;
     }
 }
 

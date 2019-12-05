@@ -22,6 +22,8 @@ namespace view
         public FormLoginRegister()
         {
             InitializeComponent();
+            tmrPassword.Interval = 1000;
+            tmrPassword.Enabled = true;
             if (File.Exists(emailStringFileName))
             {
                 long fileWeight = new FileInfo(emailStringFileName).Length;
@@ -79,44 +81,43 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtPassword.Text.Length >= 8)
+            if (IsValidEmail(txtEmail.Text))
             {
-                if (txtConfirm.Visible == false)
+                if (IsGoodPassword(txtPassword.Text))
                 {
-                    Login login = new Login();
-                    if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                    if (txtConfirm.Visible == false)
                     {
-                        //Application.Run(new FormCarCostCalculator());
-                        WriteEmailInJson(txtEmail.Text);
-                        MessageBox.Show("You are connected !");
+                        Login login = new Login();
+                        if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                        {
+                            //Application.Run(new FormCarCostCalculator());
+                            WriteEmailInJson(txtEmail.Text);
+                            MessageBox.Show("You are connected !");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error : Your email or your password is false !");
+                        }
+                    }
+                    else if (txtConfirm.Visible == true)
+                    {
+                        Register register = new Register();
+                        if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                        {
+                            //Application.Run(new FormCarCostCalculator());
+                            WriteEmailInJson(txtEmail.Text);
+                            MessageBox.Show("You are registred !");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error : Your email or your password is false !");
+                        MessageBox.Show("Error : An error has occurred !");
                     }
                 }
-                else if (txtConfirm.Visible == true)
-                {
-                    Register register = new Register();
-                    if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
-                    {
-                        //Application.Run(new FormCarCostCalculator());
-                        WriteEmailInJson(txtEmail.Text);
-                        MessageBox.Show("You are registred !");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error : An error has occurred !");
-                }
-            }
-            else
-            {
-                MessageBox.Show("The password must be at least eight characters long !");
             }
         }
 
@@ -134,14 +135,65 @@ namespace view
             string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
             return email;
         }
-        
+
+        string realPassword = "";
+        string passwordOut = "";
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
+            string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length - 1].ToString();
+            realPassword += lastPasswordLetter;
 
+            string hiddingPasswordPart = "";
+            for (int count = 0; count < realPassword.Length - 1; count++)
+            {
+                hiddingPasswordPart += "*";
+            }
+            string passwordOut = hiddingPasswordPart + lastPasswordLetter;
+            tmrPassword.Enabled = true;
+            txtPassword.Text = passwordOut;
+        }
+
+        private void TxtPassword_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
+            passwordOut = "";
+            for (int count = 0; count < txtPassword.TextLength; count++)
+            {
+                passwordOut += "*";
+            }
+            tmrPassword.Enabled = false;
+            txtPassword.Text = passwordOut;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                MessageBox.Show("This isn't an email !");
+                return false;
+            }
+        }
+
+        private bool IsGoodPassword(string password)
+        {
+            try
+            {
+                return password.Length >= 8;
+            }
+            catch
+            {
+                MessageBox.Show("The password must be at least eight characters long !");
+                return false;
+            }
         }
     }
 }
