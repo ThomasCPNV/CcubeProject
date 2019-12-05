@@ -79,36 +79,44 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtConfirm.Visible == false)
+            if (txtPassword.Text.Length >= 8)
             {
-                Login login = new Login();
-                if(login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                if (txtConfirm.Visible == false)
                 {
-                    //Application.Run(new FormCarCostCalculator());
-                    WriteEmailInJson(txtEmail.Text);
-                    MessageBox.Show("You are connected !");
+                    Login login = new Login();
+                    if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                    {
+                        //Application.Run(new FormCarCostCalculator());
+                        WriteEmailInJson(txtEmail.Text);
+                        MessageBox.Show("You are connected !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error : Your email or your password is false !");
+                    }
+                }
+                else if (txtConfirm.Visible == true)
+                {
+                    Register register = new Register();
+                    if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                    {
+                        //Application.Run(new FormCarCostCalculator());
+                        WriteEmailInJson(txtEmail.Text);
+                        MessageBox.Show("You are registred !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error : Your email or your password is false !");
-                }
-            }else if(txtConfirm.Visible == true)
-            {
-                Register register = new Register();
-                if(register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
-                {
-                    //Application.Run(new FormCarCostCalculator());
-                    WriteEmailInJson(txtEmail.Text);
-                    MessageBox.Show("You are registred !");
-                }
-                else
-                {
-                    MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                    MessageBox.Show("Error : An error has occurred !");
                 }
             }
             else
             {
-                MessageBox.Show("Error : An error has occurred !");
+                MessageBox.Show("The password must be at least eight characters long !");
             }
         }
 
@@ -126,8 +134,13 @@ namespace view
             string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
             return email;
         }
-
+        
         private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmrPassword_Tick(object sender, EventArgs e)
         {
         }
     }

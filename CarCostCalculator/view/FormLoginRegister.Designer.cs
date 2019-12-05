@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblConfirm = new System.Windows.Forms.Label();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.tmrPassword = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblEmail
@@ -70,10 +72,11 @@
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Location = new System.Drawing.Point(369, 208);
+            this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 13);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnCancel
             // 
@@ -110,7 +113,6 @@
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirm.Location = new System.Drawing.Point(369, 227);
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(100, 13);
             this.txtConfirm.TabIndex = 8;
             this.txtConfirm.Visible = false;
@@ -134,6 +136,11 @@
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // tmrPassword
+            // 
+            this.tmrPassword.Enabled = true;
+            this.tmrPassword.Tick += new System.EventHandler(this.tmrPassword_Tick);
             // 
             // FormLoginRegister
             // 
@@ -169,6 +176,7 @@
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Timer tmrPassword;
     }
 }
 
