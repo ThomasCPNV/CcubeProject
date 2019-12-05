@@ -21,11 +21,21 @@ namespace test
         }
 
         [TestMethod]
-        public void TestRegisterIncorrect()
+        public void TestRegisterUserAlreadyExist()
         {
             Register register = new Register();
 
             bool registerVerify = register.RegisterNewAccount($"Thomas.Huguet@cpnv.ch", "Pa$$w0rd", "Pa$$w0rd");
+
+            Assert.AreEqual(registerVerify, false);
+        }
+
+        [TestMethod]
+        public void TestRegisterPasswordNotLikeConfirmPassword()
+        {
+            Register register = new Register();
+
+            bool registerVerify = register.RegisterNewAccount($"Thomas.Huguet@cpnv.ch", "Password", "Pa$$w0rd");
 
             Assert.AreEqual(registerVerify, false);
         }

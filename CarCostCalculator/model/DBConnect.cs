@@ -108,6 +108,37 @@ namespace model
             return passwordUser;
         }
 
+        public bool VerifyEmailAlreadyExist(string email)
+        {
+            try
+            {
+                OpenConnection();
+            }
+            catch
+            {
+                throw new Exception("Impossible de se connecter à la base de données !");
+            }
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select email from users where email = '{email}'";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                reader.Close();
+                return true;
+                throw new Exception("Email est déjà utilisé");  
+            }
+
+            CloseConnection();
+
+            return false;
+        }
 
         /// <summary>
         /// Close connection to the database

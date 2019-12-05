@@ -15,14 +15,15 @@ namespace model
         {
             bool isRegisterOK = false;
 
+            bool verifyEmailAlreadyExist = dbConnect.VerifyEmailAlreadyExist(email);
+
             string passwordHashed = Crypto.HashPassword(password);
 
-            if (passwordConfirmation == password)
+            if (passwordConfirmation == password && verifyEmailAlreadyExist == false)
             {
                 dbConnect.InsertUser(email, passwordHashed);
                 isRegisterOK = true;
             }
-
             return isRegisterOK;
         }
     }
