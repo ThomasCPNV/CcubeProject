@@ -42,14 +42,7 @@ namespace model
         /// <param name="pseudo"></param>
         public void InsertUser(string email, string passwordHashed)
         {
-            try
-            {
-                OpenConnection();
-            }
-            catch
-            {
-                throw new Exception("Impossible de se connecter à la base de données !");
-            }
+            OpenConnection();
            
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
@@ -74,15 +67,8 @@ namespace model
         public string GetPasswordUser(string email)
         {
             string passwordUser = "";
-
-            try
-            {
-                OpenConnection();
-            }
-            catch
-            {
-                throw new Exception("Impossible de se connecter à la base de données !");
-            }
+          
+             OpenConnection();
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
@@ -110,15 +96,8 @@ namespace model
 
         public bool VerifyEmailAlreadyExist(string email)
         {
-            try
-            {
-                OpenConnection();
-            }
-            catch
-            {
-                throw new Exception("Impossible de se connecter à la base de données !");
-            }
-
+            OpenConnection();
+            
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
@@ -132,12 +111,27 @@ namespace model
                 //Despite this, we use a while
                 reader.Close();
                 return true;
-                throw new Exception("Email est déjà utilisé");  
             }
 
             CloseConnection();
 
             return false;
+        }
+
+        public bool TestConnectionBD()
+        {
+            try
+            {
+                OpenConnection();
+            }
+            catch
+            {
+                return false;
+            }
+
+            CloseConnection();
+
+            return true;
         }
 
         /// <summary>
