@@ -44,16 +44,7 @@ namespace view
                     File.Create(emailStringFileName).Close();
                     File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
                 }
-            }
-
-            try
-            {
-                dbConnect.TestConnectionBD();
-            }
-            catch
-            {
-                MessageBox.Show("The application can not connect to the database !");
-            }
+            }  
         }
 
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
@@ -94,36 +85,45 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (tryCatch.IsValidEmail(txtEmail.Text))
+           
+            if(dbConnect.TestConnectionBD() == false)
             {
-                if (tryCatch.IsGoodPassword(txtPassword.Text))
+                MessageBox.Show("The application can not connect to the database !");
+               
+            }
+            else
+            {
+                if (tryCatch.IsValidEmail(txtEmail.Text))
                 {
-                    if (tryCatch.LoginOrRegisterView(txtConfirm.Visible))
+                    if (tryCatch.IsGoodPassword(txtPassword.Text))
                     {
-                        Login login = new Login();
-                        if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                        if (tryCatch.LoginOrRegisterView(txtConfirm.Visible))
                         {
-                            //Application.Run(new FormCarCostCalculator());
-                            WriteEmailInJson(txtEmail.Text);
-                            MessageBox.Show("You are connected !");
+                            Login login = new Login();
+                            if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                            {
+                                //Application.Run(new FormCarCostCalculator());
+                                WriteEmailInJson(txtEmail.Text);
+                                MessageBox.Show("You are connected !");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error : Your email or your password is false !");
+                            }
                         }
-                        else
+                        else if (txtConfirm.Visible == true)
                         {
-                            MessageBox.Show("Error : Your email or your password is false !");
-                        }
-                    }
-                    else if (txtConfirm.Visible == true)
-                    {
-                        Register register = new Register();
-                        if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
-                        {
-                            //Application.Run(new FormCarCostCalculator());
-                            WriteEmailInJson(txtEmail.Text);
-                            MessageBox.Show("You are registred !");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                            Register register = new Register();
+                            if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                            {
+                                //Application.Run(new FormCarCostCalculator());
+                                WriteEmailInJson(txtEmail.Text);
+                                MessageBox.Show("You are registred !");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                            }
                         }
                     }
                 }
@@ -175,6 +175,11 @@ namespace view
             tmrPassword.Enabled = false;
             txtPassword.Text = passwordOut;
             */
+        }
+
+        private void FormLoginRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

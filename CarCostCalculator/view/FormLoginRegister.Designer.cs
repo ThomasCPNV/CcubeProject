@@ -161,6 +161,7 @@
             this.Controls.Add(this.lblEmail);
             this.Name = "FormLoginRegister";
             this.Text = "Car Cost Calculator - Login";
+            this.Load += new System.EventHandler(this.FormLoginRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

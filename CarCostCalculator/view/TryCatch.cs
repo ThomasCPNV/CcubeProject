@@ -27,8 +27,6 @@ namespace view
 
         public bool IsGoodPassword(string password)
         {
-            try
-            {
                 if(password.Length >= 8)
                 {
                     return true;
@@ -38,11 +36,8 @@ namespace view
                     MessageBox.Show("The password must be at least eight characters long !");
                     return false;
                 }
-            }
-            catch
-            {
-                MessageBox.Show("The password must be at least eight characters long !");
-                return false;
+<<<<<<< HEAD
+=======
             }
         }
 
