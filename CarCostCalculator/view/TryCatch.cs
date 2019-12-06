@@ -39,6 +39,11 @@ namespace view
                     return false;
                 }
             }
+            catch
+            {
+                MessageBox.Show("The password must be at least eight characters long !");
+                return false;
+            }
         }
 
         public bool LoginOrRegisterView(bool registerView)

@@ -166,6 +166,7 @@ namespace view
 
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
+            /*
             passwordOut = "";
             for (int count = 0; count < txtPassword.TextLength; count++)
             {
@@ -173,6 +174,7 @@ namespace view
             }
             tmrPassword.Enabled = false;
             txtPassword.Text = passwordOut;
+            */
         }
     }
 }
