@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using model;
+
 namespace view
 {
     public class TryCatch
@@ -32,6 +34,19 @@ namespace view
             catch
             {
                 MessageBox.Show("The password must be at least eight characters long !");
+                return false;
+            }
+        }
+
+        public bool LoginOrRegisterView(bool registerView)
+        {
+            try
+            {
+                return registerView == false;
+            }
+            catch
+            {
+                MessageBox.Show("Error : An error has occurred !");
                 return false;
             }
         }

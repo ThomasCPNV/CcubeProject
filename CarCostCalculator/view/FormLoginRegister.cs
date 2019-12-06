@@ -18,12 +18,16 @@ namespace view
     {
         string dataStringPath = @"..\..\..\data";
         string emailStringFileName = @"..\..\..\data\email.json";
+        TryCatch tryCatch = new TryCatch();
+        DBConnect dbConnect = new DBConnect();
 
         public FormLoginRegister()
         {
             InitializeComponent();
+
             tmrPassword.Interval = 1000;
-            tmrPassword.Enabled = true;
+            tmrPassword.Enabled = false;
+
             if (File.Exists(emailStringFileName))
             {
                 long fileWeight = new FileInfo(emailStringFileName).Length;
@@ -40,6 +44,15 @@ namespace view
                     File.Create(emailStringFileName).Close();
                     File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
                 }
+            }
+
+            try
+            {
+                dbConnect.TestConnectionBD();
+            }
+            catch
+            {
+                MessageBox.Show("The application can not connect to the database !");
             }
         }
 
@@ -81,11 +94,11 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (IsValidEmail(txtEmail.Text))
+            if (tryCatch.IsValidEmail(txtEmail.Text))
             {
-                if (IsGoodPassword(txtPassword.Text))
+                if (tryCatch.IsGoodPassword(txtPassword.Text))
                 {
-                    if (txtConfirm.Visible == false)
+                    if (tryCatch.LoginOrRegisterView(txtConfirm.Visible))
                     {
                         Login login = new Login();
                         if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
@@ -113,10 +126,6 @@ namespace view
                             MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Error : An error has occurred !");
-                    }
                 }
             }
         }
@@ -138,9 +147,10 @@ namespace view
 
         string realPassword = "";
         string passwordOut = "";
-        /*private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length - 1].ToString();
+            /*
+            string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length-1].ToString();
             realPassword += lastPasswordLetter;
 
             string hiddingPasswordPart = "";
@@ -151,7 +161,8 @@ namespace view
             string passwordOut = hiddingPasswordPart + lastPasswordLetter;
             tmrPassword.Enabled = true;
             txtPassword.Text = passwordOut;
-        }*/
+            */
+        }
 
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
@@ -162,33 +173,6 @@ namespace view
             }
             tmrPassword.Enabled = false;
             txtPassword.Text = passwordOut;
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                MessageBox.Show("This isn't an email !");
-                return false;
-            }
-        }
-
-        private bool IsGoodPassword(string password)
-        {
-            try
-            {
-                return password.Length >= 8;
-            }
-            catch
-            {
-                MessageBox.Show("The password must be at least eight characters long !");
-                return false;
-            }
         }
     }
 }
