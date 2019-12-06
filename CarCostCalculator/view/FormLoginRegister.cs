@@ -176,10 +176,5 @@ namespace view
             txtPassword.Text = passwordOut;
             */
         }
-
-        private void FormLoginRegister_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
