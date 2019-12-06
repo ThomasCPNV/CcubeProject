@@ -29,12 +29,15 @@ namespace view
         {
             try
             {
-                return password.Length >= 8;
-            }
-            catch
-            {
-                MessageBox.Show("The password must be at least eight characters long !");
-                return false;
+                if(password.Length >= 8)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("The password must be at least eight characters long !");
+                    return false;
+                }
             }
         }
 
