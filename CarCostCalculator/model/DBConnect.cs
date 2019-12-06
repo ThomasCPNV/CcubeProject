@@ -24,7 +24,7 @@ namespace model
         {
             // Creation of the connection string : where, who
             // Avoid user id and pwd hardcoded
-            string connectionString = "SERVER=127.0.0.1; DATABASE=CcubeProject; UID=root; PASSWORD=Pa$$w0rd";
+            string connectionString = "SERVER=127.0.0.1; DATABASE=CcubeProject; UID=userCcubeProjectSQL; PASSWORD=Pa$$w0rd";
             connection = new MySqlConnection(connectionString);
         }
 
