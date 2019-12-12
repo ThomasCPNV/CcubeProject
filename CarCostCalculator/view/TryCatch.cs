@@ -20,7 +20,7 @@ namespace view
             }
             catch
             {
-                MessageBox.Show("This isn't an email !");
+                MessageBox.Show("Error : This isn't an email !");
                 return false;
             }
         }
@@ -33,7 +33,7 @@ namespace view
                 }
                 else
                 {
-                    MessageBox.Show("The password must be at least eight characters long !");
+                    MessageBox.Show("Error : The password must be at least eight characters long !");
                     return false;
                 }
             }

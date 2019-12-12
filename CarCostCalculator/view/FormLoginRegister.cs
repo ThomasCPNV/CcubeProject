@@ -88,7 +88,7 @@ namespace view
            
             if(dbConnect.TestConnectionBD() == false)
             {
-                MessageBox.Show("The application can not connect to the database !");
+                MessageBox.Show("Error : The application can not connect to the database !");
                
             }
             else
@@ -109,7 +109,7 @@ namespace view
                             }
                             else
                             {
-                                MessageBox.Show("Error : Your email or your password is false !");
+                                MessageBox.Show("Error : This email don't exists or your password is false !");
                             }
                         }
                         else if (txtConfirm.Visible == true)
