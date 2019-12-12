@@ -159,7 +159,11 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLoginRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Car Cost Calculator - Login";
             this.ResumeLayout(false);
             this.PerformLayout();

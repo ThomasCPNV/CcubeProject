@@ -85,8 +85,7 @@ namespace view
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-           
-            if(dbConnect.TestConnectionBD() == false)
+            if (dbConnect.TestConnectionBD() == false)
             {
                 MessageBox.Show("Error : The application can not connect to the database !");
                
