@@ -94,6 +94,36 @@ namespace model
             return passwordUser;
         }
 
+        public string GetEmailUser(string email)
+        {
+            string emailUser = "";
+
+            OpenConnection();
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select email from users where email = '{email}'";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    emailUser = reader.GetString(0);
+                }
+                reader.Close();
+                return emailUser;
+            }
+
+            CloseConnection();
+
+            return emailUser;
+        }
+
         public bool VerifyEmailAlreadyExist(string email)
         {
             OpenConnection();
