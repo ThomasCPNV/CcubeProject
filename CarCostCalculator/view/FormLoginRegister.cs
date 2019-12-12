@@ -103,6 +103,7 @@ namespace view
                             if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
                             {
                                 Application.Run(new FormCalculator());
+                                Application.Exit();
                                 WriteEmailInJson(txtEmail.Text);
                                 MessageBox.Show("You are connected !");
                             }
@@ -119,6 +120,7 @@ namespace view
                                 if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
                                 {
                                     Application.Run(new FormCalculator());
+                                    Application.Exit();
                                     WriteEmailInJson(txtEmail.Text);
                                     MessageBox.Show("You are registred !");
                                 }
