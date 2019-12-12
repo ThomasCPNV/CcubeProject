@@ -102,7 +102,7 @@ namespace view
                             Login login = new Login();
                             if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
                             {
-                                //Application.Run(new FormCarCostCalculator());
+                                Application.Run(new FormCalculator());
                                 WriteEmailInJson(txtEmail.Text);
                                 MessageBox.Show("You are connected !");
                             }
@@ -116,7 +116,7 @@ namespace view
                             Register register = new Register();
                             if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
                             {
-                                //Application.Run(new FormCarCostCalculator());
+                                Application.Run(new FormCalculator());
                                 WriteEmailInJson(txtEmail.Text);
                                 MessageBox.Show("You are registred !");
                             }
