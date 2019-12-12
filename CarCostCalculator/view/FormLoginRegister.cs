@@ -114,15 +114,22 @@ namespace view
                         else if (txtConfirm.Visible == true)
                         {
                             Register register = new Register();
-                            if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                            if (!dbConnect.VerifyEmailAlreadyExist(txtEmail.Text))
                             {
-                                Application.Run(new FormCalculator());
-                                WriteEmailInJson(txtEmail.Text);
-                                MessageBox.Show("You are registred !");
+                                if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                                {
+                                    Application.Run(new FormCalculator());
+                                    WriteEmailInJson(txtEmail.Text);
+                                    MessageBox.Show("You are registred !");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
+                                MessageBox.Show("Error : This email already exists !");
                             }
                         }
                     }
