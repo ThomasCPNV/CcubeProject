@@ -184,5 +184,10 @@ namespace view
             txtPassword.Text = passwordOut;
             */
         }
+
+        private void FormLoginRegister_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
