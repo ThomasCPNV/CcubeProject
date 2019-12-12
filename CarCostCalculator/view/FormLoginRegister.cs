@@ -42,10 +42,10 @@ namespace view
                 File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
             }
 
-            /*if (File.Exists(locationStringFileName))
+            if (File.Exists(locationStringFileName))
             {
                 var jsonLocation = ReadLocationInJson();
-                var location = jsonLocation ;
+                var location = jsonLocation.Split(',');
                 Location = new Point(
                     int.Parse(location[0]),
                     int.Parse(location[1])
@@ -55,7 +55,7 @@ namespace view
             {
                 File.Create(locationStringFileName).Close();
                 File.WriteAllText(@"..\..\..\data\formLocation.json", "\"\"");
-            }*/
+            }
         }
 
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
