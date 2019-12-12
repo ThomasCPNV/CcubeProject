@@ -18,6 +18,7 @@ namespace view
     {
         string dataStringPath = @"..\..\..\data";
         string emailStringFileName = @"..\..\..\data\email.json";
+        string locationStringFileName = @"..\..\..\data\formLocation.json";
         TryCatch tryCatch = new TryCatch();
         DBConnect dbConnect = new DBConnect();
 
@@ -28,23 +29,33 @@ namespace view
             tmrPassword.Interval = 1000;
             tmrPassword.Enabled = false;
 
+            if (!Directory.Exists(dataStringPath)) { Directory.CreateDirectory(dataStringPath); }
+
             if (File.Exists(emailStringFileName))
             {
                 long fileWeight = new FileInfo(emailStringFileName).Length;
-                if (fileWeight > 0)
-                {
-                    txtEmail.Text = ReadEmailInJson();
-                }
+                if (fileWeight > 0) { txtEmail.Text = ReadEmailInJson(); }
             }
             else
             {
-                if (!Directory.Exists(dataStringPath))
-                {
-                    Directory.CreateDirectory(dataStringPath);
-                    File.Create(emailStringFileName).Close();
-                    File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
-                }
-            }  
+                File.Create(emailStringFileName).Close();
+                File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
+            }
+
+            /*if (File.Exists(locationStringFileName))
+            {
+                var jsonLocation = ReadLocationInJson();
+                var location = jsonLocation ;
+                Location = new Point(
+                    int.Parse(location[0]),
+                    int.Parse(location[1])
+                    );
+            }
+            else
+            {
+                File.Create(locationStringFileName).Close();
+                File.WriteAllText(@"..\..\..\data\formLocation.json", "\"\"");
+            }*/
         }
 
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
@@ -101,10 +112,11 @@ namespace view
                             Login login = new Login();
                             if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
                             {
-                                Application.Run(new FormCalculator());
-                                Application.Exit();
+                                FormCalculator form = new FormCalculator();
+                                form.ShowDialog();
                                 WriteEmailInJson(txtEmail.Text);
                                 MessageBox.Show("You are connected !");
+                                Application.Exit();
                             }
                             else
                             {
@@ -118,10 +130,11 @@ namespace view
                             {
                                 if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
                                 {
-                                    Application.Run(new FormCalculator());
-                                    Application.Exit();
+                                    FormCalculator form = new FormCalculator();
+                                    form.ShowDialog();
                                     WriteEmailInJson(txtEmail.Text);
                                     MessageBox.Show("You are registred !");
+                                    Application.Exit();
                                 }
                                 else
                                 {
@@ -151,6 +164,12 @@ namespace view
         {
             string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
             return email;
+        }
+
+        private string ReadLocationInJson()
+        {
+            string location = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\formLocation.json")).ToString();
+            return location;
         }
 
         string realPassword = "";
@@ -187,7 +206,8 @@ namespace view
 
         private void FormLoginRegister_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            string jsonLocation = JsonConvert.SerializeObject(Location);
+            File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
         }
     }
 }
