@@ -74,7 +74,6 @@
             this.txtPassword.Location = new System.Drawing.Point(369, 208);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 13);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -114,7 +113,6 @@
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirm.Location = new System.Drawing.Point(369, 227);
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(100, 13);
             this.txtConfirm.TabIndex = 8;
             this.txtConfirm.Visible = false;

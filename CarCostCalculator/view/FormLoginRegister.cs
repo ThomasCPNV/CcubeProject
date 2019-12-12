@@ -26,9 +26,6 @@ namespace view
         {
             InitializeComponent();
 
-            tmrPassword.Interval = 1000;
-            tmrPassword.Enabled = false;
-
             if (!Directory.Exists(dataStringPath)) { Directory.CreateDirectory(dataStringPath); }
 
             if (File.Exists(emailStringFileName))
@@ -176,32 +173,23 @@ namespace view
         string passwordOut = "";
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            /*
-            string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length-1].ToString();
-            realPassword += lastPasswordLetter;
-
-            string hiddingPasswordPart = "";
-            for (int count = 0; count < realPassword.Length - 1; count++)
+            tmrPassword.Enabled = false;
+            if (txtPassword.TextLength > realPassword.Length)
             {
-                hiddingPasswordPart += "*";
+                string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length - 1].ToString();
+                realPassword += lastPasswordLetter;
+                tmrPassword.Enabled = true;
             }
-            string passwordOut = hiddingPasswordPart + lastPasswordLetter;
-            tmrPassword.Enabled = true;
-            txtPassword.Text = passwordOut;
-            */
         }
 
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
-            /*
-            passwordOut = "";
-            for (int count = 0; count < txtPassword.TextLength; count++)
-            {
-                passwordOut += "*";
-            }
+            string hiddingPasswordPart = "";
+            for (int count = 0; count >= txtPassword.TextLength; count++) { hiddingPasswordPart += "*"; }
+            MessageBox.Show(hiddingPasswordPart);
+            txtPassword.Text = hiddingPasswordPart;
+            MessageBox.Show(hiddingPasswordPart);
             tmrPassword.Enabled = false;
-            txtPassword.Text = passwordOut;
-            */
         }
 
         private void FormLoginRegister_FormClosed(object sender, FormClosedEventArgs e)
