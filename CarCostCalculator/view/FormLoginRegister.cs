@@ -197,5 +197,10 @@ namespace view
             string jsonLocation = JsonConvert.SerializeObject(Location);
             File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
         }
+
+        private void FormLoginRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -164,6 +164,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Car Cost Calculator - Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLoginRegister_FormClosed);
+            this.Load += new System.EventHandler(this.FormLoginRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,5 +16,10 @@ namespace view
         {
             InitializeComponent();
         }
+
+        private void FormCalculator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

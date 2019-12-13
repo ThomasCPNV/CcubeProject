@@ -40,6 +40,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCalculator";
             this.Text = "FormCalculator";
+            this.Load += new System.EventHandler(this.FormCalculator_Load);
             this.ResumeLayout(false);
 
         }

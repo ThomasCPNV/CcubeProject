@@ -13,15 +13,23 @@ namespace view
     {
         public bool IsValidEmail(string email)
         {
-            try
+            if(email.Contains("'") || email.Contains('"'))
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                MessageBox.Show("Error : This isn't an email !");
+                MessageBox.Show("Error : You cannot have quote in your email");
                 return false;
+            }
+            else
+            {
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(email);
+                    return addr.Address == email;
+                }
+                catch
+                {
+                    MessageBox.Show("Error : This isn't an email !");
+                    return false;
+                }
             }
         }
 
