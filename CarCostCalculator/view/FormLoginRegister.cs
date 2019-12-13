@@ -82,7 +82,9 @@ namespace view
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtEmail.Text = "";
+            realPassword = "";
             txtPassword.Text = "";
+            realConfirm = "";
             txtConfirm.Text = "";
         }
 
@@ -102,12 +104,12 @@ namespace view
             {
                 if (tryCatch.IsValidEmail(txtEmail.Text))
                 {
-                    if (tryCatch.IsGoodPassword(txtPassword.Text))
+                    if (tryCatch.IsGoodPassword(realPassword))
                     {
                         if (tryCatch.LoginOrRegisterView(txtConfirm.Visible))
                         {
                             Login login = new Login();
-                            if (login.IsLoginCorrect(txtEmail.Text, txtPassword.Text) == true)
+                            if (login.IsLoginCorrect(txtEmail.Text, realPassword) == true)
                             {
                                 FormCalculator form = new FormCalculator();
                                 form.ShowDialog();
@@ -125,7 +127,7 @@ namespace view
                             Register register = new Register();
                             if (!dbConnect.VerifyEmailAlreadyExist(txtEmail.Text))
                             {
-                                if (register.RegisterNewAccount(txtEmail.Text, txtPassword.Text, txtConfirm.Text) == true)
+                                if (register.RegisterNewAccount(txtEmail.Text, realPassword, txtConfirm.Text) == true)
                                 {
                                     FormCalculator form = new FormCalculator();
                                     form.ShowDialog();
@@ -170,37 +172,71 @@ namespace view
         }
 
         string realPassword = "";
+        string realConfirm = "";
         string passwordOut = "";
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            tmrPassword.Enabled = false;
             if (txtPassword.TextLength > realPassword.Length)
             {
-                string lastPasswordLetter = txtPassword.Text[txtPassword.Text.Length - 1].ToString();
-                realPassword += lastPasswordLetter;
-                tmrPassword.Enabled = true;
+                txtPassword.Text = passwordView(txtPassword.Text);
+                txtPassword.SelectionStart = txtPassword.TextLength;
+            }
+            if(txtPassword.TextLength < realPassword.Length)
+            {
+                realPassword = realPassword.Remove(realPassword.Length - 1);
+            }
+        }
+
+        private void txtConfirm_TextChanged(object sender, EventArgs e)
+        {
+            if (txtConfirm.TextLength > realConfirm.Length)
+            {
+                txtConfirm.Text = passwordView(txtConfirm.Text);
+                txtConfirm.SelectionStart = txtConfirm.TextLength;
+            }
+            if (txtConfirm.TextLength < realConfirm.Length)
+            {
+                realConfirm = realConfirm.Remove(realConfirm.Length - 1);
             }
         }
 
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
             string hiddingPasswordPart = "";
-            for (int count = 0; count >= txtPassword.TextLength; count++) { hiddingPasswordPart += "*"; }
-            MessageBox.Show(hiddingPasswordPart);
+            for (int count = 1; count <= txtPassword.TextLength; count++) { hiddingPasswordPart += '*'; }
             txtPassword.Text = hiddingPasswordPart;
-            MessageBox.Show(hiddingPasswordPart);
+            txtPassword.SelectionStart = txtPassword.TextLength;
+
             tmrPassword.Enabled = false;
+        }
+
+        private void tmrConfirm_Tick(object sender, EventArgs e)
+        {
+            string hiddingPasswordPart = "";
+            for (int count = 1; count <= txtConfirm.TextLength; count++) { hiddingPasswordPart += '*'; }
+            txtConfirm.Text = hiddingPasswordPart;
+            txtConfirm.SelectionStart = txtConfirm.TextLength;
+
+            tmrPassword.Enabled = false;
+        }
+
+        private string passwordView(string passwordText)
+        {
+            tmrPassword.Enabled = false;
+            string hiddingPasswordPart = "";
+            string fullPassword = "";
+            string lastPasswordLetter = passwordText[passwordText.Length - 1].ToString();
+            realPassword += lastPasswordLetter;
+            for (int count = 1; count <= passwordText.Length - 1; count++) { hiddingPasswordPart += '*'; }
+            fullPassword = hiddingPasswordPart + lastPasswordLetter;
+            tmrPassword.Enabled = true;
+            return fullPassword;
         }
 
         private void FormLoginRegister_FormClosed(object sender, FormClosedEventArgs e)
         {
             string jsonLocation = JsonConvert.SerializeObject(Location);
             File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
-        }
-
-        private void FormLoginRegister_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

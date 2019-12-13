@@ -40,6 +40,7 @@
             this.lblConfirm = new System.Windows.Forms.Label();
             this.btnQuit = new System.Windows.Forms.Button();
             this.tmrPassword = new System.Windows.Forms.Timer(this.components);
+            this.tmrConfirm = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblEmail
@@ -116,6 +117,7 @@
             this.txtConfirm.Size = new System.Drawing.Size(100, 13);
             this.txtConfirm.TabIndex = 8;
             this.txtConfirm.Visible = false;
+            this.txtConfirm.TextChanged += new System.EventHandler(this.txtConfirm_TextChanged);
             // 
             // lblConfirm
             // 
@@ -142,6 +144,11 @@
             this.tmrPassword.Interval = 1000;
             this.tmrPassword.Tick += new System.EventHandler(this.tmrPassword_Tick);
             // 
+            // tmrConfirm
+            // 
+            this.tmrConfirm.Interval = 1000;
+            this.tmrConfirm.Tick += new System.EventHandler(this.tmrConfirm_Tick);
+            // 
             // FormLoginRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +171,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Car Cost Calculator - Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLoginRegister_FormClosed);
-            this.Load += new System.EventHandler(this.FormLoginRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +189,7 @@
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.Button btnQuit;
         public System.Windows.Forms.Timer tmrPassword;
+        public System.Windows.Forms.Timer tmrConfirm;
     }
 }
 
