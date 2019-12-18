@@ -24,7 +24,7 @@ namespace model
         {
             // Creation of the connection string : where, who
             // Avoid user id and pwd hardcoded
-            string connectionString = "SERVER=127.0.0.1; DATABASE=CcubeProject; UID=userCcubeProjectSQL; PASSWORD=Pa$$w0rd";
+            string connectionString = "SERVER=127.0.0.1; DATABASE=carcostcalculator; UID=userCarCostCalculatorSQL; PASSWORD=Pa$$w0rd";
             connection = new MySqlConnection(connectionString);
         }
 
@@ -48,7 +48,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into users (email, password, type) values ('{email}', '{passwordHashed}',{1})";
+            cmd.CommandText = $"insert into user (email, password) values ('{email}', '{passwordHashed}', {0}, {0}, {0}, {0})";
 
             // use of the pseudo string, parameter of the method AddPlayer
             cmd.Parameters.AddWithValue("@email", email);
@@ -73,7 +73,7 @@ namespace model
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select password from users where email = '{email}'";
+            cmd.CommandText = $"select password from user where email = '{email}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -103,7 +103,7 @@ namespace model
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select email from users where email = '{email}'";
+            cmd.CommandText = $"select email from user where email = '{email}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -131,7 +131,7 @@ namespace model
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select email from users where email = '{email}'";
+            cmd.CommandText = $"select email from user where email = '{email}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
