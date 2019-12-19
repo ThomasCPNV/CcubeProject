@@ -114,6 +114,7 @@ namespace view
                                 FormCalculator form = new FormCalculator();
                                 form.ShowDialog();
                                 WriteEmailInJson(txtEmail.Text);
+                                form.Tag = txtEmail.Text;
                                 MessageBox.Show("You are connected !");
                                 Application.Exit();
                             }
@@ -127,11 +128,12 @@ namespace view
                             Register register = new Register();
                             if (!dbConnect.VerifyEmailAlreadyExist(txtEmail.Text))
                             {
-                                if (register.RegisterNewAccount(txtEmail.Text, realPassword, txtConfirm.Text) == true)
+                                if (register.RegisterNewAccount(txtEmail.Text, realPassword, realConfirm) == true)
                                 {
                                     FormCalculator form = new FormCalculator();
                                     form.ShowDialog();
                                     WriteEmailInJson(txtEmail.Text);
+                                    form.Tag = txtEmail.Text;
                                     MessageBox.Show("You are registred !");
                                     Application.Exit();
                                 }

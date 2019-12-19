@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnDisconnection = new System.Windows.Forms.Button();
             this.lblEmailView = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
+            this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -668,7 +670,32 @@
             // 
             this.cbxCantonRegistration.FormattingEnabled = true;
             this.cbxCantonRegistration.Items.AddRange(new object[] {
-            "Vaud"});
+            "Aargau",
+            "Appenzell Outer-Rhodes",
+            "Appenzell Inner-Rhodes",
+            "Basel",
+            "Basel District",
+            "Bern",
+            "Fribourg",
+            "Geneva",
+            "Glarus",
+            "Grisons",
+            "Jura",
+            "Lucerne",
+            "Neuchâtel",
+            "Nidwalden",
+            "Obwalden",
+            "Schwyz",
+            "Schaffhausen",
+            "Solothurn",
+            "St Gallen",
+            "Ticino",
+            "Thurgau",
+            "Uri",
+            "Vaud",
+            "Valais",
+            "Zug",
+            "Zurich"});
             this.cbxCantonRegistration.Location = new System.Drawing.Point(7, 35);
             this.cbxCantonRegistration.Name = "cbxCantonRegistration";
             this.cbxCantonRegistration.Size = new System.Drawing.Size(154, 21);
@@ -857,6 +884,10 @@
             this.label41.TabIndex = 23;
             this.label41.Text = "Calculator";
             // 
+            // tmrCalculator
+            // 
+            this.tmrCalculator.Tick += new System.EventHandler(this.tmrCalculator_Tick);
+            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -972,5 +1003,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Timer tmrCalculator;
     }
 }
