@@ -10,11 +10,11 @@ namespace model
     {
         private DBConnect dbConnect = new DBConnect();
 
-        public bool LicensePlate(string email, string canton, double power, double weight, double co2Emission, double costYear, double costMonth)
+        public bool LicensePlate(string email, string canton, double power, double weight, double co2Emission)
         {
             bool licensePlate = true;
 
-            if(dbConnect.InsertLicensePlate(canton, power, weight, co2Emission, costYear, costMonth))
+            if(dbConnect.InsertLicensePlate(canton, power, weight, co2Emission))
             {
                 dbConnect.InsertIdLicensePlate(email);
             }
@@ -26,11 +26,11 @@ namespace model
             return licensePlate;
         }
 
-        public bool EssentialMaintain(string email, double insuranceYear, double tiresYear, double revisionYear, double costYear, double costMonth)
+        public bool EssentialMaintain(string email, double insuranceYear, double tiresYear, double revisionYear)
         {
             bool essentialMaintain = true;
 
-            if(dbConnect.InsertEssentialMaintain(insuranceYear, tiresYear, revisionYear, costYear, costMonth))
+            if(dbConnect.InsertEssentialMaintain(insuranceYear, tiresYear, revisionYear))
             {
                 dbConnect.InsertIdEssentialMaintain(email);
             }
@@ -42,11 +42,11 @@ namespace model
             return essentialMaintain;
         }
 
-        public bool InitialPrice(string email, double purchasePrice, double lifeTime, double costYear, double costMonth)
+        public bool InitialPrice(string email, double purchasePrice, double lifeTime)
         {
             bool initialPrice = true;
 
-            if(dbConnect.InsertInitialCarPrice(purchasePrice, lifeTime, costYear, costMonth))
+            if(dbConnect.InsertInitialCarPrice(purchasePrice, lifeTime))
             {
                 dbConnect.InsertIdIntialPrice(email);
             }
@@ -58,11 +58,11 @@ namespace model
             return initialPrice;
         }
 
-        public bool Consommation(string email, string fuel, double fuelPrice, double consomation, double distanceMonth, double costYear, double costMonth)
+        public bool Consommation(string email, string fuel, double consomation, double distanceMonth)
         {
             bool consommation = true;
 
-            if(dbConnect.InsertConsommation(fuel, fuelPrice, consomation, distanceMonth, costYear, costMonth))
+            if(dbConnect.InsertConsommation(fuel, consomation, distanceMonth))
             {
                 dbConnect.InsertIdConsommation(email);
             }

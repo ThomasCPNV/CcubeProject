@@ -172,7 +172,7 @@ namespace model
             connection.Dispose();
         }
 
-        public bool InsertLicensePlate(string canton, double power, double weight, double co2Emission, double costYear, double costMonth)
+        public bool InsertLicensePlate(string canton, double power, double weight, double co2Emission)
         {
             bool insertLicensePlate = true;
 
@@ -182,7 +182,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into license-plate (CANTON, POWER, WEIGHT, CO2-EMISSION, COST/YEAR, COST/MONTH) values ('{canton}', {power}, {weight}, {co2Emission}, {costYear}, {costMonth})";
+            cmd.CommandText = $"insert into `license-plate` (`CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`) values ('{canton}', {power}, {weight}, {co2Emission})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -195,7 +195,7 @@ namespace model
             return insertLicensePlate;
         }
 
-        public bool InsertEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear, double costYear, double costMonth)
+        public bool InsertEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear)
         {
             bool insertEssentialMaintain = true;
 
@@ -205,7 +205,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into essential-maintain (INSURANCE/YEAR, TIRES/YEAR, REVISION/YEAR, COST/YEAR, COST/MONTH) values ({insuranceYear}, {tiresYear}, {revisionYear}, {costYear}, {costMonth})";
+            cmd.CommandText = $"insert into `essential-maintain` (`INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`) values ({insuranceYear}, {tiresYear}, {revisionYear})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -218,7 +218,7 @@ namespace model
             return insertEssentialMaintain;
         }
 
-        public bool InsertInitialCarPrice(double purchasePrice, double lifeTime, double costYear, double costMonth)
+        public bool InsertInitialCarPrice(double purchasePrice, double lifeTime)
         {
             bool insertInitialCarPrice = true;
 
@@ -228,7 +228,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into initial-price (PURCHASE-PRICE, LIFETIME, COST/YEAR, COST/MONTH) values ({purchasePrice}, {lifeTime}, {costYear}, {costMonth})";
+            cmd.CommandText = $"insert into `initial-price` (`PURCHASE-PRICE`, `LIFETIME`) values ({purchasePrice}, {lifeTime})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -241,7 +241,7 @@ namespace model
             return insertInitialCarPrice;
         }
 
-        public bool InsertConsommation(string fuel, double fuelPrice, double consomation, double distanceMonth, double costYear, double costMonth)
+        public bool InsertConsommation(string fuel, double consomation, double distanceMonth)
         {
             bool insertConsommation = true;
 
@@ -251,7 +251,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into consommation (FUEL, FUEL-PRICE/LITER, CONSOMMATION/100km, DISTANCE/MONTH, COST/YEAR, COST/MONTH) values ('{fuel}', {fuelPrice}, {consomation}, {distanceMonth}, {costYear}, {costMonth})";
+            cmd.CommandText = $"insert into `consommation` (`FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`) values ('{fuel}', {consomation}, {distanceMonth})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -264,17 +264,14 @@ namespace model
             return insertConsommation;
         }
 
-        public int GetIdLicensePlate()
+        public int GetIdUser(string email)
         {
-            int idLicensePlate = 0;
-            int i = 0;
-
-            OpenConnection();
+            int idUser = 0;
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select ID from license-plate";
+            cmd.CommandText = $"select ID from `user` where email = '{email}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -284,13 +281,35 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    i++;
-                    idLicensePlate = reader.GetInt32(i);
+                    idUser = reader.GetInt32(0);
                 }
                 reader.Close();
             }
 
-            CloseConnection();
+            return idUser;
+        }
+
+        public int GetIdLicensePlate()
+        {
+            int idLicensePlate = 0;
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select ID from `License-Plate` ORDER BY id ASC";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    idLicensePlate = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
 
             return idLicensePlate;
         }
@@ -302,10 +321,11 @@ namespace model
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
+            int idUser = GetIdUser(email);
             int idLicensePlate = GetIdLicensePlate();
 
             // SQL request
-            cmd.CommandText = $"insert into user (License-Plate) values ({idLicensePlate}) where email = '{email}'";
+            cmd.CommandText = $"update `License-Plate` SET `iduser` = {idUser} where id = {idLicensePlate}";
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
@@ -316,14 +336,11 @@ namespace model
         public int GetIdEssentialMaintain()
         {
             int idEssentialMaintain = 0;
-            int i = 0;
-
-            OpenConnection();
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select ID from essential-maintain";
+            cmd.CommandText = $"select ID from `Essential-Maintain` ORDER BY id ASC";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -333,13 +350,10 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    i++;
-                    idEssentialMaintain = reader.GetInt32(i);
+                    idEssentialMaintain = reader.GetInt32(0);
                 }
                 reader.Close();
             }
-
-            CloseConnection();
 
             return idEssentialMaintain;
         }
@@ -351,10 +365,11 @@ namespace model
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
+            int idUser = GetIdUser(email);
             int idEssentialMaintain = GetIdEssentialMaintain();
 
             // SQL request
-            cmd.CommandText = $"insert into user (ESSENTIAL-MAINTAIN) values ({idEssentialMaintain}) where email = '{email}'";
+            cmd.CommandText = $"update `Essential-Maintain` SET `iduser` = {idUser} where id = {idEssentialMaintain}";
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
@@ -365,14 +380,11 @@ namespace model
         public int GetIdInitialPrice()
         {
             int idInitialPrice = 0;
-            int i = 0;
-
-            OpenConnection();
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select ID from initial-price";
+            cmd.CommandText = $"select ID from `Initial-Price` ORDER BY id ASC";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -382,13 +394,10 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    i++;
-                    idInitialPrice = reader.GetInt32(i);
+                    idInitialPrice = reader.GetInt32(0);
                 }
                 reader.Close();
             }
-
-            CloseConnection();
 
             return idInitialPrice;
         }
@@ -400,10 +409,11 @@ namespace model
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
-            int idInistialPrice = GetIdInitialPrice();
+            int idUser = GetIdUser(email);
+            int idInitialPrice = GetIdInitialPrice();
 
             // SQL request
-            cmd.CommandText = $"insert into user (INITIAL-PRICE) values ({idInistialPrice}) where email = '{email}'";
+            cmd.CommandText = $"update `Initial-Price` SET `iduser` = {idUser} where id = {idInitialPrice}";
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
@@ -414,14 +424,11 @@ namespace model
         public int GetIdConsommation()
         {
             int idConsommation = 0;
-            int i = 0;
-
-            OpenConnection();
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select ID from consommation";
+            cmd.CommandText = $"select ID from `Consommation` ORDER BY id ASC";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -431,13 +438,10 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    i++;
-                    idConsommation = reader.GetInt32(i);
+                    idConsommation = reader.GetInt32(0);
                 }
                 reader.Close();
             }
-
-            CloseConnection();
 
             return idConsommation;
         }
@@ -449,10 +453,11 @@ namespace model
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
+            int idUser = GetIdUser(email);
             int idConsommation = GetIdConsommation();
 
             // SQL request
-            cmd.CommandText = $"insert into user (CONSOMMATION) values ({idConsommation}) where email = '{email}'";
+            cmd.CommandText = $"update `Consommation` SET `iduser` = {idUser} where id = {idConsommation}";
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();

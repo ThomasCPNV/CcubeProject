@@ -40,22 +40,22 @@ namespace view
             {
                 try
                 {
-                    dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text), Convert.ToDouble(txtLicensePlateCpY.Text), Convert.ToDouble(txtLicensePlateCpM.Text));
+                    dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
                 }
                 catch { MessageBox.Show("Error : All 'License' entries need a value"); }
                 try
                 {
-                    dataManager.EssentialMaintain(lblEmailView.Text, Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text), Convert.ToDouble(txtEssentialsMaintainsCpY.Text), Convert.ToDouble(txtEssentialsMaintainsCpM.Text));
+                    dataManager.EssentialMaintain(lblEmailView.Text, Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text));
                 }
                 catch { MessageBox.Show("Error : All 'Essential supports' entries need a value"); }
                 try
                 {
-                    dataManager.InitialPrice(lblEmailView.Text, Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToDouble(txtCarSLifetimeEstimation.Text), Convert.ToDouble(txtInitialCarSPriceCpY.Text), Convert.ToDouble(txtInitialCarSPriceCpM.Text));
+                    dataManager.InitialPrice(lblEmailView.Text, Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToDouble(txtCarSLifetimeEstimation.Text));
                 }
                 catch { MessageBox.Show("Error : All 'Initial Price' entries need a value"); }
                 try
                 {
-                    dataManager.Consommation(lblEmailView.Text, cbxFuel.Text, Convert.ToDouble(txtAverageFuelPricePerLiter.Text), Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text), Convert.ToDouble(txtConsommationCpY.Text), Convert.ToDouble(txtConsommationCpM.Text));
+                    dataManager.Consommation(lblEmailView.Text, cbxFuel.Text, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
                 }
                 catch { MessageBox.Show("Error : All 'Consommation' entries need a value"); }
                 MessageBox.Show("Datas are saved !");
@@ -73,10 +73,10 @@ namespace view
 
         private void btnDisconnection_Click(object sender, EventArgs e)
         {
+            this.Hide();
             MessageBox.Show("You are disconnected !");
             FormLoginRegister form = new FormLoginRegister();
             form.ShowDialog();
-            Application.Exit();
         }
     }
 }

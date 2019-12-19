@@ -112,12 +112,12 @@ namespace view
                             Login login = new Login();
                             if (login.IsLoginCorrect(txtEmail.Text, realPassword) == true)
                             {
+                                this.Hide();
                                 MessageBox.Show("You are connected !");
                                 email = txtEmail.Text;
                                 FormCalculator form = new FormCalculator(email);
                                 form.ShowDialog();
                                 WriteEmailInJson(txtEmail.Text);
-                                Application.Exit();
                             }
                             else
                             {
@@ -131,12 +131,12 @@ namespace view
                             {
                                 if (register.RegisterNewAccount(txtEmail.Text, realPassword, realConfirm) == true)
                                 {
+                                    this.Hide();
                                     MessageBox.Show("You are registred !");
                                     email = txtEmail.Text;
                                     FormCalculator form = new FormCalculator(email);
                                     form.ShowDialog();
                                     WriteEmailInJson(txtEmail.Text);
-                                    Application.Exit();
                                 }
                                 else
                                 {
@@ -243,6 +243,11 @@ namespace view
         {
             string jsonLocation = JsonConvert.SerializeObject(Location);
             File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
+        }
+
+        private void FormLoginRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
