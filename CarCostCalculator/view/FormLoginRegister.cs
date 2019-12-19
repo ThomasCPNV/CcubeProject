@@ -178,7 +178,15 @@ namespace view
         {
             if (txtPassword.TextLength > realPassword.Length)
             {
-                txtPassword.Text = passwordView(txtPassword.Text);
+                tmrPassword.Enabled = false;
+                string hiddingPasswordPart = "";
+                string fullPassword = "";
+                string lastPasswordLetter = txtPassword.Text[txtPassword.TextLength - 1].ToString();
+                realPassword += lastPasswordLetter;
+                for (int count = 1; count <= txtPassword.TextLength - 1; count++) { hiddingPasswordPart += '*'; }
+                fullPassword = hiddingPasswordPart + lastPasswordLetter;
+                tmrPassword.Enabled = true;
+                txtPassword.Text = fullPassword;
                 txtPassword.SelectionStart = txtPassword.TextLength;
             }
             if(txtPassword.TextLength < realPassword.Length)
@@ -191,7 +199,15 @@ namespace view
         {
             if (txtConfirm.TextLength > realConfirm.Length)
             {
-                txtConfirm.Text = passwordView(txtConfirm.Text);
+                tmrConfirm.Enabled = false;
+                string hiddingConfirmPart = "";
+                string fullConfirm = "";
+                string lastConfirmLetter = txtConfirm.Text[txtConfirm.TextLength - 1].ToString();
+                realConfirm += lastConfirmLetter;
+                for (int count = 1; count <= txtConfirm.TextLength - 1; count++) { hiddingConfirmPart += '*'; }
+                fullConfirm = hiddingConfirmPart + lastConfirmLetter;
+                tmrConfirm.Enabled = true;
+                txtConfirm.Text = fullConfirm;
                 txtConfirm.SelectionStart = txtConfirm.TextLength;
             }
             if (txtConfirm.TextLength < realConfirm.Length)
@@ -217,31 +233,13 @@ namespace view
             txtConfirm.Text = hiddingPasswordPart;
             txtConfirm.SelectionStart = txtConfirm.TextLength;
 
-            tmrPassword.Enabled = false;
-        }
-
-        private string passwordView(string passwordText)
-        {
-            tmrPassword.Enabled = false;
-            string hiddingPasswordPart = "";
-            string fullPassword = "";
-            string lastPasswordLetter = passwordText[passwordText.Length - 1].ToString();
-            realPassword += lastPasswordLetter;
-            for (int count = 1; count <= passwordText.Length - 1; count++) { hiddingPasswordPart += '*'; }
-            fullPassword = hiddingPasswordPart + lastPasswordLetter;
-            tmrPassword.Enabled = true;
-            return fullPassword;
+            tmrConfirm.Enabled = false;
         }
 
         private void FormLoginRegister_FormClosed(object sender, FormClosedEventArgs e)
         {
             string jsonLocation = JsonConvert.SerializeObject(Location);
             File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
-        }
-
-        private void FormLoginRegister_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

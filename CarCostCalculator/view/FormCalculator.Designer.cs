@@ -79,6 +79,9 @@
             this.txtInsurancepY = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtCO2Emission = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.cbxPower = new System.Windows.Forms.ComboBox();
             this.cbxCantonRegistration = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -92,9 +95,12 @@
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtPower = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.txtCO2Emission = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -166,10 +172,11 @@
             // 
             // txtConsommationCpM
             // 
+            this.txtConsommationCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConsommationCpM.Location = new System.Drawing.Point(77, 187);
             this.txtConsommationCpM.Name = "txtConsommationCpM";
             this.txtConsommationCpM.ReadOnly = true;
-            this.txtConsommationCpM.Size = new System.Drawing.Size(56, 20);
+            this.txtConsommationCpM.Size = new System.Drawing.Size(56, 13);
             this.txtConsommationCpM.TabIndex = 14;
             // 
             // label7
@@ -183,10 +190,11 @@
             // 
             // txtConsommationCpY
             // 
+            this.txtConsommationCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConsommationCpY.Location = new System.Drawing.Point(77, 168);
             this.txtConsommationCpY.Name = "txtConsommationCpY";
             this.txtConsommationCpY.ReadOnly = true;
-            this.txtConsommationCpY.Size = new System.Drawing.Size(56, 20);
+            this.txtConsommationCpY.Size = new System.Drawing.Size(56, 13);
             this.txtConsommationCpY.TabIndex = 12;
             // 
             // label6
@@ -334,10 +342,11 @@
             // 
             // txtInitialCarSPriceCpM
             // 
+            this.txtInitialCarSPriceCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInitialCarSPriceCpM.Location = new System.Drawing.Point(77, 187);
             this.txtInitialCarSPriceCpM.Name = "txtInitialCarSPriceCpM";
             this.txtInitialCarSPriceCpM.ReadOnly = true;
-            this.txtInitialCarSPriceCpM.Size = new System.Drawing.Size(56, 20);
+            this.txtInitialCarSPriceCpM.Size = new System.Drawing.Size(56, 13);
             this.txtInitialCarSPriceCpM.TabIndex = 14;
             // 
             // label10
@@ -351,10 +360,11 @@
             // 
             // txtInitialCarSPriceCpY
             // 
+            this.txtInitialCarSPriceCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInitialCarSPriceCpY.Location = new System.Drawing.Point(77, 168);
             this.txtInitialCarSPriceCpY.Name = "txtInitialCarSPriceCpY";
             this.txtInitialCarSPriceCpY.ReadOnly = true;
-            this.txtInitialCarSPriceCpY.Size = new System.Drawing.Size(56, 20);
+            this.txtInitialCarSPriceCpY.Size = new System.Drawing.Size(56, 13);
             this.txtInitialCarSPriceCpY.TabIndex = 12;
             // 
             // label11
@@ -510,10 +520,11 @@
             // 
             // txtEssentialsMaintainsCpM
             // 
+            this.txtEssentialsMaintainsCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEssentialsMaintainsCpM.Location = new System.Drawing.Point(77, 187);
             this.txtEssentialsMaintainsCpM.Name = "txtEssentialsMaintainsCpM";
             this.txtEssentialsMaintainsCpM.ReadOnly = true;
-            this.txtEssentialsMaintainsCpM.Size = new System.Drawing.Size(56, 20);
+            this.txtEssentialsMaintainsCpM.Size = new System.Drawing.Size(56, 13);
             this.txtEssentialsMaintainsCpM.TabIndex = 14;
             // 
             // label14
@@ -527,10 +538,11 @@
             // 
             // txtEssentialsMaintainsCpY
             // 
+            this.txtEssentialsMaintainsCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEssentialsMaintainsCpY.Location = new System.Drawing.Point(77, 168);
             this.txtEssentialsMaintainsCpY.Name = "txtEssentialsMaintainsCpY";
             this.txtEssentialsMaintainsCpY.ReadOnly = true;
-            this.txtEssentialsMaintainsCpY.Size = new System.Drawing.Size(56, 20);
+            this.txtEssentialsMaintainsCpY.Size = new System.Drawing.Size(56, 13);
             this.txtEssentialsMaintainsCpY.TabIndex = 12;
             // 
             // label19
@@ -601,6 +613,31 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "License plate";
             // 
+            // txtCO2Emission
+            // 
+            this.txtCO2Emission.Location = new System.Drawing.Point(82, 131);
+            this.txtCO2Emission.Name = "txtCO2Emission";
+            this.txtCO2Emission.Size = new System.Drawing.Size(52, 20);
+            this.txtCO2Emission.TabIndex = 20;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(4, 134);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(72, 13);
+            this.label35.TabIndex = 19;
+            this.label35.Text = "CO2 Emission";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(4, 111);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(41, 13);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "Weight";
+            // 
             // cbxPower
             // 
             this.cbxPower.FormattingEnabled = true;
@@ -633,10 +670,11 @@
             // 
             // txtLicensePlateCpM
             // 
+            this.txtLicensePlateCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLicensePlateCpM.Location = new System.Drawing.Point(77, 187);
             this.txtLicensePlateCpM.Name = "txtLicensePlateCpM";
             this.txtLicensePlateCpM.ReadOnly = true;
-            this.txtLicensePlateCpM.Size = new System.Drawing.Size(56, 20);
+            this.txtLicensePlateCpM.Size = new System.Drawing.Size(56, 13);
             this.txtLicensePlateCpM.TabIndex = 14;
             // 
             // label28
@@ -650,10 +688,11 @@
             // 
             // txtLicensePlateCpY
             // 
+            this.txtLicensePlateCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLicensePlateCpY.Location = new System.Drawing.Point(77, 168);
             this.txtLicensePlateCpY.Name = "txtLicensePlateCpY";
             this.txtLicensePlateCpY.ReadOnly = true;
-            this.txtLicensePlateCpY.Size = new System.Drawing.Size(56, 20);
+            this.txtLicensePlateCpY.Size = new System.Drawing.Size(56, 13);
             this.txtLicensePlateCpY.TabIndex = 12;
             // 
             // label29
@@ -715,40 +754,75 @@
             this.label34.TabIndex = 2;
             this.label34.Text = "Canton registration";
             // 
-            // label33
+            // label36
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(4, 111);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(41, 13);
-            this.label33.TabIndex = 18;
-            this.label33.Text = "Weight";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(390, 371);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(22, 13);
+            this.label36.TabIndex = 21;
+            this.label36.Text = "chf";
             // 
-            // label35
+            // textBox1
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(4, 134);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 13);
-            this.label35.TabIndex = 19;
-            this.label35.Text = "CO2 Emission";
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(328, 368);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(56, 13);
+            this.textBox1.TabIndex = 20;
             // 
-            // txtCO2Emission
+            // label37
             // 
-            this.txtCO2Emission.Location = new System.Drawing.Point(82, 131);
-            this.txtCO2Emission.Name = "txtCO2Emission";
-            this.txtCO2Emission.Size = new System.Drawing.Size(52, 20);
-            this.txtCO2Emission.TabIndex = 20;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(390, 352);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(22, 13);
+            this.label37.TabIndex = 19;
+            this.label37.Text = "chf";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Location = new System.Drawing.Point(328, 349);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(56, 13);
+            this.textBox2.TabIndex = 18;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(255, 371);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(67, 13);
+            this.label38.TabIndex = 17;
+            this.label38.Text = "Costs/month";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(255, 352);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(58, 13);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Costs/year";
             // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 450);
+            this.Controls.Add(this.label36);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label37);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.gpbConsommation);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.label39);
             this.Controls.Add(this.lblEmailView);
             this.Controls.Add(this.btnDisconnection);
             this.Controls.Add(this.btnQuit);
@@ -839,5 +913,11 @@
         private System.Windows.Forms.TextBox txtCO2Emission;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
     }
 }
