@@ -15,9 +15,11 @@ namespace view
     public partial class FormCalculator : Form
     {
         DataManager dataManager = new DataManager();
-        public FormCalculator()
+        public FormCalculator(string email)
         {
             InitializeComponent();
+
+            lblEmailView.Text = email;
         }
 
         private void tmrCalculator_Tick(object sender, EventArgs e)
@@ -38,12 +40,6 @@ namespace view
             {
                 MessageBox.Show("Error : An error has occurred !");
             }
-        }
-
-        private void FormCalculator_Load(object sender, EventArgs e)
-        {
-            FormLoginRegister form = new FormLoginRegister();
-            lblEmailView.Text = form.email;
         }
     }
 }

@@ -930,7 +930,6 @@
             this.MinimizeBox = false;
             this.Name = "FormCalculator";
             this.Text = "Car Cost Calculator - Calculator";
-            this.Load += new System.EventHandler(this.FormCalculator_Load);
             this.gpbConsommation.ResumeLayout(false);
             this.gpbConsommation.PerformLayout();
             this.groupBox1.ResumeLayout(false);
