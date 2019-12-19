@@ -96,11 +96,13 @@
             this.txtPower = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtResultCpM = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtResultCpY = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,7 +111,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(12, 415);
+            this.btnQuit.Location = new System.Drawing.Point(8, 357);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 0;
@@ -172,12 +174,14 @@
             // 
             // txtConsommationCpM
             // 
+            this.txtConsommationCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConsommationCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConsommationCpM.Location = new System.Drawing.Point(77, 187);
             this.txtConsommationCpM.Name = "txtConsommationCpM";
             this.txtConsommationCpM.ReadOnly = true;
             this.txtConsommationCpM.Size = new System.Drawing.Size(56, 13);
             this.txtConsommationCpM.TabIndex = 14;
+            this.txtConsommationCpM.Text = "...";
             // 
             // label7
             // 
@@ -190,12 +194,14 @@
             // 
             // txtConsommationCpY
             // 
+            this.txtConsommationCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConsommationCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConsommationCpY.Location = new System.Drawing.Point(77, 168);
             this.txtConsommationCpY.Name = "txtConsommationCpY";
             this.txtConsommationCpY.ReadOnly = true;
             this.txtConsommationCpY.Size = new System.Drawing.Size(56, 13);
             this.txtConsommationCpY.TabIndex = 12;
+            this.txtConsommationCpY.Text = "...";
             // 
             // label6
             // 
@@ -276,10 +282,11 @@
             // 
             // txtAverageFuelPricePerLiter
             // 
+            this.txtAverageFuelPricePerLiter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAverageFuelPricePerLiter.Location = new System.Drawing.Point(7, 68);
             this.txtAverageFuelPricePerLiter.Name = "txtAverageFuelPricePerLiter";
             this.txtAverageFuelPricePerLiter.ReadOnly = true;
-            this.txtAverageFuelPricePerLiter.Size = new System.Drawing.Size(36, 20);
+            this.txtAverageFuelPricePerLiter.Size = new System.Drawing.Size(36, 13);
             this.txtAverageFuelPricePerLiter.TabIndex = 3;
             // 
             // lblAverageFuelPricePerLiter
@@ -342,12 +349,14 @@
             // 
             // txtInitialCarSPriceCpM
             // 
+            this.txtInitialCarSPriceCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtInitialCarSPriceCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInitialCarSPriceCpM.Location = new System.Drawing.Point(77, 187);
             this.txtInitialCarSPriceCpM.Name = "txtInitialCarSPriceCpM";
             this.txtInitialCarSPriceCpM.ReadOnly = true;
             this.txtInitialCarSPriceCpM.Size = new System.Drawing.Size(56, 13);
             this.txtInitialCarSPriceCpM.TabIndex = 14;
+            this.txtInitialCarSPriceCpM.Text = "...";
             // 
             // label10
             // 
@@ -360,12 +369,14 @@
             // 
             // txtInitialCarSPriceCpY
             // 
+            this.txtInitialCarSPriceCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtInitialCarSPriceCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInitialCarSPriceCpY.Location = new System.Drawing.Point(77, 168);
             this.txtInitialCarSPriceCpY.Name = "txtInitialCarSPriceCpY";
             this.txtInitialCarSPriceCpY.ReadOnly = true;
             this.txtInitialCarSPriceCpY.Size = new System.Drawing.Size(56, 13);
             this.txtInitialCarSPriceCpY.TabIndex = 12;
+            this.txtInitialCarSPriceCpY.Text = "...";
             // 
             // label11
             // 
@@ -520,12 +531,14 @@
             // 
             // txtEssentialsMaintainsCpM
             // 
+            this.txtEssentialsMaintainsCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEssentialsMaintainsCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEssentialsMaintainsCpM.Location = new System.Drawing.Point(77, 187);
             this.txtEssentialsMaintainsCpM.Name = "txtEssentialsMaintainsCpM";
             this.txtEssentialsMaintainsCpM.ReadOnly = true;
             this.txtEssentialsMaintainsCpM.Size = new System.Drawing.Size(56, 13);
             this.txtEssentialsMaintainsCpM.TabIndex = 14;
+            this.txtEssentialsMaintainsCpM.Text = "...";
             // 
             // label14
             // 
@@ -538,12 +551,14 @@
             // 
             // txtEssentialsMaintainsCpY
             // 
+            this.txtEssentialsMaintainsCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEssentialsMaintainsCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEssentialsMaintainsCpY.Location = new System.Drawing.Point(77, 168);
             this.txtEssentialsMaintainsCpY.Name = "txtEssentialsMaintainsCpY";
             this.txtEssentialsMaintainsCpY.ReadOnly = true;
             this.txtEssentialsMaintainsCpY.Size = new System.Drawing.Size(56, 13);
             this.txtEssentialsMaintainsCpY.TabIndex = 12;
+            this.txtEssentialsMaintainsCpY.Text = "...";
             // 
             // label19
             // 
@@ -670,12 +685,14 @@
             // 
             // txtLicensePlateCpM
             // 
+            this.txtLicensePlateCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtLicensePlateCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLicensePlateCpM.Location = new System.Drawing.Point(77, 187);
             this.txtLicensePlateCpM.Name = "txtLicensePlateCpM";
             this.txtLicensePlateCpM.ReadOnly = true;
             this.txtLicensePlateCpM.Size = new System.Drawing.Size(56, 13);
             this.txtLicensePlateCpM.TabIndex = 14;
+            this.txtLicensePlateCpM.Text = "...";
             // 
             // label28
             // 
@@ -688,12 +705,14 @@
             // 
             // txtLicensePlateCpY
             // 
+            this.txtLicensePlateCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtLicensePlateCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLicensePlateCpY.Location = new System.Drawing.Point(77, 168);
             this.txtLicensePlateCpY.Name = "txtLicensePlateCpY";
             this.txtLicensePlateCpY.ReadOnly = true;
             this.txtLicensePlateCpY.Size = new System.Drawing.Size(56, 13);
             this.txtLicensePlateCpY.TabIndex = 12;
+            this.txtLicensePlateCpY.Text = "...";
             // 
             // label29
             // 
@@ -757,69 +776,101 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(390, 371);
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(452, 351);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(22, 13);
+            this.label36.Size = new System.Drawing.Size(41, 25);
             this.label36.TabIndex = 21;
             this.label36.Text = "chf";
             // 
-            // textBox1
+            // txtResultCpM
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(328, 368);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(56, 13);
-            this.textBox1.TabIndex = 20;
+            this.txtResultCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtResultCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultCpM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultCpM.Location = new System.Drawing.Point(343, 349);
+            this.txtResultCpM.Name = "txtResultCpM";
+            this.txtResultCpM.ReadOnly = true;
+            this.txtResultCpM.Size = new System.Drawing.Size(103, 24);
+            this.txtResultCpM.TabIndex = 20;
+            this.txtResultCpM.Text = "...";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(390, 352);
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(452, 314);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(22, 13);
+            this.label37.Size = new System.Drawing.Size(41, 25);
             this.label37.TabIndex = 19;
             this.label37.Text = "chf";
             // 
-            // textBox2
+            // txtResultCpY
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(328, 349);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(56, 13);
-            this.textBox2.TabIndex = 18;
+            this.txtResultCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtResultCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultCpY.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultCpY.Location = new System.Drawing.Point(343, 312);
+            this.txtResultCpY.Name = "txtResultCpY";
+            this.txtResultCpY.ReadOnly = true;
+            this.txtResultCpY.Size = new System.Drawing.Size(103, 24);
+            this.txtResultCpY.TabIndex = 18;
+            this.txtResultCpY.Text = "...";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(255, 371);
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(205, 351);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(67, 13);
+            this.label38.Size = new System.Drawing.Size(132, 25);
             this.label38.TabIndex = 17;
             this.label38.Text = "Costs/month";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(255, 352);
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(206, 314);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(58, 13);
+            this.label39.Size = new System.Drawing.Size(115, 25);
             this.label39.TabIndex = 16;
             this.label39.Text = "Costs/year";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(310, 280);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(87, 29);
+            this.label40.TabIndex = 22;
+            this.label40.Text = "Result";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(12, 9);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(131, 29);
+            this.label41.TabIndex = 23;
+            this.label41.Text = "Calculator";
             // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 450);
+            this.ClientSize = new System.Drawing.Size(691, 387);
+            this.Controls.Add(this.label41);
+            this.Controls.Add(this.label40);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtResultCpM);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtResultCpY);
             this.Controls.Add(this.gpbConsommation);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label39);
@@ -914,10 +965,12 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtResultCpM;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtResultCpY;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
     }
 }
