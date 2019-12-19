@@ -120,6 +120,7 @@
             this.btnQuit.TabIndex = 0;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // btnDisconnection
             // 
@@ -129,6 +130,7 @@
             this.btnDisconnection.TabIndex = 1;
             this.btnDisconnection.Text = "Disconnection";
             this.btnDisconnection.UseVisualStyleBackColor = true;
+            this.btnDisconnection.Click += new System.EventHandler(this.btnDisconnection_Click);
             // 
             // lblEmailView
             // 

@@ -65,5 +65,18 @@ namespace view
                 MessageBox.Show("Error : An error has occurred !");
             }
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnDisconnection_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are disconnected !");
+            FormLoginRegister form = new FormLoginRegister();
+            form.ShowDialog();
+            Application.Exit();
+        }
     }
 }
