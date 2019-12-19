@@ -21,6 +21,7 @@ namespace view
         string locationStringFileName = @"..\..\..\data\formLocation.json";
         TryCatch tryCatch = new TryCatch();
         DBConnect dbConnect = new DBConnect();
+        public string email = "";
 
         public FormLoginRegister()
         {
@@ -111,10 +112,10 @@ namespace view
                             Login login = new Login();
                             if (login.IsLoginCorrect(txtEmail.Text, realPassword) == true)
                             {
+                                email = txtEmail.Text;
                                 FormCalculator form = new FormCalculator();
                                 form.ShowDialog();
                                 WriteEmailInJson(txtEmail.Text);
-                                form.Tag = txtEmail.Text;
                                 MessageBox.Show("You are connected !");
                                 Application.Exit();
                             }
@@ -130,10 +131,10 @@ namespace view
                             {
                                 if (register.RegisterNewAccount(txtEmail.Text, realPassword, realConfirm) == true)
                                 {
+                                    email = txtEmail.Text;
                                     FormCalculator form = new FormCalculator();
                                     form.ShowDialog();
                                     WriteEmailInJson(txtEmail.Text);
-                                    form.Tag = txtEmail.Text;
                                     MessageBox.Show("You are registred !");
                                     Application.Exit();
                                 }

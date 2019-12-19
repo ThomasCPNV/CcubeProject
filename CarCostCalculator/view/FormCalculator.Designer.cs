@@ -291,6 +291,7 @@
             this.txtAverageFuelPricePerLiter.ReadOnly = true;
             this.txtAverageFuelPricePerLiter.Size = new System.Drawing.Size(36, 13);
             this.txtAverageFuelPricePerLiter.TabIndex = 3;
+            this.txtAverageFuelPricePerLiter.Text = "...";
             // 
             // lblAverageFuelPricePerLiter
             // 
@@ -415,9 +416,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(4, 92);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 13);
+            this.label16.Size = new System.Drawing.Size(108, 13);
             this.label16.TabIndex = 6;
-            this.label16.Text = "Car\'s lifetime estimation";
+            this.label16.Text = "Car lifetime estimation";
             // 
             // txtCarSLifetimeEstimation
             // 
@@ -666,8 +667,9 @@
             "kW"});
             this.cbxPower.Location = new System.Drawing.Point(89, 64);
             this.cbxPower.Name = "cbxPower";
-            this.cbxPower.Size = new System.Drawing.Size(44, 21);
+            this.cbxPower.Size = new System.Drawing.Size(42, 21);
             this.cbxPower.TabIndex = 17;
+            this.cbxPower.Text = "kW";
             // 
             // cbxCantonRegistration
             // 
@@ -703,6 +705,7 @@
             this.cbxCantonRegistration.Name = "cbxCantonRegistration";
             this.cbxCantonRegistration.Size = new System.Drawing.Size(154, 21);
             this.cbxCantonRegistration.TabIndex = 16;
+            this.cbxCantonRegistration.Text = "Vaud";
             // 
             // label27
             // 
@@ -871,7 +874,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(310, 280);
+            this.label40.Location = new System.Drawing.Point(302, 280);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(87, 29);
             this.label40.TabIndex = 22;
@@ -926,7 +929,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCalculator";
-            this.Text = "FormCalculator";
+            this.Text = "Car Cost Calculator - Calculator";
+            this.Load += new System.EventHandler(this.FormCalculator_Load);
             this.gpbConsommation.ResumeLayout(false);
             this.gpbConsommation.PerformLayout();
             this.groupBox1.ResumeLayout(false);
