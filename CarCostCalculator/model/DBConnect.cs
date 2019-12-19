@@ -48,7 +48,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into user (email, password) values ('{email}', '{passwordHashed}', {0}, {0}, {0}, {0})";
+            cmd.CommandText = $"insert into user (email, password) values ('{email}', '{passwordHashed}')";
 
             // use of the pseudo string, parameter of the method AddPlayer
             cmd.Parameters.AddWithValue("@email", email);
