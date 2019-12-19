@@ -105,6 +105,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
+            this.btnSaveDatas = new System.Windows.Forms.Button();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -304,7 +305,9 @@
             // 
             this.cbxFuel.FormattingEnabled = true;
             this.cbxFuel.Items.AddRange(new object[] {
-            "Gasoline"});
+            "95",
+            "98",
+            "Diesel"});
             this.cbxFuel.Location = new System.Drawing.Point(37, 19);
             this.cbxFuel.Name = "cbxFuel";
             this.cbxFuel.Size = new System.Drawing.Size(107, 21);
@@ -888,11 +891,22 @@
             // 
             this.tmrCalculator.Tick += new System.EventHandler(this.tmrCalculator_Tick);
             // 
+            // btnSaveDatas
+            // 
+            this.btnSaveDatas.Location = new System.Drawing.Point(604, 357);
+            this.btnSaveDatas.Name = "btnSaveDatas";
+            this.btnSaveDatas.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveDatas.TabIndex = 24;
+            this.btnSaveDatas.Text = "Save datas";
+            this.btnSaveDatas.UseVisualStyleBackColor = true;
+            this.btnSaveDatas.Click += new System.EventHandler(this.btnSaveDatas_Click);
+            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 387);
+            this.Controls.Add(this.btnSaveDatas);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.label36);
@@ -1004,5 +1018,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Timer tmrCalculator;
+        private System.Windows.Forms.Button btnSaveDatas;
     }
 }
