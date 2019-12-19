@@ -3,7 +3,8 @@ Projet C# dans le cadre du CPNV qui permet de calculer le coût d'une voiture su
 
 Installation du projet :
 
- - Installer l'application via l'installeur
- - Installation d'un serveur BD en local pour un client pour le gérer
+ - Installation d'un serveur DB en local et un client pour le gérer
  - Exécuter le script CcubeProject\SQL\scripts\createUserSQL.sql
+ - Exécuter le script CcubeProject\SQL\scripts\createDB.sql
+ - Installer l'application via l'installeur
  - Exécuter le fichier view.exe
