@@ -132,7 +132,7 @@
             // 
             // lblEmailView
             // 
-            this.lblEmailView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmailView.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmailView.AutoSize = true;
             this.lblEmailView.Location = new System.Drawing.Point(663, 9);
             this.lblEmailView.Name = "lblEmailView";
@@ -474,7 +474,7 @@
             this.groupBox2.Size = new System.Drawing.Size(167, 223);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Essentials maintains";
+            this.groupBox2.Text = "Essential supports";
             // 
             // label25
             // 
