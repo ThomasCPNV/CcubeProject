@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "view", "view\view.csproj", "{7DE0C35C-AD15-4448-AA26-E538FBB2A6EF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_CarCostCalculator", "Setup_CarCostCalculator\Setup_CarCostCalculator.vdproj", "{B9088CC8-E94D-4F18-B48A-CD5B31220EF7}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_CarCostCalculator", "Setup_CarCostCalculator\Setup_CarCostCalculator.vdproj", "{9F0B26D4-1941-4D8F-8900-691AB56F9346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +29,8 @@ Global
 		{7DE0C35C-AD15-4448-AA26-E538FBB2A6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DE0C35C-AD15-4448-AA26-E538FBB2A6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DE0C35C-AD15-4448-AA26-E538FBB2A6EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9088CC8-E94D-4F18-B48A-CD5B31220EF7}.Debug|Any CPU.ActiveCfg = Debug
-		{B9088CC8-E94D-4F18-B48A-CD5B31220EF7}.Release|Any CPU.ActiveCfg = Release
+		{9F0B26D4-1941-4D8F-8900-691AB56F9346}.Debug|Any CPU.ActiveCfg = Debug
+		{9F0B26D4-1941-4D8F-8900-691AB56F9346}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
