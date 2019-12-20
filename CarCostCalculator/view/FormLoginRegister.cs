@@ -27,21 +27,30 @@ namespace view
         {
             InitializeComponent();
 
+            /// Directory and files creation if don't exists.
+            /// When thy exists, read in files and enter then in the window.
+
+            // Directory verifier.
             if (!Directory.Exists(dataStringPath)) { Directory.CreateDirectory(dataStringPath); }
 
+            // Email datas verifier.
             if (File.Exists(emailStringFileName))
             {
+                // Email login/Register entry initialisation with json file value.
                 long fileWeight = new FileInfo(emailStringFileName).Length;
                 if (fileWeight > 0) { txtEmail.Text = ReadEmailInJson(); }
             }
             else
             {
+                // Email json file creation.
                 File.Create(emailStringFileName).Close();
                 File.WriteAllText(@"..\..\..\data\email.json", "\"\"");
             }
 
+            // Window location datas verifier.
             if (File.Exists(locationStringFileName))
             {
+                // Convert json location to two integers.
                 var jsonLocation = ReadLocationInJson();
                 var location = jsonLocation.Split(',');
                 Location = new Point(
@@ -51,13 +60,18 @@ namespace view
             }
             else
             {
+                // Location json file creation.
                 File.Create(locationStringFileName).Close();
                 File.WriteAllText(@"..\..\..\data\formLocation.json", "\"\"");
             }
         }
 
+        /// <summary>
+        /// Login Register Window switcher function.
+        /// </summary>
         private void btnLoginRegisterChange_Click(object sender, EventArgs e)
         {
+            // Login window initialisation.
             if (lblConfirm.Visible == true)
             {
                 lblConfirm.Visible = false;
@@ -70,6 +84,7 @@ namespace view
             }
             else
             {
+                // Register window initialisation.
                 lblConfirm.Visible = true;
                 txtConfirm.Visible = true;
 
@@ -80,6 +95,9 @@ namespace view
             }
         }
 
+        /// <summary>
+        /// Login/Register entries reseter.
+        /// </summary>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtEmail.Text = "";
@@ -89,34 +107,44 @@ namespace view
             txtConfirm.Text = "";
         }
 
+        // Login/Register Quit button.
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Login/Register functions.
+        /// </summary>
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
+            // Database connection.
             if (dbConnect.TestConnectionBD() == false)
             {
                 MessageBox.Show("Error : The application can not connect to the database !");
-               
             }
             else
             {
+                // Email verification.
                 if (tryCatch.IsValidEmail(txtEmail.Text))
                 {
+                    // Password verification.
                     if (tryCatch.IsGoodPassword(realPassword))
                     {
+                        // Login or register ?
                         if (tryCatch.LoginOrRegisterView(txtConfirm.Visible))
                         {
                             Login login = new Login();
+                            // Login connection.
                             if (login.IsLoginCorrect(txtEmail.Text, realPassword) == true)
                             {
                                 this.Hide();
                                 MessageBox.Show("You are connected !");
                                 email = txtEmail.Text;
+                                // Open calculator window.
                                 FormCalculator form = new FormCalculator(email);
                                 form.ShowDialog();
+                                // Write email in json.
                                 WriteEmailInJson(txtEmail.Text);
                             }
                             else
@@ -127,6 +155,7 @@ namespace view
                         else if (txtConfirm.Visible == true)
                         {
                             Register register = new Register();
+                            // Registration and connection.
                             if (!dbConnect.VerifyEmailAlreadyExist(txtEmail.Text))
                             {
                                 if (register.RegisterNewAccount(txtEmail.Text, realPassword, realConfirm) == true)
@@ -134,8 +163,10 @@ namespace view
                                     this.Hide();
                                     MessageBox.Show("You are registred !");
                                     email = txtEmail.Text;
+                                    // Open calculator window.
                                     FormCalculator form = new FormCalculator(email);
                                     form.ShowDialog();
+                                    // Write email in json.
                                     WriteEmailInJson(txtEmail.Text);
                                 }
                                 else
@@ -153,23 +184,36 @@ namespace view
             }
         }
 
+        /// <summary>
+        /// Write the email in json file
+        /// </summary>
         private void WriteEmailInJson(string email)
         {
             if (txtEmail.Text != null)
             {
+                // Convert email string to json
                 string jsonEmail = JsonConvert.SerializeObject(email);
+                // Write json in file
                 File.WriteAllText(@"..\..\..\data\email.json", jsonEmail);
             }
         }
 
+        /// <summary>
+        /// Reader in json file
+        /// </summary>
         private string ReadEmailInJson()
         {
+            // Convert json to email string
             string email = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\email.json")).ToString();
             return email;
         }
 
+        /// <summary>
+        /// Reader Window location in json file
+        /// </summary>
         private string ReadLocationInJson()
         {
+            // Convert json to two integers X and Y
             string location = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\formLocation.json")).ToString();
             return location;
         }
@@ -177,6 +221,11 @@ namespace view
         string realPassword = "";
         string realConfirm = "";
         string passwordOut = "";
+
+        /// <summary>
+        /// Password WildCard
+        /// Replace all caracters by a star apart the last letter.
+        /// </summary>
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             if (txtPassword.TextLength > realPassword.Length)
@@ -198,6 +247,10 @@ namespace view
             }
         }
 
+        /// <summary>
+        /// Confirm WildCard
+        /// Replace all caracters by a star apart the last letter.
+        /// </summary>
         private void txtConfirm_TextChanged(object sender, EventArgs e)
         {
             if (txtConfirm.TextLength > realConfirm.Length)
@@ -219,6 +272,9 @@ namespace view
             }
         }
 
+        /// <summary>
+        /// Change password entry to stars envery seconds
+        /// </summary>
         private void tmrPassword_Tick(object sender, EventArgs e)
         {
             string hiddingPasswordPart = "";
@@ -229,6 +285,9 @@ namespace view
             tmrPassword.Enabled = false;
         }
 
+        /// <summary>
+        /// Change confirm entry to stars envery seconds
+        /// </summary>
         private void tmrConfirm_Tick(object sender, EventArgs e)
         {
             string hiddingPasswordPart = "";
@@ -239,9 +298,14 @@ namespace view
             tmrConfirm.Enabled = false;
         }
 
+        /// <summary>
+        /// Email saver in json file while FormLoginRegister Closed
+        /// </summary>
         private void FormLoginRegister_FormClosed(object sender, FormClosedEventArgs e)
         {
+            // Convert email string to json
             string jsonLocation = JsonConvert.SerializeObject(Location);
+            // Write json in file
             File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
         }
     }
