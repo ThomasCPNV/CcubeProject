@@ -665,7 +665,6 @@
             // 
             // cbxPower
             // 
-            this.cbxPower.FormattingEnabled = true;
             this.cbxPower.Items.AddRange(new object[] {
             "hp",
             "kW"});
