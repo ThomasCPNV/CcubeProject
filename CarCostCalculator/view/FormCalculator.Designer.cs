@@ -138,6 +138,7 @@
             this.lblEmailView.AutoSize = true;
             this.lblEmailView.Location = new System.Drawing.Point(663, 9);
             this.lblEmailView.Name = "lblEmailView";
+            this.lblEmailView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblEmailView.Size = new System.Drawing.Size(16, 13);
             this.lblEmailView.TabIndex = 2;
             this.lblEmailView.Text = "...";
@@ -288,7 +289,7 @@
             // txtAverageFuelPricePerLiter
             // 
             this.txtAverageFuelPricePerLiter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAverageFuelPricePerLiter.Location = new System.Drawing.Point(7, 68);
+            this.txtAverageFuelPricePerLiter.Location = new System.Drawing.Point(7, 71);
             this.txtAverageFuelPricePerLiter.Name = "txtAverageFuelPricePerLiter";
             this.txtAverageFuelPricePerLiter.ReadOnly = true;
             this.txtAverageFuelPricePerLiter.Size = new System.Drawing.Size(36, 13);
@@ -315,6 +316,7 @@
             this.cbxFuel.Name = "cbxFuel";
             this.cbxFuel.Size = new System.Drawing.Size(107, 21);
             this.cbxFuel.TabIndex = 1;
+            this.cbxFuel.Text = "95";
             // 
             // lblFuel
             // 
