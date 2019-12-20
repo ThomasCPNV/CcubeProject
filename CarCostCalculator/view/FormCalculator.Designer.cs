@@ -135,14 +135,12 @@
             // lblEmailView
             // 
             this.lblEmailView.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblEmailView.AutoSize = true;
-            this.lblEmailView.Location = new System.Drawing.Point(663, 9);
+            this.lblEmailView.Location = new System.Drawing.Point(488, 9);
             this.lblEmailView.Name = "lblEmailView";
-            this.lblEmailView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblEmailView.Size = new System.Drawing.Size(16, 13);
+            this.lblEmailView.Size = new System.Drawing.Size(191, 13);
             this.lblEmailView.TabIndex = 2;
             this.lblEmailView.Text = "...";
-            this.lblEmailView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEmailView.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gpbConsommation
             // 
