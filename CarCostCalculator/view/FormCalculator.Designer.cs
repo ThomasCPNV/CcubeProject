@@ -134,7 +134,7 @@
             // 
             // lblEmailView
             // 
-            this.lblEmailView.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblEmailView.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblEmailView.AutoSize = true;
             this.lblEmailView.Location = new System.Drawing.Point(663, 9);
             this.lblEmailView.Name = "lblEmailView";
@@ -142,6 +142,7 @@
             this.lblEmailView.Size = new System.Drawing.Size(16, 13);
             this.lblEmailView.TabIndex = 2;
             this.lblEmailView.Text = "...";
+            this.lblEmailView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gpbConsommation
             // 
@@ -307,6 +308,7 @@
             // 
             // cbxFuel
             // 
+            this.cbxFuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFuel.FormattingEnabled = true;
             this.cbxFuel.Items.AddRange(new object[] {
             "95",
@@ -316,7 +318,6 @@
             this.cbxFuel.Name = "cbxFuel";
             this.cbxFuel.Size = new System.Drawing.Size(107, 21);
             this.cbxFuel.TabIndex = 1;
-            this.cbxFuel.Text = "95";
             // 
             // lblFuel
             // 
@@ -665,6 +666,8 @@
             // 
             // cbxPower
             // 
+            this.cbxPower.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPower.FormattingEnabled = true;
             this.cbxPower.Items.AddRange(new object[] {
             "hp",
             "kW"});
@@ -672,15 +675,15 @@
             this.cbxPower.Name = "cbxPower";
             this.cbxPower.Size = new System.Drawing.Size(42, 21);
             this.cbxPower.TabIndex = 17;
-            this.cbxPower.Text = "kW";
             // 
             // cbxCantonRegistration
             // 
+            this.cbxCantonRegistration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCantonRegistration.FormattingEnabled = true;
             this.cbxCantonRegistration.Items.AddRange(new object[] {
             "Aargau",
-            "Appenzell Outer-Rhodes",
             "Appenzell Inner-Rhodes",
+            "Appenzell Outer-Rhodes",
             "Basel",
             "Basel District",
             "Bern",
@@ -693,22 +696,21 @@
             "Neuchâtel",
             "Nidwalden",
             "Obwalden",
-            "Schwyz",
             "Schaffhausen",
+            "Schwyz",
             "Solothurn",
             "St Gallen",
-            "Ticino",
             "Thurgau",
+            "Ticino",
             "Uri",
-            "Vaud",
             "Valais",
+            "Vaud",
             "Zug",
             "Zurich"});
             this.cbxCantonRegistration.Location = new System.Drawing.Point(7, 35);
             this.cbxCantonRegistration.Name = "cbxCantonRegistration";
             this.cbxCantonRegistration.Size = new System.Drawing.Size(154, 21);
             this.cbxCantonRegistration.TabIndex = 16;
-            this.cbxCantonRegistration.Text = "Vaud";
             // 
             // label27
             // 
