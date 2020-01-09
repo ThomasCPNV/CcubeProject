@@ -112,6 +112,11 @@ namespace view
 
             txtConfirm.Text = "";
             realConfirm = "";
+
+            email = txtEmail.Text;
+            // Open calculator window.
+            FormCalculator form = new FormCalculator(email);
+            form.ShowDialog();
         }
 
         // Login/Register Quit button.
