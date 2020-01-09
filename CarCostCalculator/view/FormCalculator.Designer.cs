@@ -33,6 +33,7 @@
             this.btnDisconnection = new System.Windows.Forms.Button();
             this.lblEmailView = new System.Windows.Forms.Label();
             this.gpbConsommation = new System.Windows.Forms.GroupBox();
+            this.ckbUseConsommation = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtConsommationCpM = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.cbxFuel = new System.Windows.Forms.ComboBox();
             this.lblFuel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckbUseInitialCarSPrice = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtInitialCarSPriceCpM = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@
             this.txtCarPurchasePrice = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ckbUseEssentialSupports = new System.Windows.Forms.CheckBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtRevisionpY = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -107,9 +110,6 @@
             this.label41 = new System.Windows.Forms.Label();
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
             this.btnSaveDatas = new System.Windows.Forms.Button();
-            this.ckbUseEssentialSupports = new System.Windows.Forms.CheckBox();
-            this.ckbUseInitialCarSPrice = new System.Windows.Forms.CheckBox();
-            this.ckbUseConsommation = new System.Windows.Forms.CheckBox();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -172,6 +172,17 @@
             this.gpbConsommation.TabIndex = 3;
             this.gpbConsommation.TabStop = false;
             this.gpbConsommation.Text = "Consommation";
+            // 
+            // ckbUseConsommation
+            // 
+            this.ckbUseConsommation.Checked = true;
+            this.ckbUseConsommation.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseConsommation.Location = new System.Drawing.Point(7, 219);
+            this.ckbUseConsommation.Name = "ckbUseConsommation";
+            this.ckbUseConsommation.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseConsommation.TabIndex = 23;
+            this.ckbUseConsommation.Text = "Use in the final result";
+            this.ckbUseConsommation.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -353,6 +364,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Initial car\'s price";
             // 
+            // ckbUseInitialCarSPrice
+            // 
+            this.ckbUseInitialCarSPrice.Checked = true;
+            this.ckbUseInitialCarSPrice.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseInitialCarSPrice.Location = new System.Drawing.Point(8, 219);
+            this.ckbUseInitialCarSPrice.Name = "ckbUseInitialCarSPrice";
+            this.ckbUseInitialCarSPrice.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseInitialCarSPrice.TabIndex = 22;
+            this.ckbUseInitialCarSPrice.Text = "Use in the final result";
+            this.ckbUseInitialCarSPrice.UseVisualStyleBackColor = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -485,6 +507,17 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Essential supports";
+            // 
+            // ckbUseEssentialSupports
+            // 
+            this.ckbUseEssentialSupports.Checked = true;
+            this.ckbUseEssentialSupports.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseEssentialSupports.Location = new System.Drawing.Point(4, 219);
+            this.ckbUseEssentialSupports.Name = "ckbUseEssentialSupports";
+            this.ckbUseEssentialSupports.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseEssentialSupports.TabIndex = 21;
+            this.ckbUseEssentialSupports.Text = "Use in the final result";
+            this.ckbUseEssentialSupports.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -926,44 +959,12 @@
             this.btnSaveDatas.UseVisualStyleBackColor = true;
             this.btnSaveDatas.Click += new System.EventHandler(this.btnSaveDatas_Click);
             // 
-            // ckbUseEssentialSupports
-            // 
-            this.ckbUseEssentialSupports.Checked = true;
-            this.ckbUseEssentialSupports.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbUseEssentialSupports.Location = new System.Drawing.Point(4, 219);
-            this.ckbUseEssentialSupports.Name = "ckbUseEssentialSupports";
-            this.ckbUseEssentialSupports.Size = new System.Drawing.Size(128, 17);
-            this.ckbUseEssentialSupports.TabIndex = 21;
-            this.ckbUseEssentialSupports.Text = "Use in the final result";
-            this.ckbUseEssentialSupports.UseVisualStyleBackColor = true;
-            // 
-            // ckbUseInitialCarSPrice
-            // 
-            this.ckbUseInitialCarSPrice.Checked = true;
-            this.ckbUseInitialCarSPrice.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbUseInitialCarSPrice.Location = new System.Drawing.Point(8, 219);
-            this.ckbUseInitialCarSPrice.Name = "ckbUseInitialCarSPrice";
-            this.ckbUseInitialCarSPrice.Size = new System.Drawing.Size(128, 17);
-            this.ckbUseInitialCarSPrice.TabIndex = 22;
-            this.ckbUseInitialCarSPrice.Text = "Use in the final result";
-            this.ckbUseInitialCarSPrice.UseVisualStyleBackColor = true;
-            // 
-            // ckbUseConsommation
-            // 
-            this.ckbUseConsommation.Checked = true;
-            this.ckbUseConsommation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbUseConsommation.Location = new System.Drawing.Point(7, 219);
-            this.ckbUseConsommation.Name = "ckbUseConsommation";
-            this.ckbUseConsommation.Size = new System.Drawing.Size(128, 17);
-            this.ckbUseConsommation.TabIndex = 23;
-            this.ckbUseConsommation.Text = "Use in the final result";
-            this.ckbUseConsommation.UseVisualStyleBackColor = true;
-            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 407);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSaveDatas);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
