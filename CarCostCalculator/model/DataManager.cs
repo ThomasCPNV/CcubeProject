@@ -125,6 +125,806 @@ namespace model
                         costYear = (powerCalculated + weightCalculated + 40) * 0.25;
                     }
                     break;
+                case "Aargau":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Appenzell Inner-Rhodes":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Appenzell Outer-Rhodes":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Basel":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Basel District":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Bem":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Fribourg":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Geneva":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Glarus":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Grisons":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Jura":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Lucerne":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Neuchâtel":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Nidwalden":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Obwalden":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Schaffhausen":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Schwyz":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Solothum":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "St Gallen":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Thurgau":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Ticino":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Uri":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Valais":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Zug":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
+                case "Zurich":
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
+                    break;
                 default:
 
                     //PowerCalcul
