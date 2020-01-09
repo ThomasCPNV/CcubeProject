@@ -23,6 +23,10 @@ namespace view
         DBConnect dbConnect = new DBConnect();
         string email = "";
 
+        string realPassword = "";
+        string realConfirm = "";
+        string passwordOut = "";
+
         public FormLoginRegister()
         {
             InitializeComponent();
@@ -101,10 +105,13 @@ namespace view
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtEmail.Text = "";
-            realPassword = "";
+
             txtPassword.Text = "";
-            realConfirm = "";
+            realPassword = "";
+            passwordOut = "";
+
             txtConfirm.Text = "";
+            realConfirm = "";
         }
 
         // Login/Register Quit button.
@@ -151,10 +158,6 @@ namespace view
                             {
                                 MessageBox.Show("Error : This email don't exists or your password is false !");
                             }
-                            txtPassword.Text = "";
-                            realPassword = "";
-                            txtConfirm.Text = "";
-                            realConfirm = "";
                         }
                         else if (txtConfirm.Visible == true)
                         {
@@ -177,10 +180,6 @@ namespace view
                                 {
                                     MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
                                 }
-                                txtPassword.Text = "";
-                                realPassword = "";
-                                txtConfirm.Text = "";
-                                realConfirm = "";
                             }
                             else
                             {
@@ -190,6 +189,14 @@ namespace view
                     }
                 }
             }
+            txtEmail.Text = "";
+
+            txtPassword.Text = "";
+            realPassword = "";
+            passwordOut = "";
+
+            txtConfirm.Text = "";
+            realConfirm = "";
         }
 
         /// <summary>
@@ -225,10 +232,6 @@ namespace view
             string location = JsonConvert.DeserializeObject(File.ReadAllText(@"..\..\..\data\formLocation.json")).ToString();
             return location;
         }
-
-        string realPassword = "";
-        string realConfirm = "";
-        string passwordOut = "";
 
         /// <summary>
         /// Password WildCard
