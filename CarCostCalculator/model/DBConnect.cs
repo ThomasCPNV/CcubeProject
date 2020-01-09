@@ -172,7 +172,7 @@ namespace model
             connection.Dispose();
         }
 
-        public bool InsertLicensePlate(string canton, double power, double weight, double co2Emission)
+        public bool InsertLicensePlate(string canton, double power, double weight, double co2Emission, double costYear)
         {
             bool insertLicensePlate = true;
 
@@ -182,7 +182,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into `license-plate` (`CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`) values ('{canton}', {power}, {weight}, {co2Emission})";
+            cmd.CommandText = $"insert into `license-plate` (`CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`, `COST/YEAR`) values ('{canton}', {power}, {weight}, {co2Emission}, {costYear})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -195,7 +195,7 @@ namespace model
             return insertLicensePlate;
         }
 
-        public bool InsertEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear)
+        public bool InsertEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear, double costYear)
         {
             bool insertEssentialMaintain = true;
 
@@ -205,7 +205,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into `essential-maintain` (`INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`) values ({insuranceYear}, {tiresYear}, {revisionYear})";
+            cmd.CommandText = $"insert into `essential-maintain` (`INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR`) values ({insuranceYear}, {tiresYear}, {revisionYear}, {costYear})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -218,7 +218,7 @@ namespace model
             return insertEssentialMaintain;
         }
 
-        public bool InsertInitialCarPrice(double purchasePrice, double lifeTime)
+        public bool InsertInitialCarPrice(double purchasePrice, double lifeTime, double costYear)
         {
             bool insertInitialCarPrice = true;
 
@@ -228,7 +228,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into `initial-price` (`PURCHASE-PRICE`, `LIFETIME`) values ({purchasePrice}, {lifeTime})";
+            cmd.CommandText = $"insert into `initial-price` (`PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR`) values ({purchasePrice}, {lifeTime}, {costYear})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
@@ -241,7 +241,7 @@ namespace model
             return insertInitialCarPrice;
         }
 
-        public bool InsertConsommation(string fuel, double consomation, double distanceMonth)
+        public bool InsertConsommation(string fuel, double consomation, double distanceMonth, double costYear)
         {
             bool insertConsommation = true;
 
@@ -251,7 +251,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into `consommation` (`FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`) values ('{fuel}', {consomation}, {distanceMonth})";
+            cmd.CommandText = $"insert into `consommation` (`FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR`) values ('{fuel}', {consomation}, {distanceMonth}, {costYear})";
 
             // Execute the SQL command
             if(cmd.ExecuteNonQuery() == 0)
