@@ -44,7 +44,7 @@ namespace view
                 // License plate entries verifier.
                 try
                 {
-                    dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
+                    dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), cbxPower.Text, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
                 }
                 catch { MessageBox.Show("Error : All 'License' entries need a value or the format isn't respected"); }
 
