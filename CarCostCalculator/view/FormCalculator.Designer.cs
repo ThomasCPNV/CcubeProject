@@ -109,7 +109,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
-            this.btnSaveDatas = new System.Windows.Forms.Button();
+            this.btnRegisterACar = new System.Windows.Forms.Button();
+            this.btnCarList = new System.Windows.Forms.Button();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -197,12 +198,12 @@
             // 
             this.txtConsommationCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConsommationCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsommationCpM.Location = new System.Drawing.Point(77, 196);
+            this.txtConsommationCpM.Location = new System.Drawing.Point(77, 190);
             this.txtConsommationCpM.Name = "txtConsommationCpM";
             this.txtConsommationCpM.ReadOnly = true;
             this.txtConsommationCpM.Size = new System.Drawing.Size(56, 13);
             this.txtConsommationCpM.TabIndex = 14;
-            this.txtConsommationCpM.Text = "...";
+            this.txtConsommationCpM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
@@ -217,12 +218,12 @@
             // 
             this.txtConsommationCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConsommationCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsommationCpY.Location = new System.Drawing.Point(77, 177);
+            this.txtConsommationCpY.Location = new System.Drawing.Point(77, 171);
             this.txtConsommationCpY.Name = "txtConsommationCpY";
             this.txtConsommationCpY.ReadOnly = true;
             this.txtConsommationCpY.Size = new System.Drawing.Size(56, 13);
             this.txtConsommationCpY.TabIndex = 12;
-            this.txtConsommationCpY.Text = "...";
+            this.txtConsommationCpY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -388,12 +389,12 @@
             // 
             this.txtInitialCarSPriceCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtInitialCarSPriceCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInitialCarSPriceCpM.Location = new System.Drawing.Point(77, 196);
+            this.txtInitialCarSPriceCpM.Location = new System.Drawing.Point(77, 190);
             this.txtInitialCarSPriceCpM.Name = "txtInitialCarSPriceCpM";
             this.txtInitialCarSPriceCpM.ReadOnly = true;
             this.txtInitialCarSPriceCpM.Size = new System.Drawing.Size(56, 13);
             this.txtInitialCarSPriceCpM.TabIndex = 14;
-            this.txtInitialCarSPriceCpM.Text = "...";
+            this.txtInitialCarSPriceCpM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -408,12 +409,12 @@
             // 
             this.txtInitialCarSPriceCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtInitialCarSPriceCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInitialCarSPriceCpY.Location = new System.Drawing.Point(77, 177);
+            this.txtInitialCarSPriceCpY.Location = new System.Drawing.Point(77, 171);
             this.txtInitialCarSPriceCpY.Name = "txtInitialCarSPriceCpY";
             this.txtInitialCarSPriceCpY.ReadOnly = true;
             this.txtInitialCarSPriceCpY.Size = new System.Drawing.Size(56, 13);
             this.txtInitialCarSPriceCpY.TabIndex = 12;
-            this.txtInitialCarSPriceCpY.Text = "...";
+            this.txtInitialCarSPriceCpY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -582,12 +583,12 @@
             // 
             this.txtEssentialsMaintainsCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEssentialsMaintainsCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEssentialsMaintainsCpM.Location = new System.Drawing.Point(81, 196);
+            this.txtEssentialsMaintainsCpM.Location = new System.Drawing.Point(77, 190);
             this.txtEssentialsMaintainsCpM.Name = "txtEssentialsMaintainsCpM";
             this.txtEssentialsMaintainsCpM.ReadOnly = true;
             this.txtEssentialsMaintainsCpM.Size = new System.Drawing.Size(56, 13);
             this.txtEssentialsMaintainsCpM.TabIndex = 14;
-            this.txtEssentialsMaintainsCpM.Text = "...";
+            this.txtEssentialsMaintainsCpM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
             // 
@@ -602,12 +603,12 @@
             // 
             this.txtEssentialsMaintainsCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEssentialsMaintainsCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEssentialsMaintainsCpY.Location = new System.Drawing.Point(81, 177);
+            this.txtEssentialsMaintainsCpY.Location = new System.Drawing.Point(77, 171);
             this.txtEssentialsMaintainsCpY.Name = "txtEssentialsMaintainsCpY";
             this.txtEssentialsMaintainsCpY.ReadOnly = true;
             this.txtEssentialsMaintainsCpY.Size = new System.Drawing.Size(56, 13);
             this.txtEssentialsMaintainsCpY.TabIndex = 12;
-            this.txtEssentialsMaintainsCpY.Text = "...";
+            this.txtEssentialsMaintainsCpY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label19
             // 
@@ -716,15 +717,17 @@
             // 
             // cbxPower
             // 
+            this.cbxPower.DisplayMember = "kW";
             this.cbxPower.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPower.FormattingEnabled = true;
             this.cbxPower.Items.AddRange(new object[] {
-            "hp",
-            "kW"});
+            "kW",
+            "hp"});
             this.cbxPower.Location = new System.Drawing.Point(89, 64);
             this.cbxPower.Name = "cbxPower";
             this.cbxPower.Size = new System.Drawing.Size(42, 21);
             this.cbxPower.TabIndex = 17;
+            this.cbxPower.ValueMember = " ";
             // 
             // cbxCantonRegistration
             // 
@@ -775,12 +778,12 @@
             // 
             this.txtLicensePlateCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtLicensePlateCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLicensePlateCpM.Location = new System.Drawing.Point(77, 196);
+            this.txtLicensePlateCpM.Location = new System.Drawing.Point(77, 190);
             this.txtLicensePlateCpM.Name = "txtLicensePlateCpM";
             this.txtLicensePlateCpM.ReadOnly = true;
             this.txtLicensePlateCpM.Size = new System.Drawing.Size(56, 13);
             this.txtLicensePlateCpM.TabIndex = 14;
-            this.txtLicensePlateCpM.Text = "...";
+            this.txtLicensePlateCpM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label28
             // 
@@ -795,12 +798,12 @@
             // 
             this.txtLicensePlateCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtLicensePlateCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLicensePlateCpY.Location = new System.Drawing.Point(77, 177);
+            this.txtLicensePlateCpY.Location = new System.Drawing.Point(77, 171);
             this.txtLicensePlateCpY.Name = "txtLicensePlateCpY";
             this.txtLicensePlateCpY.ReadOnly = true;
             this.txtLicensePlateCpY.Size = new System.Drawing.Size(56, 13);
             this.txtLicensePlateCpY.TabIndex = 12;
-            this.txtLicensePlateCpY.Text = "...";
+            this.txtLicensePlateCpY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label29
             // 
@@ -881,7 +884,7 @@
             this.txtResultCpM.ReadOnly = true;
             this.txtResultCpM.Size = new System.Drawing.Size(103, 24);
             this.txtResultCpM.TabIndex = 20;
-            this.txtResultCpM.Text = "...";
+            this.txtResultCpM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label37
             // 
@@ -903,7 +906,7 @@
             this.txtResultCpY.ReadOnly = true;
             this.txtResultCpY.Size = new System.Drawing.Size(103, 24);
             this.txtResultCpY.TabIndex = 18;
-            this.txtResultCpY.Text = "...";
+            this.txtResultCpY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label38
             // 
@@ -947,17 +950,27 @@
             // 
             // tmrCalculator
             // 
+            this.tmrCalculator.Enabled = true;
             this.tmrCalculator.Tick += new System.EventHandler(this.tmrCalculator_Tick);
             // 
-            // btnSaveDatas
+            // btnRegisterACar
             // 
-            this.btnSaveDatas.Location = new System.Drawing.Point(609, 376);
-            this.btnSaveDatas.Name = "btnSaveDatas";
-            this.btnSaveDatas.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveDatas.TabIndex = 24;
-            this.btnSaveDatas.Text = "Save datas";
-            this.btnSaveDatas.UseVisualStyleBackColor = true;
-            this.btnSaveDatas.Click += new System.EventHandler(this.btnSaveDatas_Click);
+            this.btnRegisterACar.Location = new System.Drawing.Point(589, 376);
+            this.btnRegisterACar.Name = "btnRegisterACar";
+            this.btnRegisterACar.Size = new System.Drawing.Size(92, 23);
+            this.btnRegisterACar.TabIndex = 24;
+            this.btnRegisterACar.Text = "Register a car";
+            this.btnRegisterACar.UseVisualStyleBackColor = true;
+            this.btnRegisterACar.Click += new System.EventHandler(this.btnRegisterACar_Click);
+            // 
+            // btnCarList
+            // 
+            this.btnCarList.Location = new System.Drawing.Point(624, 302);
+            this.btnCarList.Name = "btnCarList";
+            this.btnCarList.Size = new System.Drawing.Size(57, 23);
+            this.btnCarList.TabIndex = 25;
+            this.btnCarList.Text = "Car list";
+            this.btnCarList.UseVisualStyleBackColor = true;
             // 
             // FormCalculator
             // 
@@ -965,7 +978,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 407);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSaveDatas);
+            this.Controls.Add(this.btnCarList);
+            this.Controls.Add(this.btnRegisterACar);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.label36);
@@ -1077,10 +1091,11 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Timer tmrCalculator;
-        private System.Windows.Forms.Button btnSaveDatas;
+        private System.Windows.Forms.Button btnRegisterACar;
         private System.Windows.Forms.CheckBox ckbUseLicencePlate;
         private System.Windows.Forms.CheckBox ckbUseConsommation;
         private System.Windows.Forms.CheckBox ckbUseInitialCarSPrice;
         private System.Windows.Forms.CheckBox ckbUseEssentialSupports;
+        private System.Windows.Forms.Button btnCarList;
     }
 }

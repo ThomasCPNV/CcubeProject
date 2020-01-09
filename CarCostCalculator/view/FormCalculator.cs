@@ -15,20 +15,36 @@ namespace view
     public partial class FormCalculator : Form
     {
         DataManager dataManager = new DataManager();
+        double licenseResult;
+        double supportsResult;
+        double initialCarResult;
+        double consomationResult;
+        double finalResult;
 
-        // Email pin up
         public FormCalculator(string email)
         {
             InitializeComponent();
 
+            // Email pin up
             lblEmailView.Text = email;
+
+            cbxCantonRegistration.SelectedIndex = 23;
+            cbxPower.SelectedIndex = 0;
+            cbxFuel.SelectedIndex = 0;
         }
 
         private void tmrCalculator_Tick(object sender, EventArgs e)
         {
             try
             {
+                licenseResult = dataManager.DoCalculLicensePlate(cbxCantonRegistration.SelectedText, Convert.ToDouble(txtPower.Text), cbxPower.SelectedText, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
+                txtLicensePlateCpY.Text = licenseResult.ToString();
+                txtLicensePlateCpM.Text = (licenseResult / 12).ToString();
 
+
+                finalResult = licenseResult + supportsResult + initialCarResult + consomationResult;
+                txtResultCpY.Text = finalResult.ToString();
+                txtResultCpM.Text = (finalResult / 12).ToString();
             }
             catch
             {
@@ -37,37 +53,14 @@ namespace view
         }
 
         // Datas verification for save on database.
-        private void btnSaveDatas_Click(object sender, EventArgs e)
+        private void btnRegisterACar_Click(object sender, EventArgs e)
         {
             try
             {
-                // License plate entries verifier.
-                try
-                {
-                    dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), cbxPower.Text, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
-                }
-                catch { MessageBox.Show("Error : All 'License' entries need a value or the format isn't respected"); }
-
-                // Essential supports entries verifier.
-                try
-                {
-                    dataManager.EssentialMaintain(lblEmailView.Text, Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text));
-                }
-                catch { MessageBox.Show("Error : All 'Essential supports' entries need a value or the format isn't respected"); }
-
-                // Initial price entries verifier.
-                try
-                {
-                    dataManager.InitialPrice(lblEmailView.Text, Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToDouble(txtCarSLifetimeEstimation.Text));
-                }
-                catch { MessageBox.Show("Error : All 'Initial Price' entries need a value or the format isn't respected"); }
-
-                // Consommation entries verifier.
-                try
-                {
-                    dataManager.Consommation(lblEmailView.Text, cbxFuel.Text, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
-                }
-                catch { MessageBox.Show("Error : All 'Consommation' entries need a value or the format isn't respected"); }
+                dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.SelectedText, Convert.ToDouble(txtPower.Text), cbxPower.SelectedText, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
+                dataManager.EssentialMaintain(lblEmailView.Text, Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text));
+                dataManager.InitialPrice(lblEmailView.Text, Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToDouble(txtCarSLifetimeEstimation.Text));
+                dataManager.Consommation(lblEmailView.Text, cbxFuel.Text, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
                 MessageBox.Show("Insertion in database completed !");
             }
             catch
