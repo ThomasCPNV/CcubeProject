@@ -10,9 +10,14 @@ namespace model
     {
         private DBConnect dbConnect = new DBConnect();
 
-        public bool LicensePlate(string email, string canton, double power, double weight, double co2Emission)
+        public bool LicensePlate(string email, string canton, double power, string formatPower, double weight, double co2Emission)
         {
             bool licensePlate = true;
+
+            if(formatPower == "ch")
+            {
+                power = power * 0.74;
+            }
 
             if(dbConnect.InsertLicensePlate(canton, power, weight, co2Emission))
             {
@@ -72,6 +77,50 @@ namespace model
             }
 
             return consommation;
+        }
+
+        public double DoCalculLicensePlate(string canton, double power, string formatPower, double weight, double co2Emission)
+        {
+            int costYear = 0;
+            double powerCalculated;
+            double weightCalculated;
+
+            if (formatPower == "ch")
+            {
+                power = power * 0.74;
+            }
+
+            switch (canton)
+            {
+                case "Vaud":
+                    
+                    //PowerCalcul
+                    if(power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if(weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated =((weight - 2000) * 0.3) + 300;
+                    }
+
+                    break;
+                default:
+                    
+                    break;
+            }
+
+            return costYear;
         }
     }
 }
