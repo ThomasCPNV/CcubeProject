@@ -151,6 +151,10 @@ namespace view
                             {
                                 MessageBox.Show("Error : This email don't exists or your password is false !");
                             }
+                            txtPassword.Text = "";
+                            realPassword = "";
+                            txtConfirm.Text = "";
+                            realConfirm = "";
                         }
                         else if (txtConfirm.Visible == true)
                         {
@@ -173,6 +177,10 @@ namespace view
                                 {
                                     MessageBox.Show("Error : Your email is false or the password and the confirmation are not sames !");
                                 }
+                                txtPassword.Text = "";
+                                realPassword = "";
+                                txtConfirm.Text = "";
+                                realConfirm = "";
                             }
                             else
                             {
