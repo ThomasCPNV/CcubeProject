@@ -80,6 +80,7 @@
             this.txtInsurancepY = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ckbUseLicencePlate = new System.Windows.Forms.CheckBox();
             this.txtCO2Emission = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -106,6 +107,9 @@
             this.label41 = new System.Windows.Forms.Label();
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
             this.btnSaveDatas = new System.Windows.Forms.Button();
+            this.ckbUseEssentialSupports = new System.Windows.Forms.CheckBox();
+            this.ckbUseInitialCarSPrice = new System.Windows.Forms.CheckBox();
+            this.ckbUseConsommation = new System.Windows.Forms.CheckBox();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,7 +118,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(8, 357);
+            this.btnQuit.Location = new System.Drawing.Point(8, 376);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 0;
@@ -144,6 +148,7 @@
             // 
             // gpbConsommation
             // 
+            this.gpbConsommation.Controls.Add(this.ckbUseConsommation);
             this.gpbConsommation.Controls.Add(this.label8);
             this.gpbConsommation.Controls.Add(this.txtConsommationCpM);
             this.gpbConsommation.Controls.Add(this.label7);
@@ -163,7 +168,7 @@
             this.gpbConsommation.Controls.Add(this.lblFuel);
             this.gpbConsommation.Location = new System.Drawing.Point(512, 54);
             this.gpbConsommation.Name = "gpbConsommation";
-            this.gpbConsommation.Size = new System.Drawing.Size(167, 223);
+            this.gpbConsommation.Size = new System.Drawing.Size(167, 242);
             this.gpbConsommation.TabIndex = 3;
             this.gpbConsommation.TabStop = false;
             this.gpbConsommation.Text = "Consommation";
@@ -181,7 +186,7 @@
             // 
             this.txtConsommationCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConsommationCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsommationCpM.Location = new System.Drawing.Point(77, 187);
+            this.txtConsommationCpM.Location = new System.Drawing.Point(77, 196);
             this.txtConsommationCpM.Name = "txtConsommationCpM";
             this.txtConsommationCpM.ReadOnly = true;
             this.txtConsommationCpM.Size = new System.Drawing.Size(56, 13);
@@ -201,7 +206,7 @@
             // 
             this.txtConsommationCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConsommationCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsommationCpY.Location = new System.Drawing.Point(77, 168);
+            this.txtConsommationCpY.Location = new System.Drawing.Point(77, 177);
             this.txtConsommationCpY.Name = "txtConsommationCpY";
             this.txtConsommationCpY.ReadOnly = true;
             this.txtConsommationCpY.Size = new System.Drawing.Size(56, 13);
@@ -328,6 +333,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ckbUseInitialCarSPrice);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtInitialCarSPriceCpM);
             this.groupBox1.Controls.Add(this.label10);
@@ -342,7 +348,7 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Location = new System.Drawing.Point(346, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 223);
+            this.groupBox1.Size = new System.Drawing.Size(167, 242);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Initial car\'s price";
@@ -360,7 +366,7 @@
             // 
             this.txtInitialCarSPriceCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtInitialCarSPriceCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInitialCarSPriceCpM.Location = new System.Drawing.Point(77, 187);
+            this.txtInitialCarSPriceCpM.Location = new System.Drawing.Point(77, 196);
             this.txtInitialCarSPriceCpM.Name = "txtInitialCarSPriceCpM";
             this.txtInitialCarSPriceCpM.ReadOnly = true;
             this.txtInitialCarSPriceCpM.Size = new System.Drawing.Size(56, 13);
@@ -380,7 +386,7 @@
             // 
             this.txtInitialCarSPriceCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtInitialCarSPriceCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInitialCarSPriceCpY.Location = new System.Drawing.Point(77, 168);
+            this.txtInitialCarSPriceCpY.Location = new System.Drawing.Point(77, 177);
             this.txtInitialCarSPriceCpY.Name = "txtInitialCarSPriceCpY";
             this.txtInitialCarSPriceCpY.ReadOnly = true;
             this.txtInitialCarSPriceCpY.Size = new System.Drawing.Size(56, 13);
@@ -457,6 +463,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ckbUseEssentialSupports);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.txtRevisionpY);
             this.groupBox2.Controls.Add(this.label26);
@@ -472,9 +479,9 @@
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.txtInsurancepY);
             this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Location = new System.Drawing.Point(181, 54);
+            this.groupBox2.Location = new System.Drawing.Point(177, 54);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(167, 223);
+            this.groupBox2.Size = new System.Drawing.Size(171, 242);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Essential supports";
@@ -542,7 +549,7 @@
             // 
             this.txtEssentialsMaintainsCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEssentialsMaintainsCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEssentialsMaintainsCpM.Location = new System.Drawing.Point(77, 187);
+            this.txtEssentialsMaintainsCpM.Location = new System.Drawing.Point(81, 196);
             this.txtEssentialsMaintainsCpM.Name = "txtEssentialsMaintainsCpM";
             this.txtEssentialsMaintainsCpM.ReadOnly = true;
             this.txtEssentialsMaintainsCpM.Size = new System.Drawing.Size(56, 13);
@@ -562,7 +569,7 @@
             // 
             this.txtEssentialsMaintainsCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEssentialsMaintainsCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEssentialsMaintainsCpY.Location = new System.Drawing.Point(77, 168);
+            this.txtEssentialsMaintainsCpY.Location = new System.Drawing.Point(81, 177);
             this.txtEssentialsMaintainsCpY.Name = "txtEssentialsMaintainsCpY";
             this.txtEssentialsMaintainsCpY.ReadOnly = true;
             this.txtEssentialsMaintainsCpY.Size = new System.Drawing.Size(56, 13);
@@ -614,6 +621,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ckbUseLicencePlate);
             this.groupBox3.Controls.Add(this.txtCO2Emission);
             this.groupBox3.Controls.Add(this.label35);
             this.groupBox3.Controls.Add(this.label33);
@@ -632,10 +640,21 @@
             this.groupBox3.Controls.Add(this.label34);
             this.groupBox3.Location = new System.Drawing.Point(12, 54);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(167, 223);
+            this.groupBox3.Size = new System.Drawing.Size(167, 242);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "License plate";
+            // 
+            // ckbUseLicencePlate
+            // 
+            this.ckbUseLicencePlate.Checked = true;
+            this.ckbUseLicencePlate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseLicencePlate.Location = new System.Drawing.Point(3, 219);
+            this.ckbUseLicencePlate.Name = "ckbUseLicencePlate";
+            this.ckbUseLicencePlate.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseLicencePlate.TabIndex = 0;
+            this.ckbUseLicencePlate.Text = "Use in the final result";
+            this.ckbUseLicencePlate.UseVisualStyleBackColor = true;
             // 
             // txtCO2Emission
             // 
@@ -723,7 +742,7 @@
             // 
             this.txtLicensePlateCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtLicensePlateCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLicensePlateCpM.Location = new System.Drawing.Point(77, 187);
+            this.txtLicensePlateCpM.Location = new System.Drawing.Point(77, 196);
             this.txtLicensePlateCpM.Name = "txtLicensePlateCpM";
             this.txtLicensePlateCpM.ReadOnly = true;
             this.txtLicensePlateCpM.Size = new System.Drawing.Size(56, 13);
@@ -743,7 +762,7 @@
             // 
             this.txtLicensePlateCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtLicensePlateCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLicensePlateCpY.Location = new System.Drawing.Point(77, 168);
+            this.txtLicensePlateCpY.Location = new System.Drawing.Point(77, 177);
             this.txtLicensePlateCpY.Name = "txtLicensePlateCpY";
             this.txtLicensePlateCpY.ReadOnly = true;
             this.txtLicensePlateCpY.Size = new System.Drawing.Size(56, 13);
@@ -813,7 +832,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(452, 351);
+            this.label36.Location = new System.Drawing.Point(452, 370);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(41, 25);
             this.label36.TabIndex = 21;
@@ -824,7 +843,7 @@
             this.txtResultCpM.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtResultCpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultCpM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultCpM.Location = new System.Drawing.Point(343, 349);
+            this.txtResultCpM.Location = new System.Drawing.Point(343, 370);
             this.txtResultCpM.Name = "txtResultCpM";
             this.txtResultCpM.ReadOnly = true;
             this.txtResultCpM.Size = new System.Drawing.Size(103, 24);
@@ -835,7 +854,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(452, 314);
+            this.label37.Location = new System.Drawing.Point(452, 333);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(41, 25);
             this.label37.TabIndex = 19;
@@ -846,7 +865,7 @@
             this.txtResultCpY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtResultCpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultCpY.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultCpY.Location = new System.Drawing.Point(343, 312);
+            this.txtResultCpY.Location = new System.Drawing.Point(343, 334);
             this.txtResultCpY.Name = "txtResultCpY";
             this.txtResultCpY.ReadOnly = true;
             this.txtResultCpY.Size = new System.Drawing.Size(103, 24);
@@ -857,7 +876,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(205, 351);
+            this.label38.Location = new System.Drawing.Point(205, 370);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(132, 25);
             this.label38.TabIndex = 17;
@@ -867,7 +886,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(206, 314);
+            this.label39.Location = new System.Drawing.Point(206, 333);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(115, 25);
             this.label39.TabIndex = 16;
@@ -877,7 +896,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(302, 280);
+            this.label40.Location = new System.Drawing.Point(302, 299);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(87, 29);
             this.label40.TabIndex = 22;
@@ -899,7 +918,7 @@
             // 
             // btnSaveDatas
             // 
-            this.btnSaveDatas.Location = new System.Drawing.Point(604, 357);
+            this.btnSaveDatas.Location = new System.Drawing.Point(609, 376);
             this.btnSaveDatas.Name = "btnSaveDatas";
             this.btnSaveDatas.Size = new System.Drawing.Size(75, 23);
             this.btnSaveDatas.TabIndex = 24;
@@ -907,11 +926,44 @@
             this.btnSaveDatas.UseVisualStyleBackColor = true;
             this.btnSaveDatas.Click += new System.EventHandler(this.btnSaveDatas_Click);
             // 
+            // ckbUseEssentialSupports
+            // 
+            this.ckbUseEssentialSupports.Checked = true;
+            this.ckbUseEssentialSupports.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseEssentialSupports.Location = new System.Drawing.Point(4, 219);
+            this.ckbUseEssentialSupports.Name = "ckbUseEssentialSupports";
+            this.ckbUseEssentialSupports.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseEssentialSupports.TabIndex = 21;
+            this.ckbUseEssentialSupports.Text = "Use in the final result";
+            this.ckbUseEssentialSupports.UseVisualStyleBackColor = true;
+            // 
+            // ckbUseInitialCarSPrice
+            // 
+            this.ckbUseInitialCarSPrice.Checked = true;
+            this.ckbUseInitialCarSPrice.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseInitialCarSPrice.Location = new System.Drawing.Point(8, 219);
+            this.ckbUseInitialCarSPrice.Name = "ckbUseInitialCarSPrice";
+            this.ckbUseInitialCarSPrice.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseInitialCarSPrice.TabIndex = 22;
+            this.ckbUseInitialCarSPrice.Text = "Use in the final result";
+            this.ckbUseInitialCarSPrice.UseVisualStyleBackColor = true;
+            // 
+            // ckbUseConsommation
+            // 
+            this.ckbUseConsommation.Checked = true;
+            this.ckbUseConsommation.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbUseConsommation.Location = new System.Drawing.Point(7, 219);
+            this.ckbUseConsommation.Name = "ckbUseConsommation";
+            this.ckbUseConsommation.Size = new System.Drawing.Size(128, 17);
+            this.ckbUseConsommation.TabIndex = 23;
+            this.ckbUseConsommation.Text = "Use in the final result";
+            this.ckbUseConsommation.UseVisualStyleBackColor = true;
+            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 387);
+            this.ClientSize = new System.Drawing.Size(691, 407);
             this.Controls.Add(this.btnSaveDatas);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
@@ -1025,5 +1077,9 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Timer tmrCalculator;
         private System.Windows.Forms.Button btnSaveDatas;
+        private System.Windows.Forms.CheckBox ckbUseLicencePlate;
+        private System.Windows.Forms.CheckBox ckbUseConsommation;
+        private System.Windows.Forms.CheckBox ckbUseInitialCarSPrice;
+        private System.Windows.Forms.CheckBox ckbUseEssentialSupports;
     }
 }
