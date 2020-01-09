@@ -14,7 +14,7 @@ namespace model
         {
             bool licensePlate = true;
 
-            if(formatPower == "ch")
+            if(formatPower == "hp")
             {
                 power = power * 0.74;
             }
@@ -79,17 +79,18 @@ namespace model
             return consommation;
         }
 
-        public double DoCalculLicensePlate(string canton, double power, string formatPower, double weight, double co2Emission)
+        public double CalculLicensePlate(string canton, double power, string formatPower, double weight, double co2Emission)
         {
-            int costYear = 0;
+            double costYear = 0;
             double powerCalculated;
             double weightCalculated;
 
-            if (formatPower == "ch")
+            if (formatPower == "hp")
             {
                 power = power * 0.74;
             }
 
+            //Les nombres qui sont utilisés sont expliqués dans le fichier excel se trouvant dans le dossier Documentation du projet
             switch (canton)
             {
                 case "Vaud":
@@ -114,13 +115,99 @@ namespace model
                         weightCalculated =((weight - 2000) * 0.3) + 300;
                     }
 
+                    //CostYear calcul
+                    if(co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
                     break;
                 default:
-                    
+
+                    //PowerCalcul
+                    if (power < 100)
+                    {
+                        powerCalculated = power * 2;
+                    }
+                    else
+                    {
+                        powerCalculated = ((power - 100) * 3) + 200;
+                    }
+
+                    //WeightCalcul
+                    if (weight < 2000)
+                    {
+                        weightCalculated = weight * 0.15;
+                    }
+                    else
+                    {
+                        weightCalculated = ((weight - 2000) * 0.3) + 300;
+                    }
+
+                    //CostYear calcul
+                    if (co2Emission > 120)
+                    {
+                        costYear = powerCalculated + weightCalculated + 40;
+                    }
+                    else
+                    {
+                        costYear = (powerCalculated + weightCalculated + 40) * 0.25;
+                    }
                     break;
             }
+            return costYear;
+        }
+
+        public double CalculEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear)
+        {
+            double costYear = 0;
+
+            costYear = insuranceYear + tiresYear + revisionYear;
 
             return costYear;
+        }
+
+        public double CalculInitialPrice(double purchasePrice, double lifeTime)
+        {
+            double costYear = 0;
+
+            costYear = purchasePrice / lifeTime;
+
+            return costYear;
+        }
+
+        public double CalculConsommation(double fuelPrice, double consomation, double distanceMonth)
+        {
+            double costYear = 0;
+
+            costYear = (distanceMonth / 100) * consomation * fuelPrice;
+
+            return costYear;
+        }
+
+        public double CalculFuelPrice(string fuel)
+        {
+            double priceFuel = 0;
+
+            switch(fuel)
+            {
+                case "95":
+                        priceFuel = 1.46;
+                        break;
+                case "98":
+                        priceFuel = 1.55;
+                        break;
+                case "Diesel":
+                        priceFuel = 1.63;
+                        break;
+                default:
+                        priceFuel = 1.46;
+                        break;
+            }
+            return priceFuel;
         }
     }
 }
