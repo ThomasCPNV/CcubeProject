@@ -983,7 +983,7 @@ namespace model
         {
             double costYear = 0;
 
-            costYear = (distanceMonth / 100) * consomation * fuelPrice;
+            costYear = (distanceMonth * 12 / 100) * consomation * fuelPrice;
 
             return costYear;
         }

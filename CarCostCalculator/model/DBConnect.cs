@@ -464,5 +464,105 @@ namespace model
 
             CloseConnection();
         }
+
+        public List<string> GetLicensePlate(string email)
+        {
+            List<string> licensePlate = null;
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select `ID`, `CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`, `COST/YEAR` from `license-plate` where `IDUSER` = '{email}'";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    licensePlate.Add(reader.GetString(0));
+                }
+                reader.Close();
+            }
+
+            return licensePlate;
+        }
+
+        public List<string> GetEssentialMaintain(string email)
+        {
+            List<string> essentialMaintain = null;
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `IDUSER` = '{email}'";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    essentialMaintain.Add(reader.GetString(0));
+                }
+                reader.Close();
+            }
+
+            return essentialMaintain;
+        }
+
+        public List<string> GetInitialPrice(string email)
+        {
+            List<string> initialPrice = null;
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `IDUSER` = '{email}'";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    initialPrice.Add(reader.GetString(0));
+                }
+                reader.Close();
+            }
+
+            return initialPrice;
+        }
+
+        public List<string> GetConsommation(string email)
+        {
+            List<string> consommation = null;
+
+            // Create a command object
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = $"select `ID`, `FUEL`, `FUEL-PRICE/LITER`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `IDUSER` = '{email}'";
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    consommation.Add(reader.GetString(0));
+                }
+                reader.Close();
+            }
+
+            return consommation;
+        }
     }
 }
