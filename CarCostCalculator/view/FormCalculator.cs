@@ -43,6 +43,7 @@ namespace view
             }
             else
             {
+                licenseResult = 0;
                 txtLicensePlateCpY.Text = "";
                 txtLicensePlateCpM.Text = "";
             }
@@ -56,6 +57,7 @@ namespace view
             }
             else
             {
+                supportsResult = 0;
                 txtEssentialsMaintainsCpY.Text = "";
                 txtEssentialsMaintainsCpM.Text = "";
             }
@@ -69,6 +71,7 @@ namespace view
             }
             else
             {
+                initialCarResult = 0;
                 txtInitialCarSPriceCpY.Text = "";
                 txtInitialCarSPriceCpM.Text = "";
             }
@@ -83,6 +86,7 @@ namespace view
             }
             else
             {
+                consommationResult = 0;
                 txtConsommationCpY.Text = "";
                 txtConsommationCpM.Text = "";
             }
