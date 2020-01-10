@@ -151,8 +151,10 @@ namespace view
         }
 
         /*lblEmailView.Text*/
+        public string Email { get { return lblEmailView.Text; } }
 
         /*cbxCantonRegistration.Text*/
+        public string CantonRegistration { get { return cbxCantonRegistration.Text; } }
         /*Convert.ToDouble(txtPower.Text)*/
         /*cbxPower.Text*/
         /*Convert.ToDouble(txtWeight.Text)*/
