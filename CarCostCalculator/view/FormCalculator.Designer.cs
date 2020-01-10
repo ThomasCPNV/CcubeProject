@@ -59,6 +59,7 @@
             this.txtInitialCarSPriceCpY = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.lblCarSLifetimeEstimation = new System.Windows.Forms.Label();
             this.txtCarSLifetimeEstimation = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -110,7 +111,6 @@
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
             this.btnRegisterACar = new System.Windows.Forms.Button();
             this.btnCarList = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -254,10 +254,12 @@
             // 
             // txtDpM
             // 
-            this.txtDpM.Location = new System.Drawing.Point(97, 134);
+            this.txtDpM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDpM.Location = new System.Drawing.Point(94, 137);
             this.txtDpM.Name = "txtDpM";
-            this.txtDpM.Size = new System.Drawing.Size(35, 20);
+            this.txtDpM.Size = new System.Drawing.Size(35, 13);
             this.txtDpM.TabIndex = 9;
+            this.txtDpM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblDpM
             // 
@@ -271,7 +273,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 111);
+            this.label2.Location = new System.Drawing.Point(135, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(9, 13);
             this.label2.TabIndex = 7;
@@ -288,10 +290,12 @@
             // 
             // txtCarSCp100km
             // 
-            this.txtCarSCp100km.Location = new System.Drawing.Point(97, 108);
+            this.txtCarSCp100km.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCarSCp100km.Location = new System.Drawing.Point(94, 111);
             this.txtCarSCp100km.Name = "txtCarSCp100km";
-            this.txtCarSCp100km.Size = new System.Drawing.Size(35, 20);
+            this.txtCarSCp100km.Size = new System.Drawing.Size(35, 13);
             this.txtCarSCp100km.TabIndex = 5;
+            this.txtCarSCp100km.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblChf
             // 
@@ -435,6 +439,15 @@
             this.label12.TabIndex = 4;
             this.label12.Text = "Costs/year";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(49, 111);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "years";
+            // 
             // lblCarSLifetimeEstimation
             // 
             this.lblCarSLifetimeEstimation.AutoSize = true;
@@ -446,15 +459,17 @@
             // 
             // txtCarSLifetimeEstimation
             // 
-            this.txtCarSLifetimeEstimation.Location = new System.Drawing.Point(8, 108);
+            this.txtCarSLifetimeEstimation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCarSLifetimeEstimation.Location = new System.Drawing.Point(8, 111);
             this.txtCarSLifetimeEstimation.Name = "txtCarSLifetimeEstimation";
-            this.txtCarSLifetimeEstimation.Size = new System.Drawing.Size(35, 20);
+            this.txtCarSLifetimeEstimation.Size = new System.Drawing.Size(35, 13);
             this.txtCarSLifetimeEstimation.TabIndex = 5;
+            this.txtCarSLifetimeEstimation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(49, 38);
+            this.label17.Location = new System.Drawing.Point(77, 38);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(22, 13);
             this.label17.TabIndex = 4;
@@ -462,10 +477,12 @@
             // 
             // txtCarPurchasePrice
             // 
-            this.txtCarPurchasePrice.Location = new System.Drawing.Point(7, 35);
+            this.txtCarPurchasePrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCarPurchasePrice.Location = new System.Drawing.Point(8, 38);
             this.txtCarPurchasePrice.Name = "txtCarPurchasePrice";
-            this.txtCarPurchasePrice.Size = new System.Drawing.Size(36, 20);
+            this.txtCarPurchasePrice.Size = new System.Drawing.Size(63, 13);
             this.txtCarPurchasePrice.TabIndex = 3;
+            this.txtCarPurchasePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblCarPurchasePrice
             // 
@@ -523,10 +540,12 @@
             // 
             // txtRevisionpY
             // 
-            this.txtRevisionpY.Location = new System.Drawing.Point(89, 112);
+            this.txtRevisionpY.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRevisionpY.Location = new System.Drawing.Point(89, 115);
             this.txtRevisionpY.Name = "txtRevisionpY";
-            this.txtRevisionpY.Size = new System.Drawing.Size(36, 20);
+            this.txtRevisionpY.Size = new System.Drawing.Size(36, 13);
             this.txtRevisionpY.TabIndex = 20;
+            this.txtRevisionpY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblRevisionpY
             // 
@@ -548,10 +567,12 @@
             // 
             // txtTirespY
             // 
-            this.txtTirespY.Location = new System.Drawing.Point(89, 65);
+            this.txtTirespY.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTirespY.Location = new System.Drawing.Point(89, 68);
             this.txtTirespY.Name = "txtTirespY";
-            this.txtTirespY.Size = new System.Drawing.Size(36, 20);
+            this.txtTirespY.Size = new System.Drawing.Size(36, 13);
             this.txtTirespY.TabIndex = 17;
+            this.txtTirespY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblTirespY
             // 
@@ -631,10 +652,12 @@
             // 
             // txtInsurancepY
             // 
-            this.txtInsurancepY.Location = new System.Drawing.Point(89, 16);
+            this.txtInsurancepY.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInsurancepY.Location = new System.Drawing.Point(89, 19);
             this.txtInsurancepY.Name = "txtInsurancepY";
-            this.txtInsurancepY.Size = new System.Drawing.Size(36, 20);
+            this.txtInsurancepY.Size = new System.Drawing.Size(36, 13);
             this.txtInsurancepY.TabIndex = 3;
+            this.txtInsurancepY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblInsurancepY
             // 
@@ -684,10 +707,12 @@
             // 
             // txtCO2Emission
             // 
-            this.txtCO2Emission.Location = new System.Drawing.Point(82, 131);
+            this.txtCO2Emission.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCO2Emission.Location = new System.Drawing.Point(82, 135);
             this.txtCO2Emission.Name = "txtCO2Emission";
-            this.txtCO2Emission.Size = new System.Drawing.Size(52, 20);
+            this.txtCO2Emission.Size = new System.Drawing.Size(52, 13);
             this.txtCO2Emission.TabIndex = 20;
+            this.txtCO2Emission.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblCO2Emission
             // 
@@ -835,17 +860,21 @@
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(82, 108);
+            this.txtWeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWeight.Location = new System.Drawing.Point(82, 112);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(52, 20);
+            this.txtWeight.Size = new System.Drawing.Size(52, 13);
             this.txtWeight.TabIndex = 5;
+            this.txtWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPower
             // 
-            this.txtPower.Location = new System.Drawing.Point(47, 64);
+            this.txtPower.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPower.Location = new System.Drawing.Point(47, 68);
             this.txtPower.Name = "txtPower";
-            this.txtPower.Size = new System.Drawing.Size(36, 20);
+            this.txtPower.Size = new System.Drawing.Size(36, 13);
             this.txtPower.TabIndex = 3;
+            this.txtPower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label34
             // 
@@ -965,15 +994,6 @@
             this.btnCarList.Text = "Car list";
             this.btnCarList.UseVisualStyleBackColor = true;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(49, 111);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "years";
-            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1019,19 +1039,15 @@
 
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnDisconnection;
-        private System.Windows.Forms.Label lblEmailView;
         private System.Windows.Forms.GroupBox gpbConsommation;
         private System.Windows.Forms.Label lblFuel;
-        private System.Windows.Forms.ComboBox cbxFuel;
         private System.Windows.Forms.Label lblAverageFuelPricePerLiter;
         private System.Windows.Forms.Label lblChf;
         private System.Windows.Forms.TextBox txtAverageFuelPricePerLiter;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDpM;
         private System.Windows.Forms.Label lblDpM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCarSCp100km;
-        private System.Windows.Forms.TextBox txtCarSCp100km;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtConsommationCpM;
         private System.Windows.Forms.Label label7;
@@ -1046,16 +1062,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblCarSLifetimeEstimation;
-        private System.Windows.Forms.TextBox txtCarSLifetimeEstimation;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtCarPurchasePrice;
         private System.Windows.Forms.Label lblCarPurchasePrice;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox txtRevisionpY;
         private System.Windows.Forms.Label lblRevisionpY;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtTirespY;
         private System.Windows.Forms.Label lblTirespY;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtEssentialsMaintainsCpM;
@@ -1064,10 +1076,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtInsurancepY;
         private System.Windows.Forms.Label lblInsurancepY;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cbxCantonRegistration;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtLicensePlateCpM;
         private System.Windows.Forms.Label label28;
@@ -1076,11 +1086,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label lblPower;
-        private System.Windows.Forms.TextBox txtWeight;
-        private System.Windows.Forms.TextBox txtPower;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox cbxPower;
-        private System.Windows.Forms.TextBox txtCO2Emission;
         private System.Windows.Forms.Label lblCO2Emission;
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.Label label36;
@@ -1099,5 +1105,19 @@
         private System.Windows.Forms.CheckBox ckbUseEssentialSupports;
         private System.Windows.Forms.Button btnCarList;
         private System.Windows.Forms.Label label15;
+        internal System.Windows.Forms.Label lblEmailView;
+        private System.Windows.Forms.ComboBox cbxFuel;
+        private System.Windows.Forms.TextBox txtDpM;
+        private System.Windows.Forms.TextBox txtCarSCp100km;
+        private System.Windows.Forms.TextBox txtCarSLifetimeEstimation;
+        private System.Windows.Forms.TextBox txtCarPurchasePrice;
+        private System.Windows.Forms.TextBox txtRevisionpY;
+        private System.Windows.Forms.TextBox txtTirespY;
+        private System.Windows.Forms.TextBox txtInsurancepY;
+        private System.Windows.Forms.ComboBox cbxCantonRegistration;
+        private System.Windows.Forms.TextBox txtWeight;
+        private System.Windows.Forms.TextBox txtPower;
+        private System.Windows.Forms.ComboBox cbxPower;
+        private System.Windows.Forms.TextBox txtCO2Emission;
     }
 }

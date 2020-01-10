@@ -15,11 +15,11 @@ namespace view
     public partial class FormCalculator : Form
     {
         DataManager dataManager = new DataManager();
-        double licenseResult;
-        double supportsResult;
-        double initialCarResult;
-        double consommationResult;
-        double finalResult;
+        private double licenseResult;
+        private double supportsResult;
+        private double initialCarResult;
+        private double consommationResult;
+        private double finalResult;
 
         public FormCalculator(string email)
         {
@@ -111,18 +111,8 @@ namespace view
         // Datas verification for save on database.
         private void btnRegisterACar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dataManager.LicensePlate(lblEmailView.Text, cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), cbxPower.Text, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text), licenseResult);
-                dataManager.EssentialMaintain(lblEmailView.Text, Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text), supportsResult);
-                dataManager.InitialPrice(lblEmailView.Text, Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToDouble(txtCarSLifetimeEstimation.Text), initialCarResult);
-                dataManager.Consommation(lblEmailView.Text, cbxFuel.Text, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text), consommationResult);
-                MessageBox.Show("Insertion in database completed !");
-            }
-            catch
-            {
-                MessageBox.Show("Error : All entries need a value !");
-            }
+            FormRegisterACar form = new FormRegisterACar();
+            form.ShowDialog();
         }
 
         // Calculator quit button.
@@ -159,9 +149,30 @@ namespace view
                 tmrCalculator.Enabled = true;
             }
         }
-        public static bool IsFloat(ValueType value)
-        {
-            return (value is float | value is double | value is Decimal);
-        }
+
+        /*lblEmailView.Text*/
+
+        /*cbxCantonRegistration.Text*/
+        /*Convert.ToDouble(txtPower.Text)*/
+        /*cbxPower.Text*/
+        /*Convert.ToDouble(txtWeight.Text)*/
+        /*Convert.ToDouble(txtCO2Emission.Text)*/
+        /*licenseResult*/
+
+        /*txtInsurancepY.Text*/
+        /*Convert.ToDouble(txtTirespY.Text)*/
+        /*Convert.ToDouble(txtRevisionpY.Text)*/
+        /*supportsResult*/
+
+        /*lblEmailView.Text*/
+        /*Convert.ToDouble(txtCarPurchasePrice.Text)*/
+        /*Convert.ToDouble(txtCarSLifetimeEstimation.Text)*/
+        /*initialCarResult*/
+
+        /*lblEmailView.Text*/
+        /*cbxFuel.Text*/
+        /*Convert.ToDouble(txtCarSCp100km.Text)*/
+        /*Convert.ToDouble(txtDpM.Text)*/
+        /*consommationResult*/
     }
 }
