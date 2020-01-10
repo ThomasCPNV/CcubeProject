@@ -310,7 +310,7 @@
             this.txtAverageFuelPricePerLiter.ReadOnly = true;
             this.txtAverageFuelPricePerLiter.Size = new System.Drawing.Size(36, 13);
             this.txtAverageFuelPricePerLiter.TabIndex = 3;
-            this.txtAverageFuelPricePerLiter.Text = "...";
+            this.txtAverageFuelPricePerLiter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblAverageFuelPricePerLiter
             // 
@@ -333,6 +333,7 @@
             this.cbxFuel.Name = "cbxFuel";
             this.cbxFuel.Size = new System.Drawing.Size(107, 21);
             this.cbxFuel.TabIndex = 1;
+            this.cbxFuel.SelectedIndexChanged += new System.EventHandler(this.cbxFuel_SelectedIndexChanged);
             // 
             // lblFuel
             // 
@@ -951,6 +952,7 @@
             // tmrCalculator
             // 
             this.tmrCalculator.Enabled = true;
+            this.tmrCalculator.Interval = 300;
             this.tmrCalculator.Tick += new System.EventHandler(this.tmrCalculator_Tick);
             // 
             // btnRegisterACar
