@@ -42,9 +42,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDpM = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDpM = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCarSCp100km = new System.Windows.Forms.Label();
             this.txtCarSCp100km = new System.Windows.Forms.TextBox();
             this.lblChf = new System.Windows.Forms.Label();
             this.txtAverageFuelPricePerLiter = new System.Windows.Forms.TextBox();
@@ -59,20 +59,19 @@
             this.txtInitialCarSPriceCpY = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblCarSLifetimeEstimation = new System.Windows.Forms.Label();
             this.txtCarSLifetimeEstimation = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtCarPurchasePrice = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblCarPurchasePrice = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ckbUseEssentialSupports = new System.Windows.Forms.CheckBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtRevisionpY = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblRevisionpY = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtTirespY = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblTirespY = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtEssentialsMaintainsCpM = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -81,12 +80,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtInsurancepY = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblInsurancepY = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ckbUseLicencePlate = new System.Windows.Forms.CheckBox();
             this.txtCO2Emission = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lblCO2Emission = new System.Windows.Forms.Label();
+            this.lblWeight = new System.Windows.Forms.Label();
             this.cbxPower = new System.Windows.Forms.ComboBox();
             this.cbxCantonRegistration = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -96,7 +95,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblPower = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtPower = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -111,6 +110,7 @@
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
             this.btnRegisterACar = new System.Windows.Forms.Button();
             this.btnCarList = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -158,9 +158,9 @@
             this.gpbConsommation.Controls.Add(this.label5);
             this.gpbConsommation.Controls.Add(this.label4);
             this.gpbConsommation.Controls.Add(this.txtDpM);
-            this.gpbConsommation.Controls.Add(this.label3);
+            this.gpbConsommation.Controls.Add(this.lblDpM);
             this.gpbConsommation.Controls.Add(this.label2);
-            this.gpbConsommation.Controls.Add(this.label1);
+            this.gpbConsommation.Controls.Add(this.lblCarSCp100km);
             this.gpbConsommation.Controls.Add(this.txtCarSCp100km);
             this.gpbConsommation.Controls.Add(this.lblChf);
             this.gpbConsommation.Controls.Add(this.txtAverageFuelPricePerLiter);
@@ -259,14 +259,14 @@
             this.txtDpM.Size = new System.Drawing.Size(35, 20);
             this.txtDpM.TabIndex = 9;
             // 
-            // label3
+            // lblDpM
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Distance/month";
+            this.lblDpM.AutoSize = true;
+            this.lblDpM.Location = new System.Drawing.Point(4, 137);
+            this.lblDpM.Name = "lblDpM";
+            this.lblDpM.Size = new System.Drawing.Size(83, 13);
+            this.lblDpM.TabIndex = 8;
+            this.lblDpM.Text = "Distance/month";
             // 
             // label2
             // 
@@ -277,14 +277,14 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "l";
             // 
-            // label1
+            // lblCarSCp100km
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Car\'s consommation/100km";
+            this.lblCarSCp100km.AutoSize = true;
+            this.lblCarSCp100km.Location = new System.Drawing.Point(4, 92);
+            this.lblCarSCp100km.Name = "lblCarSCp100km";
+            this.lblCarSCp100km.Size = new System.Drawing.Size(138, 13);
+            this.lblCarSCp100km.TabIndex = 6;
+            this.lblCarSCp100km.Text = "Car\'s consommation/100km";
             // 
             // txtCarSCp100km
             // 
@@ -354,11 +354,11 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.lblCarSLifetimeEstimation);
             this.groupBox1.Controls.Add(this.txtCarSLifetimeEstimation);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.txtCarPurchasePrice);
-            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.lblCarPurchasePrice);
             this.groupBox1.Location = new System.Drawing.Point(346, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(167, 242);
@@ -435,23 +435,14 @@
             this.label12.TabIndex = 4;
             this.label12.Text = "Costs/year";
             // 
-            // label15
+            // lblCarSLifetimeEstimation
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(49, 111);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "years";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 92);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Car lifetime estimation";
+            this.lblCarSLifetimeEstimation.AutoSize = true;
+            this.lblCarSLifetimeEstimation.Location = new System.Drawing.Point(4, 92);
+            this.lblCarSLifetimeEstimation.Name = "lblCarSLifetimeEstimation";
+            this.lblCarSLifetimeEstimation.Size = new System.Drawing.Size(108, 13);
+            this.lblCarSLifetimeEstimation.TabIndex = 6;
+            this.lblCarSLifetimeEstimation.Text = "Car lifetime estimation";
             // 
             // txtCarSLifetimeEstimation
             // 
@@ -476,24 +467,24 @@
             this.txtCarPurchasePrice.Size = new System.Drawing.Size(36, 20);
             this.txtCarPurchasePrice.TabIndex = 3;
             // 
-            // label18
+            // lblCarPurchasePrice
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(4, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(96, 13);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Car purchase price";
+            this.lblCarPurchasePrice.AutoSize = true;
+            this.lblCarPurchasePrice.Location = new System.Drawing.Point(4, 19);
+            this.lblCarPurchasePrice.Name = "lblCarPurchasePrice";
+            this.lblCarPurchasePrice.Size = new System.Drawing.Size(96, 13);
+            this.lblCarPurchasePrice.TabIndex = 2;
+            this.lblCarPurchasePrice.Text = "Car purchase price";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ckbUseEssentialSupports);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.txtRevisionpY);
-            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Controls.Add(this.lblRevisionpY);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.txtTirespY);
-            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.lblTirespY);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtEssentialsMaintainsCpM);
             this.groupBox2.Controls.Add(this.label14);
@@ -502,7 +493,7 @@
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.txtInsurancepY);
-            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.lblInsurancepY);
             this.groupBox2.Location = new System.Drawing.Point(177, 54);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(171, 242);
@@ -537,14 +528,14 @@
             this.txtRevisionpY.Size = new System.Drawing.Size(36, 20);
             this.txtRevisionpY.TabIndex = 20;
             // 
-            // label26
+            // lblRevisionpY
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(4, 115);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(73, 13);
-            this.label26.TabIndex = 19;
-            this.label26.Text = "Revision/year";
+            this.lblRevisionpY.AutoSize = true;
+            this.lblRevisionpY.Location = new System.Drawing.Point(4, 115);
+            this.lblRevisionpY.Name = "lblRevisionpY";
+            this.lblRevisionpY.Size = new System.Drawing.Size(73, 13);
+            this.lblRevisionpY.TabIndex = 19;
+            this.lblRevisionpY.Text = "Revision/year";
             // 
             // label21
             // 
@@ -562,14 +553,14 @@
             this.txtTirespY.Size = new System.Drawing.Size(36, 20);
             this.txtTirespY.TabIndex = 17;
             // 
-            // label22
+            // lblTirespY
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(4, 68);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 13);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Tires/year";
+            this.lblTirespY.AutoSize = true;
+            this.lblTirespY.Location = new System.Drawing.Point(4, 68);
+            this.lblTirespY.Name = "lblTirespY";
+            this.lblTirespY.Size = new System.Drawing.Size(55, 13);
+            this.lblTirespY.TabIndex = 16;
+            this.lblTirespY.Text = "Tires/year";
             // 
             // label13
             // 
@@ -645,21 +636,21 @@
             this.txtInsurancepY.Size = new System.Drawing.Size(36, 20);
             this.txtInsurancepY.TabIndex = 3;
             // 
-            // label24
+            // lblInsurancepY
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(4, 19);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 13);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Insurance/year";
+            this.lblInsurancepY.AutoSize = true;
+            this.lblInsurancepY.Location = new System.Drawing.Point(4, 19);
+            this.lblInsurancepY.Name = "lblInsurancepY";
+            this.lblInsurancepY.Size = new System.Drawing.Size(79, 13);
+            this.lblInsurancepY.TabIndex = 2;
+            this.lblInsurancepY.Text = "Insurance/year";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.ckbUseLicencePlate);
             this.groupBox3.Controls.Add(this.txtCO2Emission);
-            this.groupBox3.Controls.Add(this.label35);
-            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.lblCO2Emission);
+            this.groupBox3.Controls.Add(this.lblWeight);
             this.groupBox3.Controls.Add(this.cbxPower);
             this.groupBox3.Controls.Add(this.cbxCantonRegistration);
             this.groupBox3.Controls.Add(this.label27);
@@ -669,7 +660,7 @@
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.label31);
-            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.lblPower);
             this.groupBox3.Controls.Add(this.txtWeight);
             this.groupBox3.Controls.Add(this.txtPower);
             this.groupBox3.Controls.Add(this.label34);
@@ -698,23 +689,23 @@
             this.txtCO2Emission.Size = new System.Drawing.Size(52, 20);
             this.txtCO2Emission.TabIndex = 20;
             // 
-            // label35
+            // lblCO2Emission
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(4, 134);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 13);
-            this.label35.TabIndex = 19;
-            this.label35.Text = "CO2 Emission";
+            this.lblCO2Emission.AutoSize = true;
+            this.lblCO2Emission.Location = new System.Drawing.Point(4, 134);
+            this.lblCO2Emission.Name = "lblCO2Emission";
+            this.lblCO2Emission.Size = new System.Drawing.Size(72, 13);
+            this.lblCO2Emission.TabIndex = 19;
+            this.lblCO2Emission.Text = "CO2 Emission";
             // 
-            // label33
+            // lblWeight
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(4, 111);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(41, 13);
-            this.label33.TabIndex = 18;
-            this.label33.Text = "Weight";
+            this.lblWeight.AutoSize = true;
+            this.lblWeight.Location = new System.Drawing.Point(4, 111);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(41, 13);
+            this.lblWeight.TabIndex = 18;
+            this.lblWeight.Text = "Weight";
             // 
             // cbxPower
             // 
@@ -833,14 +824,14 @@
             this.label31.TabIndex = 7;
             this.label31.Text = "kg";
             // 
-            // label32
+            // lblPower
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(4, 68);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(37, 13);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "Power";
+            this.lblPower.AutoSize = true;
+            this.lblPower.Location = new System.Drawing.Point(4, 68);
+            this.lblPower.Name = "lblPower";
+            this.lblPower.Size = new System.Drawing.Size(37, 13);
+            this.lblPower.TabIndex = 6;
+            this.lblPower.Text = "Power";
             // 
             // txtWeight
             // 
@@ -974,6 +965,15 @@
             this.btnCarList.Text = "Car list";
             this.btnCarList.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(49, 111);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "years";
+            // 
             // FormCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1028,9 +1028,9 @@
         private System.Windows.Forms.TextBox txtAverageFuelPricePerLiter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDpM;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDpM;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCarSCp100km;
         private System.Windows.Forms.TextBox txtCarSCp100km;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtConsommationCpM;
@@ -1045,19 +1045,18 @@
         private System.Windows.Forms.TextBox txtInitialCarSPriceCpY;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblCarSLifetimeEstimation;
         private System.Windows.Forms.TextBox txtCarSLifetimeEstimation;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtCarPurchasePrice;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblCarPurchasePrice;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtRevisionpY;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblRevisionpY;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtTirespY;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblTirespY;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtEssentialsMaintainsCpM;
         private System.Windows.Forms.Label label14;
@@ -1066,7 +1065,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtInsurancepY;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblInsurancepY;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbxCantonRegistration;
         private System.Windows.Forms.Label label27;
@@ -1076,14 +1075,14 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblPower;
         private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.TextBox txtPower;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox cbxPower;
         private System.Windows.Forms.TextBox txtCO2Emission;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblCO2Emission;
+        private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox txtResultCpM;
         private System.Windows.Forms.Label label37;
@@ -1099,5 +1098,6 @@
         private System.Windows.Forms.CheckBox ckbUseInitialCarSPrice;
         private System.Windows.Forms.CheckBox ckbUseEssentialSupports;
         private System.Windows.Forms.Button btnCarList;
+        private System.Windows.Forms.Label label15;
     }
 }

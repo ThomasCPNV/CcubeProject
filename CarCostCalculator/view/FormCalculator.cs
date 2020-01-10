@@ -35,11 +35,22 @@ namespace view
 
         private void tmrCalculator_Tick(object sender, EventArgs e)
         {
+            entryVerification(txtPower, lblPower.Text);
+            entryVerification(txtWeight, lblWeight.Text);
+            entryVerification(txtCO2Emission, lblCO2Emission.Text);
+            entryVerification(txtInsurancepY, lblInsurancepY.Text);
+            entryVerification(txtTirespY, lblTirespY.Text);
+            entryVerification(txtRevisionpY, lblRevisionpY.Text);
+            entryVerification(txtCarPurchasePrice, lblCarPurchasePrice.Text);
+            entryVerification(txtCarSLifetimeEstimation, lblCarSLifetimeEstimation.Text);
+            entryVerification(txtCarSCp100km, lblCarSCp100km.Text);
+            entryVerification(txtDpM, lblDpM.Text);
+
             if (cbxCantonRegistration.Text != "" && txtPower.Text != "" && cbxPower.Text != "" && txtWeight.Text != "" && txtCO2Emission.Text != "")
             {
                 licenseResult = dataManager.CalculLicensePlate(cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), cbxPower.Text, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
-                txtLicensePlateCpY.Text = licenseResult.ToString();
-                txtLicensePlateCpM.Text = (licenseResult / 12).ToString();
+                txtLicensePlateCpY.Text = Math.Round(licenseResult,2).ToString();
+                txtLicensePlateCpM.Text = Math.Round((licenseResult / 12),2).ToString();
             }
             else
             {
@@ -52,8 +63,8 @@ namespace view
             if(txtInsurancepY.Text != "" && txtTirespY.Text != "" && txtRevisionpY.Text != "")
             {
                 supportsResult = dataManager.CalculEssentialMaintain(Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text));
-                txtEssentialsMaintainsCpY.Text = supportsResult.ToString();
-                txtEssentialsMaintainsCpM.Text = (supportsResult / 12).ToString();
+                txtEssentialsMaintainsCpY.Text = Math.Round(supportsResult,2).ToString();
+                txtEssentialsMaintainsCpM.Text = Math.Round((supportsResult / 12),2).ToString();
             }
             else
             {
@@ -66,8 +77,8 @@ namespace view
             if(txtCarPurchasePrice.Text != "" && txtCarSLifetimeEstimation.Text != "")
             {
                 initialCarResult = dataManager.CalculInitialPrice(Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToInt16(txtCarSLifetimeEstimation.Text));
-                txtInitialCarSPriceCpY.Text = initialCarResult.ToString();
-                txtInitialCarSPriceCpM.Text = (initialCarResult / 12).ToString();
+                txtInitialCarSPriceCpY.Text = Math.Round(initialCarResult,2).ToString();
+                txtInitialCarSPriceCpM.Text = Math.Round((initialCarResult / 12),2).ToString();
             }
             else
             {
@@ -81,8 +92,8 @@ namespace view
             {
                 double fuelPrice = dataManager.CalculFuelPrice(cbxFuel.Text);
                 consommationResult = dataManager.CalculConsommation(fuelPrice, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
-                txtConsommationCpY.Text = consommationResult.ToString();
-                txtConsommationCpM.Text = (consommationResult / 12).ToString();
+                txtConsommationCpY.Text = Math.Round(consommationResult,2).ToString();
+                txtConsommationCpM.Text = Math.Round((consommationResult / 12),2).ToString();
             }
             else
             {
@@ -93,8 +104,8 @@ namespace view
             if (!ckbUseConsommation.Checked) { consommationResult = 0; }
                 
             finalResult = licenseResult + supportsResult + initialCarResult + consommationResult;
-            txtResultCpY.Text = finalResult.ToString();
-            txtResultCpM.Text = (finalResult / 12).ToString();
+            txtResultCpY.Text = Math.Round(finalResult,2).ToString();
+            txtResultCpM.Text = Math.Round((finalResult / 12),2).ToString();
         }
 
         // Datas verification for save on database.
@@ -134,6 +145,23 @@ namespace view
         private void cbxFuel_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtAverageFuelPricePerLiter.Text = dataManager.CalculFuelPrice(cbxFuel.Text).ToString();
+        }
+
+        private void entryVerification(TextBox entry, string label)
+        {
+            if (!Double.TryParse(entry.Text, out double convertEntry) && entry.Text != "")
+            {
+                tmrCalculator.Enabled = false;
+
+                MessageBox.Show("Error: The '" + label + "' entry have a bad value.");
+                entry.Text = "";
+
+                tmrCalculator.Enabled = true;
+            }
+        }
+        public static bool IsFloat(ValueType value)
+        {
+            return (value is float | value is double | value is Decimal);
         }
     }
 }
