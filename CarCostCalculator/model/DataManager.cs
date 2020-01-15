@@ -10,7 +10,7 @@ namespace model
     {
         private DBConnect dbConnect = new DBConnect();
 
-        public bool LicensePlate(string email, string canton, double power, string formatPower, double weight, double co2Emission, double costYear)
+        public bool LicensePlate(string canton, double power, string formatPower, double weight, double co2Emission, double costYear)
         {
             bool licensePlate = true;
 
@@ -31,7 +31,7 @@ namespace model
             return licensePlate;
         }
 
-        public bool EssentialMaintain(string email, double insuranceYear, double tiresYear, double revisionYear, double costYear)
+        public bool EssentialMaintain(double insuranceYear, double tiresYear, double revisionYear, double costYear)
         {
             bool essentialMaintain = true;
 
@@ -47,7 +47,7 @@ namespace model
             return essentialMaintain;
         }
 
-        public bool InitialPrice(string email, double purchasePrice, double lifeTime, double costYear)
+        public bool InitialPrice(double purchasePrice, double lifeTime, double costYear)
         {
             bool initialPrice = true;
 
@@ -63,7 +63,7 @@ namespace model
             return initialPrice;
         }
 
-        public bool Consommation(string email, string fuel, double consomation, double distanceMonth, double costYear)
+        public bool Consommation(string fuel, double consomation, double distanceMonth, double costYear)
         {
             bool consommation = true;
 
@@ -979,9 +979,10 @@ namespace model
             return costYear;
         }
 
-        public double CalculConsommation(double fuelPrice, double consomation, double distanceMonth)
+        public double CalculConsommation(string fuel, double consomation, double distanceMonth)
         {
             double costYear = 0;
+            double fuelPrice = CalculFuelPrice(fuel);
 
             costYear = (distanceMonth * 12 / 100) * consomation * fuelPrice;
 
