@@ -21,7 +21,7 @@ namespace model
 
             if(dbConnect.InsertLicensePlate(canton, power, weight, co2Emission, costYear))
             {
-                dbConnect.InsertIdLicensePlate(email);
+                dbConnect.InsertIdLicensePlate();
             }
             else
             {
@@ -37,7 +37,7 @@ namespace model
 
             if(dbConnect.InsertEssentialMaintain(insuranceYear, tiresYear, revisionYear, costYear))
             {
-                dbConnect.InsertIdEssentialMaintain(email);
+                dbConnect.InsertIdEssentialMaintain();
             }
             else
             {
@@ -53,7 +53,7 @@ namespace model
 
             if(dbConnect.InsertInitialCarPrice(purchasePrice, lifeTime, costYear))
             {
-                dbConnect.InsertIdIntialPrice(email);
+                dbConnect.InsertIdIntialPrice();
             }
             else
             {
@@ -69,7 +69,7 @@ namespace model
 
             if(dbConnect.InsertConsommation(fuel, consomation, distanceMonth, costYear))
             {
-                dbConnect.InsertIdConsommation(email);
+                dbConnect.InsertIdConsommation();
             }
             else
             {
