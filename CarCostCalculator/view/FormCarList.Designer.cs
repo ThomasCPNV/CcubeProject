@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lstCar = new System.Windows.Forms.ListView();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.Brand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstCar

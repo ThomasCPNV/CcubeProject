@@ -126,6 +126,7 @@ namespace view
         private void btnCarList_Click(object sender, EventArgs e)
         {
             FormCarList form = new FormCarList();
+            form.email = Email;
             form.ShowDialog();
         }
 

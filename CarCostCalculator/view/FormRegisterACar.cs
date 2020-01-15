@@ -15,6 +15,7 @@ namespace view
     public partial class FormRegisterACar : Form
     {
         DataManager dataManager = new DataManager();
+        DBConnect dBConnect = new DBConnect();
         public string email;
 
         public string cantonRegistration;
@@ -50,6 +51,7 @@ namespace view
         {
             try
             {
+                dBConnect.InsertCar(txtBrand.Text, txtModel.Text, txtVersion.Text, cbxType.SelectedText, Convert.ToInt16(cbxReleaseYear.SelectedText));
                 dataManager.EssentialMaintain(email, insurance, tires, revision, supportsResult);
                 dataManager.InitialPrice(email, carPurchasePrice, carSLifetimeEstimation, initialCarResult);
                 dataManager.Consommation(email, fuel, carSCp100km, dpM, consommationResult);
