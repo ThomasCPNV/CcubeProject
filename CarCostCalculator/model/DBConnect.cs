@@ -158,7 +158,6 @@ namespace model
             {
                 return false;
             }
-
             CloseConnection();
 
             return true;
@@ -189,7 +188,6 @@ namespace model
             {
                 insertLicensePlate = false;
             }
-
             CloseConnection();
 
             return insertLicensePlate;
@@ -212,7 +210,6 @@ namespace model
             {
                 insertEssentialMaintain = false;
             }
-
             CloseConnection();
 
             return insertEssentialMaintain;
@@ -235,7 +232,6 @@ namespace model
             {
                 insertInitialCarPrice = false;
             }
-
             CloseConnection();
 
             return insertInitialCarPrice;
@@ -258,7 +254,6 @@ namespace model
             {
                 insertConsommation = false;
             }
-
             CloseConnection();
 
             return insertConsommation;
@@ -281,7 +276,6 @@ namespace model
             {
                 insertCar = false;
             }
-
             CloseConnection();
 
             return insertCar;
@@ -523,6 +517,8 @@ namespace model
 
         public List<string> GetLicensePlate(string email)
         {
+            OpenConnection();
+
             List<string> licensePlate = null;
             int idUserLicensePlate = GetIdUserLicense(email);
 
@@ -544,6 +540,8 @@ namespace model
                 }
                 reader.Close();
             }
+            CloseConnection();
+
             return licensePlate;
         }
 
@@ -574,6 +572,8 @@ namespace model
 
         public List<string> GetEssentialMaintain(string email)
         {
+            OpenConnection();
+
             List<string> essentialMaintain = null;
             int idUserEssential = GetIdUserEssential(email);
 
@@ -594,6 +594,8 @@ namespace model
                 }
                 reader.Close();
             }
+            CloseConnection();
+
             return essentialMaintain;
         }
 
@@ -624,6 +626,8 @@ namespace model
 
         public List<string> GetInitialPrice(string email)
         {
+            OpenConnection();
+
             List<string> initialPrice = null;
             int idUserInitial = GetIdUserInitial(email);
 
@@ -644,6 +648,8 @@ namespace model
                 }
                 reader.Close();
             }
+            CloseConnection();
+
             return initialPrice;
         }
 
@@ -674,6 +680,8 @@ namespace model
 
         public List<string> GetConsommation(string email)
         {
+            OpenConnection();
+
             List<string> consommation = null;
             int idUserConsommation = GetIdUserConsommation(email);
 
@@ -694,11 +702,15 @@ namespace model
                 }
                 reader.Close();
             }
+            CloseConnection();
+
             return consommation;
         }
 
         public List<string> GetCar(string email)
         {
+            OpenConnection();
+
             List<string> car = null;
             int idUser = GetIdUser(email);
 
@@ -719,6 +731,8 @@ namespace model
                 }
                 reader.Close();
             }
+            CloseConnection();
+
             return car;
         }
     }
