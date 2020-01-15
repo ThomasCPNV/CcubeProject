@@ -123,7 +123,19 @@ namespace view
             else { btnRegisterACar.Enabled = false; }
         }
 
-        // Datas verification for save on database.
+        private void btnCarList_Click(object sender, EventArgs e)
+        {
+            FormCarList form = new FormCarList();
+            form.ShowDialog();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            FormHistory form = new FormHistory();
+            form.email = Email;
+            form.ShowDialog();
+        }
+
         private void btnRegisterACar_Click(object sender, EventArgs e)
         {
             if (txtPower.Text != ""

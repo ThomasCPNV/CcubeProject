@@ -111,6 +111,7 @@
             this.tmrCalculator = new System.Windows.Forms.Timer(this.components);
             this.btnRegisterACar = new System.Windows.Forms.Button();
             this.btnCarList = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.gpbConsommation.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -993,6 +994,17 @@
             this.btnCarList.TabIndex = 25;
             this.btnCarList.Text = "Car list";
             this.btnCarList.UseVisualStyleBackColor = true;
+            this.btnCarList.Click += new System.EventHandler(this.btnCarList_Click);
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.Location = new System.Drawing.Point(624, 331);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(57, 23);
+            this.btnHistory.TabIndex = 26;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // FormCalculator
             // 
@@ -1000,6 +1012,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 407);
             this.ControlBox = false;
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnCarList);
             this.Controls.Add(this.btnRegisterACar);
             this.Controls.Add(this.label41);
@@ -1119,5 +1132,6 @@
         private System.Windows.Forms.TextBox txtPower;
         private System.Windows.Forms.ComboBox cbxPower;
         private System.Windows.Forms.TextBox txtCO2Emission;
+        private System.Windows.Forms.Button btnHistory;
     }
 }

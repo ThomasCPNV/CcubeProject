@@ -202,7 +202,7 @@
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblBrand);
             this.Name = "FormRegisterACar";
-            this.Text = "Car Cost Calculator - Car register";
+            this.Text = "Car register";
             this.ResumeLayout(false);
             this.PerformLayout();
 

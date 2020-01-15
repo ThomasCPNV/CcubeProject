@@ -543,6 +543,7 @@ namespace model
             {
                 //we go through the result of the select, we might get only one response. 
                 //Despite this, we use a while
+
                 while (reader.Read())
                 {
                     licensePlate.Add(reader.GetString(0));
