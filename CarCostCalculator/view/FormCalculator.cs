@@ -31,6 +31,8 @@ namespace view
             cbxCantonRegistration.SelectedIndex = 23;
             cbxPower.SelectedIndex = 0;
             cbxFuel.SelectedIndex = 0;
+
+            btnRegisterACar.Enabled = false;
         }
 
         private void tmrCalculator_Tick(object sender, EventArgs e)
@@ -106,36 +108,65 @@ namespace view
             finalResult = licenseResult + supportsResult + initialCarResult + consommationResult;
             txtResultCpY.Text = Math.Round(finalResult, 2).ToString();
             txtResultCpM.Text = Math.Round((finalResult / 12), 2).ToString();
+
+            if (txtPower.Text != ""
+                && txtWeight.Text != ""
+                && txtCO2Emission.Text != ""
+                && txtInsurancepY.Text != ""
+                && txtTirespY.Text != ""
+                && txtRevisionpY.Text != ""
+                && txtCarPurchasePrice.Text != ""
+                && txtCarSLifetimeEstimation.Text != ""
+                && txtCarSCp100km.Text != ""
+                && txtDpM.Text != "")
+            { btnRegisterACar.Enabled = true; }
+            else { btnRegisterACar.Enabled = false; }
         }
 
         // Datas verification for save on database.
         private void btnRegisterACar_Click(object sender, EventArgs e)
         {
-            FormRegisterACar form = new FormRegisterACar();
-            form.email = Email;
+            if (txtPower.Text != ""
+                && txtWeight.Text != ""
+                && txtCO2Emission.Text != ""
+                && txtInsurancepY.Text != ""
+                && txtTirespY.Text != ""
+                && txtRevisionpY.Text != ""
+                && txtCarPurchasePrice.Text != ""
+                && txtCarSLifetimeEstimation.Text != ""
+                && txtCarSCp100km.Text != ""
+                && txtDpM.Text != "")
+            {
+                FormRegisterACar form = new FormRegisterACar();
+                form.email = Email;
 
-            form.cantonRegistration = CantonRegistration;
-            form.carPower = CarPower;
-            form.powerType = PowerType;
-            form.weight = Weight;
-            form.cO2Emission = CO2Emission;
-            form.licenseResult = licenseResult;
+                form.cantonRegistration = CantonRegistration;
+                form.carPower = CarPower;
+                form.powerType = PowerType;
+                form.weight = Weight;
+                form.cO2Emission = CO2Emission;
+                form.licenseResult = licenseResult;
 
-            form.insurance = Insurance;
-            form.tires = Tires;
-            form.revision = Revision;
-            form.supportsResult = supportsResult;
+                form.insurance = Insurance;
+                form.tires = Tires;
+                form.revision = Revision;
+                form.supportsResult = supportsResult;
 
-            form.carPurchasePrice = CarPurchasePrice;
-            form.carSLifetimeEstimation = CarSLifetimeEstimation;
-            form.initialCarResult = initialCarResult;
+                form.carPurchasePrice = CarPurchasePrice;
+                form.carSLifetimeEstimation = CarSLifetimeEstimation;
+                form.initialCarResult = initialCarResult;
 
-            form.fuel = Fuel;
-            form.carSCp100km = CarSCp100km;
-            form.dpM = DpM;
-            form.consommationResult = consommationResult;
+                form.fuel = Fuel;
+                form.carSCp100km = CarSCp100km;
+                form.dpM = DpM;
+                form.consommationResult = consommationResult;
 
-        form.ShowDialog();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Error : All entries need a value !");
+            }
         }
 
         // Calculator quit button.

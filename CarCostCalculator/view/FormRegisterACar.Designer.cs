@@ -28,91 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.lblModel = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.txtVersion = new System.Windows.Forms.TextBox();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblReleaseYear = new System.Windows.Forms.Label();
+            this.cbxType = new System.Windows.Forms.ComboBox();
+            this.cbxReleaseYear = new System.Windows.Forms.ComboBox();
             this.btnRegisterACarCancel = new System.Windows.Forms.Button();
             this.btnRegisterCar = new System.Windows.Forms.Button();
+            this.tmr = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // label1
+            // lblBrand
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Brand*";
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(12, 15);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(39, 13);
+            this.lblBrand.TabIndex = 0;
+            this.lblBrand.Text = "Brand*";
             // 
-            // label2
+            // lblModel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Model*";
+            this.lblModel.AutoSize = true;
+            this.lblModel.Location = new System.Drawing.Point(12, 41);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(40, 13);
+            this.lblModel.TabIndex = 1;
+            this.lblModel.Text = "Model*";
             // 
-            // label3
+            // lblVersion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Version*";
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(12, 67);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(46, 13);
+            this.lblVersion.TabIndex = 2;
+            this.lblVersion.Text = "Version*";
             // 
-            // textBox1
+            // txtBrand
             // 
-            this.textBox1.Location = new System.Drawing.Point(64, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtBrand.Location = new System.Drawing.Point(64, 12);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(100, 20);
+            this.txtBrand.TabIndex = 3;
             // 
-            // textBox2
+            // txtModel
             // 
-            this.textBox2.Location = new System.Drawing.Point(64, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtModel.Location = new System.Drawing.Point(64, 38);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(100, 20);
+            this.txtModel.TabIndex = 4;
             // 
-            // textBox3
+            // txtVersion
             // 
-            this.textBox3.Location = new System.Drawing.Point(64, 64);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtVersion.Location = new System.Drawing.Point(64, 64);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(100, 20);
+            this.txtVersion.TabIndex = 5;
             // 
-            // label4
+            // lblType
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 121);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Type";
+            this.lblType.AutoSize = true;
+            this.lblType.Location = new System.Drawing.Point(12, 121);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(31, 13);
+            this.lblType.TabIndex = 6;
+            this.lblType.Text = "Type";
             // 
-            // label5
+            // lblReleaseYear
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Release year";
+            this.lblReleaseYear.AutoSize = true;
+            this.lblReleaseYear.Location = new System.Drawing.Point(12, 159);
+            this.lblReleaseYear.Name = "lblReleaseYear";
+            this.lblReleaseYear.Size = new System.Drawing.Size(69, 13);
+            this.lblReleaseYear.TabIndex = 7;
+            this.lblReleaseYear.Text = "Release year";
             // 
-            // comboBox1
+            // cbxType
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Items.AddRange(new object[] {
             "Hatchback",
             "Sedan",
             "MPV",
@@ -120,16 +122,16 @@
             "Crossover",
             "Coupe",
             "Convertible"});
-            this.comboBox1.Location = new System.Drawing.Point(64, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cbxType.Location = new System.Drawing.Point(64, 118);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(100, 21);
+            this.cbxType.TabIndex = 6;
             // 
-            // comboBox2
+            // cbxReleaseYear
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbxReleaseYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxReleaseYear.FormattingEnabled = true;
+            this.cbxReleaseYear.Items.AddRange(new object[] {
             "2020",
             "2019",
             "2018",
@@ -151,10 +153,10 @@
             "2002",
             "2001",
             "2000"});
-            this.comboBox2.Location = new System.Drawing.Point(87, 156);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(77, 21);
-            this.comboBox2.TabIndex = 9;
+            this.cbxReleaseYear.Location = new System.Drawing.Point(87, 156);
+            this.cbxReleaseYear.Name = "cbxReleaseYear";
+            this.cbxReleaseYear.Size = new System.Drawing.Size(77, 21);
+            this.cbxReleaseYear.TabIndex = 1;
             // 
             // btnRegisterACarCancel
             // 
@@ -164,6 +166,7 @@
             this.btnRegisterACarCancel.TabIndex = 10;
             this.btnRegisterACarCancel.Text = "Cancel";
             this.btnRegisterACarCancel.UseVisualStyleBackColor = true;
+            this.btnRegisterACarCancel.Click += new System.EventHandler(this.btnRegisterACarCancel_Click);
             // 
             // btnRegisterCar
             // 
@@ -175,6 +178,12 @@
             this.btnRegisterCar.UseVisualStyleBackColor = true;
             this.btnRegisterCar.Click += new System.EventHandler(this.btnRegisterCar_Click);
             // 
+            // tmr
+            // 
+            this.tmr.Enabled = true;
+            this.tmr.Interval = 300;
+            this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
+            // 
             // FormRegisterACar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,16 +191,16 @@
             this.ClientSize = new System.Drawing.Size(180, 226);
             this.Controls.Add(this.btnRegisterCar);
             this.Controls.Add(this.btnRegisterACarCancel);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxReleaseYear);
+            this.Controls.Add(this.cbxType);
+            this.Controls.Add(this.lblReleaseYear);
+            this.Controls.Add(this.lblType);
+            this.Controls.Add(this.txtVersion);
+            this.Controls.Add(this.txtModel);
+            this.Controls.Add(this.txtBrand);
+            this.Controls.Add(this.lblVersion);
+            this.Controls.Add(this.lblModel);
+            this.Controls.Add(this.lblBrand);
             this.Name = "FormRegisterACar";
             this.Text = "Car Cost Calculator - Car register";
             this.ResumeLayout(false);
@@ -201,17 +210,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.Label lblModel;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txtVersion;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblReleaseYear;
+        private System.Windows.Forms.ComboBox cbxType;
+        private System.Windows.Forms.ComboBox cbxReleaseYear;
         private System.Windows.Forms.Button btnRegisterACarCancel;
         private System.Windows.Forms.Button btnRegisterCar;
+        private System.Windows.Forms.Timer tmr;
     }
 }
