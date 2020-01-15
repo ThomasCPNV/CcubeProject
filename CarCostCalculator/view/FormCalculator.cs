@@ -92,8 +92,7 @@ namespace view
 
             if (cbxFuel.Text != "" && txtCarSCp100km.Text != "" && txtDpM.Text != "")
             {
-                double fuelPrice = dataManager.CalculFuelPrice(cbxFuel.Text);
-                consommationResult = dataManager.CalculConsommation(fuelPrice, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
+                consommationResult = dataManager.CalculConsommation(cbxFuel.Text, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
                 txtConsommationCpY.Text = Math.Round(consommationResult, 2).ToString();
                 txtConsommationCpM.Text = Math.Round((consommationResult / 12), 2).ToString();
             }

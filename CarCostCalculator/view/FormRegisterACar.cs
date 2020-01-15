@@ -14,7 +14,6 @@ namespace view
 {
     public partial class FormRegisterACar : Form
     {
-        DataManager dataManager = new DataManager();
         DBConnect dBConnect = new DBConnect();
         public string email;
 
@@ -52,10 +51,10 @@ namespace view
             try
             {
                 dBConnect.InsertCar(txtBrand.Text, txtModel.Text, txtVersion.Text, cbxType.SelectedText, Convert.ToInt16(cbxReleaseYear.SelectedText));
-                dataManager.EssentialMaintain(email, insurance, tires, revision, supportsResult);
-                dataManager.InitialPrice(email, carPurchasePrice, carSLifetimeEstimation, initialCarResult);
-                dataManager.Consommation(email, fuel, carSCp100km, dpM, consommationResult);
-                dataManager.LicensePlate(email, cantonRegistration, carPower, powerType, weight, cO2Emission, licenseResult);
+                dBConnect.InsertLicensePlate(cantonRegistration, carPower, weight, cO2Emission, licenseResult);
+                dBConnect.InsertEssentialMaintain(insurance, tires, revision, supportsResult);
+                dBConnect.InsertInitialCarPrice(carPurchasePrice, carSLifetimeEstimation, initialCarResult);
+                dBConnect.InsertConsommation(fuel, carSCp100km, dpM, consommationResult);
                 MessageBox.Show("Insertion in database completed !");
             }
             catch
