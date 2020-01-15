@@ -49,8 +49,8 @@ namespace view
             if (cbxCantonRegistration.Text != "" && txtPower.Text != "" && cbxPower.Text != "" && txtWeight.Text != "" && txtCO2Emission.Text != "")
             {
                 licenseResult = dataManager.CalculLicensePlate(cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), cbxPower.Text, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
-                txtLicensePlateCpY.Text = Math.Round(licenseResult,2).ToString();
-                txtLicensePlateCpM.Text = Math.Round((licenseResult / 12),2).ToString();
+                txtLicensePlateCpY.Text = Math.Round(licenseResult, 2).ToString();
+                txtLicensePlateCpM.Text = Math.Round((licenseResult / 12), 2).ToString();
             }
             else
             {
@@ -59,12 +59,12 @@ namespace view
                 txtLicensePlateCpM.Text = "";
             }
             if (!ckbUseLicencePlate.Checked) { licenseResult = 0; }
-            
-            if(txtInsurancepY.Text != "" && txtTirespY.Text != "" && txtRevisionpY.Text != "")
+
+            if (txtInsurancepY.Text != "" && txtTirespY.Text != "" && txtRevisionpY.Text != "")
             {
                 supportsResult = dataManager.CalculEssentialMaintain(Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text));
-                txtEssentialsMaintainsCpY.Text = Math.Round(supportsResult,2).ToString();
-                txtEssentialsMaintainsCpM.Text = Math.Round((supportsResult / 12),2).ToString();
+                txtEssentialsMaintainsCpY.Text = Math.Round(supportsResult, 2).ToString();
+                txtEssentialsMaintainsCpM.Text = Math.Round((supportsResult / 12), 2).ToString();
             }
             else
             {
@@ -73,12 +73,12 @@ namespace view
                 txtEssentialsMaintainsCpM.Text = "";
             }
             if (!ckbUseEssentialSupports.Checked) { supportsResult = 0; }
-            
-            if(txtCarPurchasePrice.Text != "" && txtCarSLifetimeEstimation.Text != "")
+
+            if (txtCarPurchasePrice.Text != "" && txtCarSLifetimeEstimation.Text != "")
             {
                 initialCarResult = dataManager.CalculInitialPrice(Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToInt16(txtCarSLifetimeEstimation.Text));
-                txtInitialCarSPriceCpY.Text = Math.Round(initialCarResult,2).ToString();
-                txtInitialCarSPriceCpM.Text = Math.Round((initialCarResult / 12),2).ToString();
+                txtInitialCarSPriceCpY.Text = Math.Round(initialCarResult, 2).ToString();
+                txtInitialCarSPriceCpM.Text = Math.Round((initialCarResult / 12), 2).ToString();
             }
             else
             {
@@ -87,13 +87,13 @@ namespace view
                 txtInitialCarSPriceCpM.Text = "";
             }
             if (!ckbUseInitialCarSPrice.Checked) { initialCarResult = 0; }
-            
-            if(cbxFuel.Text != "" && txtCarSCp100km.Text != "" && txtDpM.Text != "")
+
+            if (cbxFuel.Text != "" && txtCarSCp100km.Text != "" && txtDpM.Text != "")
             {
                 double fuelPrice = dataManager.CalculFuelPrice(cbxFuel.Text);
                 consommationResult = dataManager.CalculConsommation(fuelPrice, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
-                txtConsommationCpY.Text = Math.Round(consommationResult,2).ToString();
-                txtConsommationCpM.Text = Math.Round((consommationResult / 12),2).ToString();
+                txtConsommationCpY.Text = Math.Round(consommationResult, 2).ToString();
+                txtConsommationCpM.Text = Math.Round((consommationResult / 12), 2).ToString();
             }
             else
             {
@@ -102,17 +102,40 @@ namespace view
                 txtConsommationCpM.Text = "";
             }
             if (!ckbUseConsommation.Checked) { consommationResult = 0; }
-                
+
             finalResult = licenseResult + supportsResult + initialCarResult + consommationResult;
-            txtResultCpY.Text = Math.Round(finalResult,2).ToString();
-            txtResultCpM.Text = Math.Round((finalResult / 12),2).ToString();
+            txtResultCpY.Text = Math.Round(finalResult, 2).ToString();
+            txtResultCpM.Text = Math.Round((finalResult / 12), 2).ToString();
         }
 
         // Datas verification for save on database.
         private void btnRegisterACar_Click(object sender, EventArgs e)
         {
             FormRegisterACar form = new FormRegisterACar();
-            form.ShowDialog();
+            form.email = Email;
+
+            form.cantonRegistration = CantonRegistration;
+            form.carPower = CarPower;
+            form.powerType = PowerType;
+            form.weight = Weight;
+            form.cO2Emission = CO2Emission;
+            form.licenseResult = licenseResult;
+
+            form.insurance = Insurance;
+            form.tires = Tires;
+            form.revision = Revision;
+            form.supportsResult = supportsResult;
+
+            form.carPurchasePrice = CarPurchasePrice;
+            form.carSLifetimeEstimation = CarSLifetimeEstimation;
+            form.initialCarResult = initialCarResult;
+
+            form.fuel = Fuel;
+            form.carSCp100km = CarSCp100km;
+            form.dpM = DpM;
+            form.consommationResult = consommationResult;
+
+        form.ShowDialog();
         }
 
         // Calculator quit button.
@@ -120,7 +143,7 @@ namespace view
         {
             Application.Exit();
         }
-        
+
         // Calculator disconnection button.
         private void btnDisconnection_Click(object sender, EventArgs e)
         {
@@ -149,32 +172,24 @@ namespace view
                 tmrCalculator.Enabled = true;
             }
         }
-
-        /*lblEmailView.Text*/
+        
         public string Email { get { return lblEmailView.Text; } }
-
-        /*cbxCantonRegistration.Text*/
+        
         public string CantonRegistration { get { return cbxCantonRegistration.Text; } }
-        /*Convert.ToDouble(txtPower.Text)*/
-        /*cbxPower.Text*/
-        /*Convert.ToDouble(txtWeight.Text)*/
-        /*Convert.ToDouble(txtCO2Emission.Text)*/
-        /*licenseResult*/
-
-        /*txtInsurancepY.Text*/
-        /*Convert.ToDouble(txtTirespY.Text)*/
-        /*Convert.ToDouble(txtRevisionpY.Text)*/
-        /*supportsResult*/
-
-        /*lblEmailView.Text*/
-        /*Convert.ToDouble(txtCarPurchasePrice.Text)*/
-        /*Convert.ToDouble(txtCarSLifetimeEstimation.Text)*/
-        /*initialCarResult*/
-
-        /*lblEmailView.Text*/
-        /*cbxFuel.Text*/
-        /*Convert.ToDouble(txtCarSCp100km.Text)*/
-        /*Convert.ToDouble(txtDpM.Text)*/
-        /*consommationResult*/
+        public double CarPower { get { return Convert.ToDouble(txtPower.Text); } }
+        public string PowerType { get { return cbxPower.Text; } }
+        public double Weight { get { return Convert.ToDouble(txtWeight.Text); } }
+        public double CO2Emission { get { return Convert.ToDouble(txtCO2Emission.Text); } }
+        
+        public double Insurance { get { return Convert.ToDouble(txtInsurancepY.Text); } }
+        public double Tires { get { return Convert.ToDouble(txtTirespY.Text); } }
+        public double Revision { get { return Convert.ToDouble(txtRevisionpY.Text); } }
+        
+        public double CarPurchasePrice { get { return Convert.ToDouble(txtCarPurchasePrice.Text); } }
+        public double CarSLifetimeEstimation { get { return Convert.ToDouble(txtCarSLifetimeEstimation.Text); } }
+        
+        public string Fuel { get { return cbxFuel.Text; } }
+        public double CarSCp100km { get { return Convert.ToDouble(txtCarSCp100km.Text); } }
+        public double DpM { get { return Convert.ToDouble(txtDpM.Text); } }
     }
 }
