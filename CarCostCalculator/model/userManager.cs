@@ -49,7 +49,6 @@ namespace model
             {
                 isLoginCorrect = false;
             }
-
             return isLoginCorrect;
         }
     }

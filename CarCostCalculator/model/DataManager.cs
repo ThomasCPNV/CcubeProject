@@ -27,7 +27,6 @@ namespace model
             {
                 licensePlate = false;
             }
-
             return licensePlate;
         }
 
@@ -43,7 +42,6 @@ namespace model
             {
                 essentialMaintain = false;
             }
-
             return essentialMaintain;
         }
 
@@ -59,7 +57,6 @@ namespace model
             {
                 initialPrice = false;
             }
-
             return initialPrice;
         }
 
@@ -75,7 +72,6 @@ namespace model
             {
                 consommation = false;
             }
-
             return consommation;
         }
 

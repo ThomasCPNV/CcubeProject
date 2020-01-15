@@ -308,7 +308,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idLicensePlate;
         }
 
@@ -350,7 +349,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idLicensePlate;
         }
 
@@ -393,7 +391,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idEssentialMaintain;
         }
 
@@ -436,7 +433,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idInitialPrice;
         }
 
@@ -479,7 +475,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idConsommation;
         }
 
@@ -523,7 +518,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idUserLicense;
         }
 
@@ -550,7 +544,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return licensePlate;
         }
 
@@ -576,7 +569,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idUserEssential;
         }
 
@@ -602,7 +594,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return essentialMaintain;
         }
 
@@ -628,7 +619,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idUserInitial;
         }
 
@@ -654,7 +644,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return initialPrice;
         }
 
@@ -680,7 +669,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return idUserConsommation;
         }
 
@@ -706,7 +694,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return consommation;
         }
 
@@ -732,7 +719,6 @@ namespace model
                 }
                 reader.Close();
             }
-
             return car;
         }
     }
