@@ -308,6 +308,7 @@ namespace model
         public void InsertIdUser(string email)
         {
             OpenConnection();
+
             int idUser = GetIdUser(email);
 
             // Create a SQL command
