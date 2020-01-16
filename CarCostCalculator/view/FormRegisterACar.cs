@@ -56,6 +56,7 @@ namespace view
                 dBConnect.InsertInitialCarPrice(carPurchasePrice, carSLifetimeEstimation, initialCarResult);
                 dBConnect.InsertConsommation(fuel, carSCp100km, dpM, consommationResult);
                 MessageBox.Show("Insertion in database completed !");
+                Close();
             }
             catch
             {

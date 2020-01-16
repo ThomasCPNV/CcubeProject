@@ -31,7 +31,6 @@
             this.lstCar = new System.Windows.Forms.ListView();
             this.Brand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -39,10 +38,14 @@
             // 
             this.lstCar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Brand,
-            this.Model,
-            this.Version});
+            this.Model});
+            this.lstCar.FullRowSelect = true;
+            this.lstCar.GridLines = true;
             this.lstCar.Location = new System.Drawing.Point(12, 12);
+            this.lstCar.MultiSelect = false;
             this.lstCar.Name = "lstCar";
+            this.lstCar.ShowGroups = false;
+            this.lstCar.ShowItemToolTips = true;
             this.lstCar.Size = new System.Drawing.Size(198, 263);
             this.lstCar.TabIndex = 0;
             this.lstCar.UseCompatibleStateImageBehavior = false;
@@ -75,6 +78,5 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.ColumnHeader Brand;
         private System.Windows.Forms.ColumnHeader Model;
-        private System.Windows.Forms.ColumnHeader Version;
     }
 }
