@@ -15,13 +15,12 @@ namespace view
     public partial class FormCarList : Form
     {
         DBConnect dBConnect = new DBConnect();
-        public string email;
 
-        public FormCarList()
+        public FormCarList(string email)
         {
             InitializeComponent();
-
-            /*string[,] array2D = new string[,] { { "pomme", "poire" }, { "fraise", "framboise" }, { "mangue", "ananas" }, { "noisette", "amande" } };
+            /*
+            string[,] array2D = new string[,] { { "pomme", "poire" }, { "fraise", "framboise" }, { "mangue", "ananas" }, { "noisette", "amande" } };
 
             foreach (var group in array2D)
             {
@@ -31,10 +30,8 @@ namespace view
                 lstCar.Items.Add(item);
             }
             */
-            
             lstCar.View = View.Details;
             foreach (string item in dBConnect.GetCar(email)) { lstCar.Items.Add(new ListViewItem(item)); }
-            
         }
     }
 }

@@ -15,9 +15,8 @@ namespace view
     public partial class FormHistory : Form
     {
         DBConnect dBConnect = new DBConnect();
-        public string email;
 
-        public FormHistory()
+        public FormHistory(string email)
         {
             InitializeComponent();
 

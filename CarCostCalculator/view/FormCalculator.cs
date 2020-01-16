@@ -124,15 +124,13 @@ namespace view
 
         private void btnCarList_Click(object sender, EventArgs e)
         {
-            FormCarList form = new FormCarList();
-            form.email = Email;
+            FormCarList form = new FormCarList(Email);
             form.ShowDialog();
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            FormHistory form = new FormHistory();
-            form.email = Email;
+            FormHistory form = new FormHistory(Email);
             form.ShowDialog();
         }
 
