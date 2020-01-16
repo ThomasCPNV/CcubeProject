@@ -259,17 +259,22 @@ namespace model
             return insertConsommation;
         }
 
-        public bool InsertCar(string brand, string model, string version, string type, int release)
+        public bool InsertCar(string brand, string model, string version, string type, int release, string email)
         {
-            bool insertCar = true;
-
             OpenConnection();
+
+            bool insertCar = true;
+            int idLicence = GetIdLicensePlate();
+            int idEssential = GetIdEssentialMaintain();
+            int idInitial = GetIdInitialPrice();
+            int idConsommation = GetIdConsommation();
+            int idUser = GetIdUser(email);
 
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into `car` (`BRAND`, `MODEL`, `VERSION`, `TYPE`, `RELEASE`, `IDLICENSE`, `IDESSENTIAL`, `IDINITIAL`, `IDCONSOMMATION`, `IDUSER`) values ('{brand}', '{model}', '{version}', '{type}', {release}, null, null, null, null, null)";
+            cmd.CommandText = $"insert into `car` (`BRAND`, `MODEL`, `VERSION`, `TYPE`, `RELEASE`, `IDLICENSE`, `IDESSENTIAL`, `IDINITIAL`, `IDCONSOMMATION`, `IDUSER`) values ('{brand}', '{model}', '{version}', '{type}', {release}, {idLicence}, {idEssential}, {idInitial}, {idConsommation}, {idUser})";
 
             // Execute the SQL command
             if (cmd.ExecuteNonQuery() == 0)
@@ -279,48 +284,6 @@ namespace model
             CloseConnection();
 
             return insertCar;
-        }
-
-        public int GetIdUser(string email)
-        {
-            int idLicensePlate = 0;
-
-            // Create a command object
-            MySqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandText = $"select ID from `USER` where `email` = '{email}'";
-
-            DbDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                //we go through the result of the select, we might get only one response. 
-                //Despite this, we use a while
-                while (reader.Read())
-                {
-                    idLicensePlate = reader.GetInt32(0);
-                }
-                reader.Close();
-            }
-            return idLicensePlate;
-        }
-
-        public void InsertIdUser(string email)
-        {
-            OpenConnection();
-
-            int idUser = GetIdUser(email);
-
-            // Create a SQL command
-            MySqlCommand cmd = connection.CreateCommand();
-
-            // SQL request
-            cmd.CommandText = $"update `car` SET `IDUSER` = {idUser}";
-
-            // Execute the SQL command
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
         }
 
         public int GetIdLicensePlate()
@@ -347,24 +310,6 @@ namespace model
             return idLicensePlate;
         }
 
-        public void InsertIdLicensePlate()
-        {
-            OpenConnection();
-
-            // Create a SQL command
-            MySqlCommand cmd = connection.CreateCommand();
-
-            int idLicensePlate = GetIdLicensePlate();
-
-            // SQL request
-            cmd.CommandText = $"update `car` SET `IDLICENSE` = {idLicensePlate}";
-
-            // Execute the SQL command
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
-        }
-
         public int GetIdEssentialMaintain()
         {
             int idEssentialMaintain = 0;
@@ -387,24 +332,6 @@ namespace model
                 reader.Close();
             }
             return idEssentialMaintain;
-        }
-
-        public void InsertIdEssentialMaintain()
-        {
-            OpenConnection();
-
-            // Create a SQL command
-            MySqlCommand cmd = connection.CreateCommand();
-
-            int idEssentialMaintain = GetIdEssentialMaintain();
-
-            // SQL request
-            cmd.CommandText = $"update `Essential-Maintain` SET `IDESSENTIAL` = {idEssentialMaintain}";
-
-            // Execute the SQL command
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
         }
 
         public int GetIdInitialPrice()
@@ -431,24 +358,6 @@ namespace model
             return idInitialPrice;
         }
 
-        public void InsertIdIntialPrice()
-        {
-            OpenConnection();
-
-            // Create a SQL command
-            MySqlCommand cmd = connection.CreateCommand();
-
-            int idInitialPrice = GetIdInitialPrice();
-
-            // SQL request
-            cmd.CommandText = $"update `Initial-Price` SET `IDINITIAL` = {idInitialPrice}";
-
-            // Execute the SQL command
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
-        }
-
         public int GetIdConsommation()
         {
             int idConsommation = 0;
@@ -473,27 +382,33 @@ namespace model
             return idConsommation;
         }
 
-        public void InsertIdConsommation()
+        public int GetIdUser(string email)
         {
-            OpenConnection();
+            int idLicensePlate = 0;
 
-            // Create a SQL command
+            // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            int idConsommation = GetIdConsommation();
+            cmd.CommandText = $"select ID from `USER` where `email` = '{email}'";
 
-            // SQL request
-            cmd.CommandText = $"update `Consommation` SET `IDCONSOMMATION` = {idConsommation}";
+            DbDataReader reader = cmd.ExecuteReader();
 
-            // Execute the SQL command
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
+            if (reader.HasRows)
+            {
+                //we go through the result of the select, we might get only one response. 
+                //Despite this, we use a while
+                while (reader.Read())
+                {
+                    idLicensePlate = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            return idLicensePlate;
         }
 
-        public int GetIdUserLicense(string email)
+        public List<int> GetIdUserLicense(string email)
         {
-            int idUserLicense = 0;
+            List<int> idUserLicense = new List<int>();
             int idUser = GetIdUser(email);
 
             // Create a command object
@@ -509,7 +424,7 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    idUserLicense = reader.GetInt32(0);
+                    idUserLicense.Add(reader.GetInt32(0));
                 }
                 reader.Close();
             }
@@ -520,13 +435,13 @@ namespace model
         {
             OpenConnection();
 
-            List<string> licensePlate = null;
-            int idUserLicensePlate = GetIdUserLicense(email);
+            List<string> licensePlate = new List<string>();
+            List<int> idUserLicensePlate = GetIdUserLicense(email);
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select `ID`, `CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`, `COST/YEAR` from `license-plate` where `ID` = {idUserLicensePlate}";
+            cmd.CommandText = $"select `ID`, `CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`, `COST/YEAR` from `license-plate` where `ID` = {idUserLicensePlate[0]}";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -546,9 +461,9 @@ namespace model
             return licensePlate;
         }
 
-        public int GetIdUserEssential(string email)
+        public List<int> GetIdUserEssential(string email)
         {
-            int idUserEssential = 0;
+            List<int> idUserEssential = new List<int>();
             int idUser = GetIdUser(email);
 
             // Create a command object
@@ -564,7 +479,7 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    idUserEssential = reader.GetInt32(0);
+                    idUserEssential.Add(reader.GetInt32(0));
                 }
                 reader.Close();
             }
@@ -575,13 +490,13 @@ namespace model
         {
             OpenConnection();
 
-            List<string> essentialMaintain = null;
-            int idUserEssential = GetIdUserEssential(email);
+            List<string> essentialMaintain = new List<string>();
+            List<int> idUserEssential = GetIdUserEssential(email);
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `ID` = '{idUserEssential}'";
+            cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `ID` = '{idUserEssential[0]}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -600,9 +515,9 @@ namespace model
             return essentialMaintain;
         }
 
-        public int GetIdUserInitial(string email)
+        public List<int> GetIdUserInitial(string email)
         {
-            int idUserInitial = 0;
+            List<int> idUserInitial = new List<int>();
             int idUser = GetIdUser(email);
 
             // Create a command object
@@ -618,7 +533,7 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    idUserInitial = reader.GetInt32(0);
+                    idUserInitial.Add(reader.GetInt32(0));
                 }
                 reader.Close();
             }
@@ -629,13 +544,13 @@ namespace model
         {
             OpenConnection();
 
-            List<string> initialPrice = null;
-            int idUserInitial = GetIdUserInitial(email);
+            List<string> initialPrice = new List<string>();
+            List<int> idUserInitial = GetIdUserInitial(email);
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `IDUSER` = '{idUserInitial}'";
+            cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `ID` = '{idUserInitial[0]}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -654,9 +569,9 @@ namespace model
             return initialPrice;
         }
 
-        public int GetIdUserConsommation(string email)
+        public List<int> GetIdUserConsommation(string email)
         {
-            int idUserConsommation = 0;
+            List<int> idUserConsommation = new List<int>();
             int idUser = GetIdUser(email);
 
             // Create a command object
@@ -672,7 +587,7 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    idUserConsommation = reader.GetInt32(0);
+                    idUserConsommation.Add(reader.GetInt32(0));
                 }
                 reader.Close();
             }
@@ -683,13 +598,13 @@ namespace model
         {
             OpenConnection();
 
-            List<string> consommation = null;
-            int idUserConsommation = GetIdUserConsommation(email);
+            List<string> consommation = new List<string>();
+            List<int> idUserConsommation = GetIdUserConsommation(email);
 
             // Create a command object
             MySqlCommand cmd = connection.CreateCommand();
 
-            cmd.CommandText = $"select `ID`, `FUEL`, `FUEL-PRICE/LITER`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `ID` = '{idUserConsommation}'";
+            cmd.CommandText = $"select `ID`, `FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `ID` = '{idUserConsommation[0]}'";
 
             DbDataReader reader = cmd.ExecuteReader();
 
@@ -712,7 +627,7 @@ namespace model
         {
             OpenConnection();
 
-            List<string> car = null;
+            List<string> car = new List<string>();
             int idUser = GetIdUser(email);
 
             // Create a command object
