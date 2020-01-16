@@ -269,7 +269,7 @@ namespace model
             MySqlCommand cmd = connection.CreateCommand();
 
             // SQL request
-            cmd.CommandText = $"insert into `car` (`BRAND`, `MODEL`, `VERSION`, `TYPE`, `RELEASE`) values ('{brand}', '{model}', '{version}', '{type}', {release})";
+            cmd.CommandText = $"insert into `car` (`BRAND`, `MODEL`, `VERSION`, `TYPE`, `RELEASE`, `IDLICENSE`, `IDESSENTIAL`, `IDINITIAL`, `IDCONSOMMATION`, `IDUSER`) values ('{brand}', '{model}', '{version}', '{type}', {release}, null, null, null, null, null)";
 
             // Execute the SQL command
             if (cmd.ExecuteNonQuery() == 0)
