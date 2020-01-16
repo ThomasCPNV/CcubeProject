@@ -438,23 +438,29 @@ namespace model
             List<string> licensePlate = new List<string>();
             List<int> idUserLicensePlate = GetIdUserLicense(email);
 
-            // Create a command object
-            MySqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandText = $"select `ID`, `CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`, `COST/YEAR` from `license-plate` where `ID` = {idUserLicensePlate[0]}";
-
-            DbDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            for (int compteurId = 0; compteurId < idUserLicensePlate.Count; compteurId++)
             {
-                //we go through the result of the select, we might get only one response. 
-                //Despite this, we use a while
+                // Create a command object
+                MySqlCommand cmd = connection.CreateCommand();
 
-                while (reader.Read())
+                cmd.CommandText = $"select `ID`, `CANTON`, `POWER`, `WEIGHT`, `CO2-EMISSION`, `COST/YEAR` from `license-plate` where `ID` = {idUserLicensePlate[compteurId]}";
+
+                DbDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    licensePlate.Add(reader.GetString(0));
+                    //we go through the result of the select, we might get only one response. 
+                    //Despite this, we use a while
+
+                    while (reader.Read())
+                    {
+                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        {
+                            licensePlate.Add(reader.GetString(compteur));
+                        }
+                    }
+                    reader.Close();
                 }
-                reader.Close();
             }
             CloseConnection();
 
@@ -493,22 +499,28 @@ namespace model
             List<string> essentialMaintain = new List<string>();
             List<int> idUserEssential = GetIdUserEssential(email);
 
-            // Create a command object
-            MySqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `ID` = '{idUserEssential[0]}'";
-
-            DbDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            for (int compteurId = 0; compteurId < idUserEssential.Count; compteurId++)
             {
-                //we go through the result of the select, we might get only one response. 
-                //Despite this, we use a while
-                while (reader.Read())
+                // Create a command object
+                MySqlCommand cmd = connection.CreateCommand();
+
+                cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `ID` = '{idUserEssential[compteurId]}'";
+
+                DbDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    essentialMaintain.Add(reader.GetString(0));
+                    //we go through the result of the select, we might get only one response. 
+                    //Despite this, we use a while
+                    while (reader.Read())
+                    {
+                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        {
+                            essentialMaintain.Add(reader.GetString(compteur));
+                        }
+                    }
+                    reader.Close();
                 }
-                reader.Close();
             }
             CloseConnection();
 
@@ -547,22 +559,28 @@ namespace model
             List<string> initialPrice = new List<string>();
             List<int> idUserInitial = GetIdUserInitial(email);
 
-            // Create a command object
-            MySqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `ID` = '{idUserInitial[0]}'";
-
-            DbDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            for (int compteurId = 0; compteurId < idUserInitial.Count; compteurId++)
             {
-                //we go through the result of the select, we might get only one response. 
-                //Despite this, we use a while
-                while (reader.Read())
+                // Create a command object
+                MySqlCommand cmd = connection.CreateCommand();
+
+                cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `ID` = '{idUserInitial[compteurId]}'";
+
+                DbDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    initialPrice.Add(reader.GetString(0));
+                    //we go through the result of the select, we might get only one response. 
+                    //Despite this, we use a while
+                    while (reader.Read())
+                    {
+                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        {
+                            initialPrice.Add(reader.GetString(compteur));
+                        }
+                    }
+                    reader.Close();
                 }
-                reader.Close();
             }
             CloseConnection();
 
@@ -601,22 +619,28 @@ namespace model
             List<string> consommation = new List<string>();
             List<int> idUserConsommation = GetIdUserConsommation(email);
 
-            // Create a command object
-            MySqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandText = $"select `ID`, `FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `ID` = '{idUserConsommation[0]}'";
-
-            DbDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            for (int compteurId = 0; compteurId < idUserConsommation.Count; compteurId++)
             {
-                //we go through the result of the select, we might get only one response. 
-                //Despite this, we use a while
-                while (reader.Read())
+                // Create a command object
+                MySqlCommand cmd = connection.CreateCommand();
+
+                cmd.CommandText = $"select `ID`, `FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `ID` = '{idUserConsommation[compteurId]}'";
+
+                DbDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    consommation.Add(reader.GetString(0));
+                    //we go through the result of the select, we might get only one response. 
+                    //Despite this, we use a while
+                    while (reader.Read())
+                    {
+                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        {
+                            consommation.Add(reader.GetString(compteur));
+                        }
+                    }
+                    reader.Close();
                 }
-                reader.Close();
             }
             CloseConnection();
 
@@ -643,7 +667,10 @@ namespace model
                 //Despite this, we use a while
                 while (reader.Read())
                 {
-                    car.Add(reader.GetString(0));
+                    for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                    {
+                        car.Add(reader.GetString(compteur));
+                    }
                 }
                 reader.Close();
             }
