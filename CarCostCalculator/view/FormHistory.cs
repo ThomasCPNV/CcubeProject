@@ -23,17 +23,17 @@ namespace view
             lstLicense.View = View.Details;
             foreach (string item in dBConnect.GetLicensePlate(email)) {
 
-                lstLicense.Items.Add(new ListViewItem(item));
+                lstLicense.Items.Add(item);
             }
 
             lstEssentials.View = View.Details;
-            foreach (string item in dBConnect.GetEssentialMaintain(email)) { lstEssentials.Items.Add(new ListViewItem(item)); }
+            foreach (string item in dBConnect.GetEssentialMaintain(email)) { lstEssentials.Items.Add(item); }
 
             lstInitialPurchase.View = View.Details;
-            foreach (string item in dBConnect.GetInitialPrice(email)) { lstInitialPurchase.Items.Add(new ListViewItem(item)); }
+            foreach (string item in dBConnect.GetInitialPrice(email)) { lstInitialPurchase.Items.Add(item); }
 
             lstConsommation.View = View.Details;
-            foreach (string item in dBConnect.GetConsommation(email)) { lstConsommation.Items.Add(new ListViewItem(item)); }
+            foreach (string item in dBConnect.GetConsommation(email)) { lstConsommation.Items.Add(item); }
         }
     }
 }
