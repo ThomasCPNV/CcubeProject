@@ -54,11 +54,11 @@ namespace view
             {
                 try
                 {
-                    dBConnect.InsertCar(txtBrand.Text, txtModel.Text, txtVersion.Text, cbxType.Text, Convert.ToInt16(cbxReleaseYear.Text), email);
                     dBConnect.InsertLicensePlate(cantonRegistration, carPower, weight, cO2Emission, licenseResult);
                     dBConnect.InsertEssentialMaintain(insurance, tires, revision, supportsResult);
                     dBConnect.InsertInitialCarPrice(carPurchasePrice, carSLifetimeEstimation, initialCarResult);
                     dBConnect.InsertConsommation(fuel, carSCp100km, dpM, consommationResult);
+                    dBConnect.InsertCar(txtBrand.Text, txtModel.Text, txtVersion.Text, cbxType.Text, Convert.ToInt16(cbxReleaseYear.Text), email);
                     MessageBox.Show("Insertion in database completed !");
                     Close();
                 }
