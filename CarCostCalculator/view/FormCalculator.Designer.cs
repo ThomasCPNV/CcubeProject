@@ -369,7 +369,7 @@
             this.groupBox1.Size = new System.Drawing.Size(167, 242);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Initial car\'s price";
+            this.groupBox1.Text = "Initial car price";
             // 
             // ckbUseInitialCarSPrice
             // 
