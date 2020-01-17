@@ -21,7 +21,10 @@ namespace view
             InitializeComponent();
 
             lstLicense.View = View.Details;
-            foreach (string item in dBConnect.GetLicensePlate(email)) { lstLicense.Items.Add(new ListViewItem(item)); }
+            foreach (string item in dBConnect.GetLicensePlate(email)) {
+
+                lstLicense.Items.Add(new ListViewItem(item));
+            }
 
             lstEssentials.View = View.Details;
             foreach (string item in dBConnect.GetEssentialMaintain(email)) { lstEssentials.Items.Add(new ListViewItem(item)); }

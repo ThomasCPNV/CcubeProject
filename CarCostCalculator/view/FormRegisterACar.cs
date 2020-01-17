@@ -48,20 +48,26 @@ namespace view
 
         private void btnRegisterCar_Click(object sender, EventArgs e)
         {
-            try
+            if(isNotNull(txtBrand, lblBrand.Text) &&
+                isNotNull(txtModel, lblModel.Text) &&
+                isNotNull(txtVersion, lblVersion.Text))
             {
-                dBConnect.InsertLicensePlate(cantonRegistration, carPower, weight, cO2Emission, licenseResult);
-                dBConnect.InsertEssentialMaintain(insurance, tires, revision, supportsResult);
-                dBConnect.InsertInitialCarPrice(carPurchasePrice, carSLifetimeEstimation, initialCarResult);
-                dBConnect.InsertConsommation(fuel, carSCp100km, dpM, consommationResult);
-                dBConnect.InsertCar(txtBrand.Text, txtModel.Text, txtVersion.Text, cbxType.Text, Convert.ToInt16(cbxReleaseYear.Text), email);
-                MessageBox.Show("Insertion in database completed !");
-                Close();
+                try
+                {
+                    dBConnect.InsertLicensePlate(cantonRegistration, carPower, weight, cO2Emission, licenseResult);
+                    dBConnect.InsertEssentialMaintain(insurance, tires, revision, supportsResult);
+                    dBConnect.InsertInitialCarPrice(carPurchasePrice, carSLifetimeEstimation, initialCarResult);
+                    dBConnect.InsertConsommation(fuel, carSCp100km, dpM, consommationResult);
+                    dBConnect.InsertCar(txtBrand.Text, txtModel.Text, txtVersion.Text, cbxType.Text, Convert.ToInt16(cbxReleaseYear.Text), email);
+                    MessageBox.Show("Insertion in database completed !");
+                    Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Error : An error has occurred !");
+                }
             }
-            catch
-            {
-                MessageBox.Show("Error : An error has occurred !");
-            }
+            else { }
         }
 
         private void tmr_Tick(object sender, EventArgs e)
@@ -81,6 +87,17 @@ namespace view
                 entry.Text = "";
 
                 tmr.Enabled = true;
+            }
+        }
+
+        private bool isNotNull(TextBox text, string label)
+        {
+            if(text.Text != "") {
+                return true;
+            }
+            else {
+                MessageBox.Show("Error : the '" + label + "' entry is invalid.");
+                return false;
             }
         }
 
