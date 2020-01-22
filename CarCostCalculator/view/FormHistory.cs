@@ -19,21 +19,57 @@ namespace view
         public FormHistory(string email)
         {
             InitializeComponent();
+            
 
             lstLicense.View = View.Details;
-            foreach (string item in dBConnect.GetLicensePlate(email)) {
 
-                lstLicense.Items.Add(item);
+            foreach (string item in dBConnect.GetLicensePlate(email))
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.SubItems.Add(dBConnect.GetLicensePlate(email)[0]);
+                lvi.SubItems.Add(dBConnect.GetLicensePlate(email)[1]);
+                lvi.SubItems.Add(dBConnect.GetLicensePlate(email)[2]);
+                lvi.SubItems.Add(dBConnect.GetLicensePlate(email)[3]);
+                lvi.SubItems.Add(dBConnect.GetLicensePlate(email)[4]);
+                lvi.SubItems.Add(dBConnect.GetLicensePlate(email)[5]);
+                lstLicense.Items.Add(lvi);
             }
 
-            lstEssentials.View = View.Details;
-            foreach (string item in dBConnect.GetEssentialMaintain(email)) { lstEssentials.Items.Add(item); }
+            foreach (string item in dBConnect.GetEssentialMaintain(email))
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[0]);
+                lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[1]);
+                lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[2]);
+                lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[3]);
+                lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[4]);
+                lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[5]);
+                lstLicense.Items.Add(lvi);
+            }
 
-            lstInitialPurchase.View = View.Details;
-            foreach (string item in dBConnect.GetInitialPrice(email)) { lstInitialPurchase.Items.Add(item); }
+            foreach (string item in dBConnect.GetInitialPrice(email))
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[0]);
+                lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[1]);
+                lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[2]);
+                lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[3]);
+                lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[4]);
+                lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[5]);
+                lstLicense.Items.Add(lvi);
+            }
 
-            lstConsommation.View = View.Details;
-            foreach (string item in dBConnect.GetConsommation(email)) { lstConsommation.Items.Add(item); }
+            foreach (string item in dBConnect.GetConsommation(email))
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.SubItems.Add(dBConnect.GetConsommation(email)[0]);
+                lvi.SubItems.Add(dBConnect.GetConsommation(email)[1]);
+                lvi.SubItems.Add(dBConnect.GetConsommation(email)[2]);
+                lvi.SubItems.Add(dBConnect.GetConsommation(email)[3]);
+                lvi.SubItems.Add(dBConnect.GetConsommation(email)[4]);
+                lvi.SubItems.Add(dBConnect.GetConsommation(email)[5]);
+                lstLicense.Items.Add(lvi);
+            }
         }
     }
 }
