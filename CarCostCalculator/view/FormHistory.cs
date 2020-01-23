@@ -34,7 +34,7 @@ namespace view
             {
                 count++;
                 rowLicense.Add(item);
-                if (count >= 5)
+                if (count >= 6)
                 {
                     listViewItem = new ListViewItem(rowLicense.ToArray());
                     lstLicense.Items.Add(listViewItem);
@@ -42,9 +42,10 @@ namespace view
                     count = 0;
                 }
             }
+            rowLicense.Clear();
 
             lstEssentials.View = View.Details;
-            List<string> essentialsList = dBConnect.GetLicensePlate(email);
+            List<string> essentialsList = dBConnect.GetEssentialMaintain(email);
 
             List<string> rowEssentials = new List<string>();
             count = 0;
@@ -61,9 +62,10 @@ namespace view
                     count = 0;
                 }
             }
+            rowEssentials.Clear();
 
             lstInitialPurchase.View = View.Details;
-            List<string> initialPurchaseList = dBConnect.GetLicensePlate(email);
+            List<string> initialPurchaseList = dBConnect.GetInitialPrice(email);
 
             List<string> rowInitialPurchase = new List<string>();
             count = 0;
@@ -80,9 +82,10 @@ namespace view
                     count = 0;
                 }
             }
+            rowInitialPurchase.Clear();
 
             lstConsommation.View = View.Details;
-            List<string> consommationList = dBConnect.GetLicensePlate(email);
+            List<string> consommationList = dBConnect.GetConsommation(email);
 
             List<string> rowConsommation = new List<string>();
             count = 0;
@@ -99,6 +102,7 @@ namespace view
                     count = 0;
                 }
             }
+            rowConsommation.Clear();
         }
     }
 }
