@@ -912,12 +912,12 @@ namespace model
         }
 
         /// <summary>
-        /// 
+        /// Calcul the cost/year of EssentialMaintain
         /// </summary>
-        /// <param name="insuranceYear"></param>
-        /// <param name="tiresYear"></param>
-        /// <param name="revisionYear"></param>
-        /// <returns></returns>
+        /// <param name="insuranceYear">contain insurance/year filled by the user</param>
+        /// <param name="tiresYear">contain the tires/year filled by the user</param>
+        /// <param name="revisionYear">contain the revision/year filled by the user</param>
+        /// <returns>return the cost/year of EssentialMaintain</returns>
         public double CalculEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear)
         {
             double costYear = 0;
@@ -927,6 +927,12 @@ namespace model
             return costYear;
         }
 
+        /// <summary>
+        /// Calcul the cost/year of InitialPrice
+        /// </summary>
+        /// <param name="purchasePrice">contain the purchase price filled by the user</param>
+        /// <param name="lifeTime">contain the life time filled by the user</param>
+        /// <returns></returns>
         public double CalculInitialPrice(double purchasePrice, double lifeTime)
         {
             double costYear = 0;
@@ -936,6 +942,13 @@ namespace model
             return costYear;
         }
 
+        /// <summary>
+        /// Calcul the cost/year of Consommation
+        /// </summary>
+        /// <param name="fuel">contain the fuel name selected</param>
+        /// <param name="consomation">contain the consommation filled by the user</param>
+        /// <param name="distanceMonth">contain the distance/month filled by the user</param>
+        /// <returns>return the cost/year of Consommation</returns>
         public double CalculConsommation(string fuel, double consomation, double distanceMonth)
         {
             double costYear = 0;
@@ -946,6 +959,11 @@ namespace model
             return costYear;
         }
 
+        /// <summary>
+        /// Calcul the price of fuel selected by the user
+        /// </summary>
+        /// <param name="fuel">contain the fuel name slected</param>
+        /// <returns>return the price of the fuel selected</returns>
         public double CalculFuelPrice(string fuel)
         {
             double priceFuel = 0;
