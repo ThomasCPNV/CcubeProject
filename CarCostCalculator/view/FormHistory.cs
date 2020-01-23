@@ -44,7 +44,7 @@ namespace view
                 lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[3]);
                 lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[4]);
                 lvi.SubItems.Add(dBConnect.GetEssentialMaintain(email)[5]);
-                lstLicense.Items.Add(lvi);
+                lstEssentials.Items.Add(lvi);
             }
 
             foreach (string item in dBConnect.GetInitialPrice(email))
@@ -56,7 +56,7 @@ namespace view
                 lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[3]);
                 lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[4]);
                 lvi.SubItems.Add(dBConnect.GetInitialPrice(email)[5]);
-                lstLicense.Items.Add(lvi);
+                lstInitialPurchase.Items.Add(lvi);
             }
 
             foreach (string item in dBConnect.GetConsommation(email))
@@ -68,7 +68,7 @@ namespace view
                 lvi.SubItems.Add(dBConnect.GetConsommation(email)[3]);
                 lvi.SubItems.Add(dBConnect.GetConsommation(email)[4]);
                 lvi.SubItems.Add(dBConnect.GetConsommation(email)[5]);
-                lstLicense.Items.Add(lvi);
+                lstConsommation.Items.Add(lvi);
             }
         }
     }
