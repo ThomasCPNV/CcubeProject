@@ -31,11 +31,12 @@
             this.lstCar = new System.Windows.Forms.ListView();
             this.clmId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSelect = new System.Windows.Forms.Button();
             this.clmModel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmRelease = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.clmCarListVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lstCar
@@ -46,7 +47,8 @@
             this.clmModel,
             this.clmVersion,
             this.clmType,
-            this.clmRelease});
+            this.clmRelease,
+            this.clmCarListVanish});
             this.lstCar.FullRowSelect = true;
             this.lstCar.GridLines = true;
             this.lstCar.Location = new System.Drawing.Point(12, 12);
@@ -66,15 +68,6 @@
             // 
             this.clmBrand.Text = "Brand";
             // 
-            // btnSelect
-            // 
-            this.btnSelect.Location = new System.Drawing.Point(178, 281);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 1;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            // 
             // clmModel
             // 
             this.clmModel.Text = "Model";
@@ -90,6 +83,19 @@
             // clmRelease
             // 
             this.clmRelease.Text = "Release";
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(178, 281);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 1;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            // 
+            // clmCarListVanish
+            // 
+            this.clmCarListVanish.Text = "";
             // 
             // FormCarList
             // 
@@ -114,5 +120,6 @@
         private System.Windows.Forms.ColumnHeader clmVersion;
         private System.Windows.Forms.ColumnHeader clmType;
         private System.Windows.Forms.ColumnHeader clmRelease;
+        private System.Windows.Forms.ColumnHeader clmCarListVanish;
     }
 }

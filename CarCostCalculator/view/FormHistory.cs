@@ -21,54 +21,84 @@ namespace view
         {
             InitializeComponent();
 
-            var listViewItem = new ListViewItem();
 
+            var listViewItem = new ListViewItem();
+     
             lstLicense.View = View.Details;
-            item = dBConnect.GetLicensePlate(email);
-            string[] rowLicense = {
-                item[0],
-                item[1],
-                item[2],
-                item[3],
-                item[4]
-            };
-            listViewItem = new ListViewItem(rowLicense);
-            lstLicense.Items.Add(listViewItem);
+            List<string> licenseList = dBConnect.GetLicensePlate(email);
+
+            List<string> rowLicense = new List<string>();
+            int count = 0;
+
+            foreach (string item in licenseList)
+            {
+                count++;
+                rowLicense.Add(item);
+                if (count >= 5)
+                {
+                    listViewItem = new ListViewItem(rowLicense.ToArray());
+                    lstLicense.Items.Add(listViewItem);
+                    rowLicense.Clear();
+                    count = 0;
+                }
+            }
 
             lstEssentials.View = View.Details;
-            item = dBConnect.GetEssentialMaintain(email);
-            string[] rowEssentials = {
-                item[0],
-                item[1],
-                item[2],
-                item[3],
-                item[4]
-            };
-            listViewItem = new ListViewItem(rowEssentials);
-            lstEssentials.Items.Add(listViewItem);
+            List<string> essentialsList = dBConnect.GetLicensePlate(email);
+
+            List<string> rowEssentials = new List<string>();
+            count = 0;
+
+            foreach (string item in essentialsList)
+            {
+                count++;
+                rowEssentials.Add(item);
+                if (count >= 5)
+                {
+                    listViewItem = new ListViewItem(rowEssentials.ToArray());
+                    lstEssentials.Items.Add(listViewItem);
+                    rowEssentials.Clear();
+                    count = 0;
+                }
+            }
 
             lstInitialPurchase.View = View.Details;
-            item = dBConnect.GetInitialPrice(email);
-            string[] rowInitialPurchase = {
-                item[0],
-                item[1],
-                item[2],
-                item[3]
-            };
-            listViewItem = new ListViewItem(rowInitialPurchase);
-            lstInitialPurchase.Items.Add(listViewItem);
+            List<string> initialPurchaseList = dBConnect.GetLicensePlate(email);
+
+            List<string> rowInitialPurchase = new List<string>();
+            count = 0;
+
+            foreach (string item in initialPurchaseList)
+            {
+                count++;
+                rowInitialPurchase.Add(item);
+                if (count >= 4)
+                {
+                    listViewItem = new ListViewItem(rowInitialPurchase.ToArray());
+                    lstInitialPurchase.Items.Add(listViewItem);
+                    rowInitialPurchase.Clear();
+                    count = 0;
+                }
+            }
 
             lstConsommation.View = View.Details;
-            item = dBConnect.GetConsommation(email);
-            string[] rowConsommation = {
-                item[0],
-                item[1],
-                item[2],
-                item[3],
-                item[4]
-            };
-            listViewItem = new ListViewItem(rowConsommation);
-            lstConsommation.Items.Add(listViewItem);
+            List<string> consommationList = dBConnect.GetLicensePlate(email);
+
+            List<string> rowConsommation = new List<string>();
+            count = 0;
+
+            foreach (string item in consommationList)
+            {
+                count++;
+                rowInitialPurchase.Add(item);
+                if (count >= 5)
+                {
+                    listViewItem = new ListViewItem(rowConsommation.ToArray());
+                    lstConsommation.Items.Add(listViewItem);
+                    rowConsommation.Clear();
+                    count = 0;
+                }
+            }
         }
     }
 }

@@ -57,6 +57,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.clmLicenseVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmEssentialsVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmInitialVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmConsommationVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lstLicense
@@ -67,7 +71,8 @@
             this.clmPower,
             this.clmWeight,
             this.clmCO2Emission,
-            this.clmLicenseResult});
+            this.clmLicenseResult,
+            this.clmLicenseVanish});
             this.lstLicense.Location = new System.Drawing.Point(12, 29);
             this.lstLicense.Name = "lstLicense";
             this.lstLicense.Size = new System.Drawing.Size(377, 106);
@@ -80,27 +85,22 @@
             // 
             // clmcantonRegistration
             // 
-            this.clmcantonRegistration.DisplayIndex = 0;
             this.clmcantonRegistration.Text = "Canton registration";
             // 
             // clmPower
             // 
-            this.clmPower.DisplayIndex = 1;
             this.clmPower.Text = "Power";
             // 
             // clmWeight
             // 
-            this.clmWeight.DisplayIndex = 2;
             this.clmWeight.Text = "Weight";
             // 
             // clmCO2Emission
             // 
-            this.clmCO2Emission.DisplayIndex = 3;
             this.clmCO2Emission.Text = "Co2 emission";
             // 
             // clmLicenseResult
             // 
-            this.clmLicenseResult.DisplayIndex = 4;
             this.clmLicenseResult.Text = "Result";
             // 
             // btnSelect
@@ -119,7 +119,8 @@
             this.clmInsurance,
             this.clmTires,
             this.clmRevision,
-            this.clmSupportResult});
+            this.clmSupportResult,
+            this.clmEssentialsVanish});
             this.lstEssentials.Location = new System.Drawing.Point(12, 163);
             this.lstEssentials.Name = "lstEssentials";
             this.lstEssentials.Size = new System.Drawing.Size(377, 106);
@@ -132,22 +133,18 @@
             // 
             // clmInsurance
             // 
-            this.clmInsurance.DisplayIndex = 0;
             this.clmInsurance.Text = "Insurance";
             // 
             // clmTires
             // 
-            this.clmTires.DisplayIndex = 1;
             this.clmTires.Text = "Tires";
             // 
             // clmRevision
             // 
-            this.clmRevision.DisplayIndex = 2;
             this.clmRevision.Text = "Revision";
             // 
             // clmSupportResult
             // 
-            this.clmSupportResult.DisplayIndex = 3;
             this.clmSupportResult.Text = "Result";
             // 
             // lstInitialPurchase
@@ -156,7 +153,8 @@
             this.clmInitialId,
             this.clmPurchasePrice,
             this.clmLifetimeEstimation,
-            this.clmInitialPriceResult});
+            this.clmInitialPriceResult,
+            this.clmInitialVanish});
             this.lstInitialPurchase.Location = new System.Drawing.Point(12, 297);
             this.lstInitialPurchase.Name = "lstInitialPurchase";
             this.lstInitialPurchase.Size = new System.Drawing.Size(377, 106);
@@ -169,17 +167,14 @@
             // 
             // clmPurchasePrice
             // 
-            this.clmPurchasePrice.DisplayIndex = 0;
             this.clmPurchasePrice.Text = "Purchase price";
             // 
             // clmLifetimeEstimation
             // 
-            this.clmLifetimeEstimation.DisplayIndex = 1;
             this.clmLifetimeEstimation.Text = "Lifetime estimation";
             // 
             // clmInitialPriceResult
             // 
-            this.clmInitialPriceResult.DisplayIndex = 2;
             this.clmInitialPriceResult.Text = "Result";
             // 
             // lstConsommation
@@ -189,7 +184,8 @@
             this.clmFuel,
             this.clmCp100km,
             this.clmDpM,
-            this.clmConsommationResult});
+            this.clmConsommationResult,
+            this.clmConsommationVanish});
             this.lstConsommation.Location = new System.Drawing.Point(12, 431);
             this.lstConsommation.Name = "lstConsommation";
             this.lstConsommation.Size = new System.Drawing.Size(377, 106);
@@ -202,22 +198,18 @@
             // 
             // clmFuel
             // 
-            this.clmFuel.DisplayIndex = 0;
             this.clmFuel.Text = "Fuel";
             // 
             // clmCp100km
             // 
-            this.clmCp100km.DisplayIndex = 1;
             this.clmCp100km.Text = "Consommation /100km";
             // 
             // clmDpM
             // 
-            this.clmDpM.DisplayIndex = 2;
             this.clmDpM.Text = "Distance /month";
             // 
             // clmConsommationResult
             // 
-            this.clmConsommationResult.DisplayIndex = 3;
             this.clmConsommationResult.Text = "Result";
             // 
             // label1
@@ -255,6 +247,22 @@
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Consommation";
+            // 
+            // clmLicenseVanish
+            // 
+            this.clmLicenseVanish.Text = "";
+            // 
+            // clmEssentialsVanish
+            // 
+            this.clmEssentialsVanish.Text = "";
+            // 
+            // clmInitialVanish
+            // 
+            this.clmInitialVanish.Text = "";
+            // 
+            // clmConsommationVanish
+            // 
+            this.clmConsommationVanish.Text = "";
             // 
             // FormHistory
             // 
@@ -308,5 +316,9 @@
         private System.Windows.Forms.ColumnHeader clmEssentialsId;
         private System.Windows.Forms.ColumnHeader clmInitialId;
         private System.Windows.Forms.ColumnHeader clmConsommationId;
+        private System.Windows.Forms.ColumnHeader clmLicenseVanish;
+        private System.Windows.Forms.ColumnHeader clmEssentialsVanish;
+        private System.Windows.Forms.ColumnHeader clmInitialVanish;
+        private System.Windows.Forms.ColumnHeader clmConsommationVanish;
     }
 }
