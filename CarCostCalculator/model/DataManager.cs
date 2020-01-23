@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Developer : Thomas Huguet
+ * Project : CarCostCalculator
+ * Version : 1.0
+ * Creation date : 19.12.2019 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +13,22 @@ using System.Threading.Tasks;
 
 namespace model
 {
+    /// <summary>
+    /// this is used for all datas's handling
+    /// </summary>
     public class DataManager
     {
         private DBConnect dbConnect = new DBConnect();
 
+        /// <summary>
+        /// Calcul the cost/year of LicensePlate
+        /// </summary>
+        /// <param name="canton">contain the canton filled by the user</param>
+        /// <param name="power">contain the power filled by the user</param>
+        /// <param name="formatPower">contain the format of power filled by the user</param>
+        /// <param name="weight">contain the weight filled by the user</param>
+        /// <param name="co2Emission">contain the co2 emission filled by the user</param>
+        /// <returns>return the cost/year of LicensePlate</returns>
         public double CalculLicensePlate(string canton, double power, string formatPower, double weight, double co2Emission)
         {
             double costYear = 0;
@@ -21,7 +40,7 @@ namespace model
                 power = power * 0.74;
             }
 
-            //Les nombres qui sont utilisés sont expliqués dans le fichier excel se trouvant dans le dossier Documentation du projet
+            //All there numbers used can be finded on the excel "Voiture" file in the "Documentation" repertory
             switch (canton)
             {
                 case "Vaud":
@@ -892,6 +911,13 @@ namespace model
             return costYear;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="insuranceYear"></param>
+        /// <param name="tiresYear"></param>
+        /// <param name="revisionYear"></param>
+        /// <returns></returns>
         public double CalculEssentialMaintain(double insuranceYear, double tiresYear, double revisionYear)
         {
             double costYear = 0;
