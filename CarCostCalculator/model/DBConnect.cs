@@ -554,11 +554,11 @@ namespace model
             List<string> essentialMaintain = new List<string>();
             List<int> idUserEssential = GetIdUserEssential(email);
 
-            for (int compteurId = 0; compteurId < idUserEssential.Count; compteurId++)
+            for (int countId = 0; countId < idUserEssential.Count; countId++)
             {
                 MySqlCommand cmd = connection.CreateCommand();
 
-                cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `ID` = '{idUserEssential[compteurId]}'";
+                cmd.CommandText = $"select `ID`, `INSURANCE/YEAR`, `TIRES/YEAR`, `REVISION/YEAR`, `COST/YEAR` from `essential-maintain` where `ID` = '{idUserEssential[countId]}'";
 
                 DbDataReader reader = cmd.ExecuteReader();
 
@@ -566,9 +566,9 @@ namespace model
                 {
                     while (reader.Read())
                     {
-                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        for (int count = 0; count < reader.FieldCount; count++)
                         {
-                            essentialMaintain.Add(reader.GetString(compteur));
+                            essentialMaintain.Add(reader.GetString(count));
                         }
                     }
                     reader.Close();
@@ -618,11 +618,11 @@ namespace model
             List<string> initialPrice = new List<string>();
             List<int> idUserInitial = GetIdUserInitial(email);
 
-            for (int compteurId = 0; compteurId < idUserInitial.Count; compteurId++)
+            for (int countId = 0; countId < idUserInitial.Count; countId++)
             {
                 MySqlCommand cmd = connection.CreateCommand();
 
-                cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `ID` = '{idUserInitial[compteurId]}'";
+                cmd.CommandText = $"select `ID`, `PURCHASE-PRICE`, `LIFETIME`, `COST/YEAR` from `initial-price` where `ID` = '{idUserInitial[countId]}'";
 
                 DbDataReader reader = cmd.ExecuteReader();
 
@@ -630,9 +630,9 @@ namespace model
                 {
                     while (reader.Read())
                     {
-                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        for (int count = 0; count < reader.FieldCount; count++)
                         {
-                            initialPrice.Add(reader.GetString(compteur));
+                            initialPrice.Add(reader.GetString(count));
                         }
                     }
                     reader.Close();
@@ -682,11 +682,11 @@ namespace model
             List<string> consommation = new List<string>();
             List<int> idUserConsommation = GetIdUserConsommation(email);
 
-            for (int compteurId = 0; compteurId < idUserConsommation.Count; compteurId++)
+            for (int countId = 0; countId < idUserConsommation.Count; countId++)
             { 
                 MySqlCommand cmd = connection.CreateCommand();
 
-                cmd.CommandText = $"select `ID`, `FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `ID` = '{idUserConsommation[compteurId]}'";
+                cmd.CommandText = $"select `ID`, `FUEL`, `CONSOMMATION/100km`, `DISTANCE/MONTH`, `COST/YEAR` from `consommation` where `ID` = '{idUserConsommation[countId]}'";
 
                 DbDataReader reader = cmd.ExecuteReader();
 
@@ -694,9 +694,9 @@ namespace model
                 {
                     while (reader.Read())
                     {
-                        for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                        for (int count = 0; count < reader.FieldCount; count++)
                         {
-                            consommation.Add(reader.GetString(compteur));
+                            consommation.Add(reader.GetString(count));
                         }
                     }
                     reader.Close();
@@ -729,9 +729,9 @@ namespace model
             {
                 while (reader.Read())
                 {
-                    for (int compteur = 0; compteur < reader.FieldCount; compteur++)
+                    for (int count = 0; count < reader.FieldCount; count++)
                     {
-                        car.Add(reader.GetString(compteur));
+                        car.Add(reader.GetString(count));
                     }
                 }
                 reader.Close();
