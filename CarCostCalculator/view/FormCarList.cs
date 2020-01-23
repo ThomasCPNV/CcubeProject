@@ -21,7 +21,17 @@ namespace view
             InitializeComponent();
 
             lstCar.View = View.Details;
-            foreach (string item in dBConnect.GetCar(email)) { lstCar.Items.Add(item); }
+            foreach (string item in dBConnect.GetCar(email))
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.SubItems.Add(dBConnect.GetCar(email)[0]);
+                lvi.SubItems.Add(dBConnect.GetCar(email)[1]);
+                lvi.SubItems.Add(dBConnect.GetCar(email)[2]);
+                lvi.SubItems.Add(dBConnect.GetCar(email)[3]);
+                lvi.SubItems.Add(dBConnect.GetCar(email)[4]);
+                lvi.SubItems.Add(dBConnect.GetCar(email)[5]);
+                lstCar.Items.Add(lvi);
+            }
         }
     }
 }
