@@ -93,7 +93,7 @@ namespace view
             foreach (string item in consommationList)
             {
                 count++;
-                rowInitialPurchase.Add(item);
+                rowConsommation.Add(item);
                 if (count >= 5)
                 {
                     listViewItem = new ListViewItem(rowConsommation.ToArray());
