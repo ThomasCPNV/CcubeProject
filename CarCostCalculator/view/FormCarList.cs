@@ -15,25 +15,26 @@ namespace view
     public partial class FormCarList : Form
     {
         DBConnect dBConnect = new DBConnect();
+        List<string> item = new List<string>();
 
         public FormCarList(string email)
         {
             InitializeComponent();
 
+            var listViewItem = new ListViewItem();
+
             lstCar.View = View.Details;
-            foreach (string item in dBConnect.GetCar(email))
-            {
-                string[] row = {
-                    dBConnect.GetCar(email)[0],
-                    dBConnect.GetCar(email)[1],
-                    dBConnect.GetCar(email)[2],
-                    dBConnect.GetCar(email)[3],
-                    dBConnect.GetCar(email)[4],
-                    dBConnect.GetCar(email)[5]
-                };
-                var listViewItem = new ListViewItem(row);
-                lstCar.Items.Add(listViewItem);
-            }
+            item = dBConnect.GetCar(email);
+            string[] rowCar = {
+                item[0],
+                item[1],
+                item[2],
+                item[3],
+                item[4],
+                item[5]
+            };
+            listViewItem = new ListViewItem(rowCar);
+            lstCar.Items.Add(listViewItem);
         }
     }
 }

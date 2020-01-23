@@ -76,7 +76,6 @@
             // 
             // clmLicenseId
             // 
-            this.clmLicenseId.DisplayIndex = 5;
             this.clmLicenseId.Text = "Id";
             // 
             // clmcantonRegistration
@@ -129,7 +128,6 @@
             // 
             // clmEssentialsId
             // 
-            this.clmEssentialsId.DisplayIndex = 4;
             this.clmEssentialsId.Text = "Id";
             // 
             // clmInsurance
@@ -167,7 +165,6 @@
             // 
             // clmInitialId
             // 
-            this.clmInitialId.DisplayIndex = 3;
             this.clmInitialId.Text = "Id";
             // 
             // clmPurchasePrice
@@ -201,7 +198,6 @@
             // 
             // clmConsommationId
             // 
-            this.clmConsommationId.DisplayIndex = 4;
             this.clmConsommationId.Text = "Id";
             // 
             // clmFuel
