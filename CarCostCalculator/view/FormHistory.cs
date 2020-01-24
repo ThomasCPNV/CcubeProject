@@ -12,6 +12,9 @@ using model;
 
 namespace view
 {
+    /// <summary>
+    /// This is used for all the interactions with the History
+    /// </summary>
     public partial class FormHistory : Form
     {
         DBConnect dBConnect = new DBConnect();
@@ -21,7 +24,7 @@ namespace view
         {
             InitializeComponent();
 
-
+            // Display the license datas in listview
             var listViewItem = new ListViewItem();
      
             lstLicense.View = View.Details;
@@ -44,6 +47,7 @@ namespace view
             }
             rowLicense.Clear();
 
+            // Display the essentials datas in listview
             lstEssentials.View = View.Details;
             List<string> essentialsList = dBConnect.GetEssentialMaintain(email);
 
@@ -64,6 +68,7 @@ namespace view
             }
             rowEssentials.Clear();
 
+            // Display the initial purchase datas in listview
             lstInitialPurchase.View = View.Details;
             List<string> initialPurchaseList = dBConnect.GetInitialPrice(email);
 
@@ -84,6 +89,7 @@ namespace view
             }
             rowInitialPurchase.Clear();
 
+            // Display the consommation datas in listview
             lstConsommation.View = View.Details;
             List<string> consommationList = dBConnect.GetConsommation(email);
 

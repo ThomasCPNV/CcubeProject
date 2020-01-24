@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Developer : Samuel Meyer
+ * Version : 1.0
+ * Creation date : 12.12.2019 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +18,9 @@ using model;
 
 namespace view
 {
+    /// <summary>
+    /// This is used for all the interactions with the Calculator's view
+    /// </summary>
     public partial class FormCalculator : Form
     {
         DataManager dataManager = new DataManager();
@@ -28,6 +37,7 @@ namespace view
             // Email pin up
             lblEmailView.Text = email;
 
+            // Initialize combobox default values
             cbxCantonRegistration.SelectedIndex = 23;
             cbxPower.SelectedIndex = 0;
             cbxFuel.SelectedIndex = 0;
@@ -35,8 +45,12 @@ namespace view
             btnRegisterACar.Enabled = false;
         }
 
+        /// <summary>
+        /// Calculate and display results every tick
+        /// </summary>
         private void tmrCalculator_Tick(object sender, EventArgs e)
         {
+            // Check all entries validity
             entryVerification(txtPower, lblPower.Text);
             entryVerification(txtWeight, lblWeight.Text);
             entryVerification(txtCO2Emission, lblCO2Emission.Text);
@@ -48,6 +62,7 @@ namespace view
             entryVerification(txtCarSCp100km, lblCarSCp100km.Text);
             entryVerification(txtDpM, lblDpM.Text);
 
+            // Calculate and display license plate's result
             if (cbxCantonRegistration.Text != "" && txtPower.Text != "" && cbxPower.Text != "" && txtWeight.Text != "" && txtCO2Emission.Text != "")
             {
                 licenseResult = dataManager.CalculLicensePlate(cbxCantonRegistration.Text, Convert.ToDouble(txtPower.Text), cbxPower.Text, Convert.ToDouble(txtWeight.Text), Convert.ToDouble(txtCO2Emission.Text));
@@ -62,6 +77,7 @@ namespace view
             }
             if (!ckbUseLicencePlate.Checked) { licenseResult = 0; }
 
+            // Calculate and display essentials supports's result
             if (txtInsurancepY.Text != "" && txtTirespY.Text != "" && txtRevisionpY.Text != "")
             {
                 supportsResult = dataManager.CalculEssentialMaintain(Convert.ToDouble(txtInsurancepY.Text), Convert.ToDouble(txtTirespY.Text), Convert.ToDouble(txtRevisionpY.Text));
@@ -76,6 +92,7 @@ namespace view
             }
             if (!ckbUseEssentialSupports.Checked) { supportsResult = 0; }
 
+            // Calculate and display car purchase price's result
             if (txtCarPurchasePrice.Text != "" && txtCarSLifetimeEstimation.Text != "")
             {
                 initialCarResult = dataManager.CalculInitialPrice(Convert.ToDouble(txtCarPurchasePrice.Text), Convert.ToInt16(txtCarSLifetimeEstimation.Text));
@@ -90,6 +107,7 @@ namespace view
             }
             if (!ckbUseInitialCarSPrice.Checked) { initialCarResult = 0; }
 
+            // Calculate and display consommation's result
             if (cbxFuel.Text != "" && txtCarSCp100km.Text != "" && txtDpM.Text != "")
             {
                 consommationResult = dataManager.CalculConsommation(cbxFuel.Text, Convert.ToDouble(txtCarSCp100km.Text), Convert.ToDouble(txtDpM.Text));
@@ -104,10 +122,12 @@ namespace view
             }
             if (!ckbUseConsommation.Checked) { consommationResult = 0; }
 
+            // Calculate and display the final result
             finalResult = licenseResult + supportsResult + initialCarResult + consommationResult;
             txtResultCpY.Text = Math.Round(finalResult, 2).ToString();
             txtResultCpM.Text = Math.Round((finalResult / 12), 2).ToString();
 
+            // Enablement and disablement set
             if (txtPower.Text != ""
                 && txtWeight.Text != ""
                 && txtCO2Emission.Text != ""
@@ -122,20 +142,30 @@ namespace view
             else { btnRegisterACar.Enabled = false; }
         }
 
+        /// <summary>
+        /// Open car list's window if click on button
+        /// </summary>
         private void btnCarList_Click(object sender, EventArgs e)
         {
             FormCarList form = new FormCarList(Email);
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Open history's window if click on button
+        /// </summary>
         private void btnHistory_Click(object sender, EventArgs e)
         {
             FormHistory form = new FormHistory(Email);
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Open register a car's window if click on button
+        /// </summary>
         private void btnRegisterACar_Click(object sender, EventArgs e)
         {
+            // Condition transfert the calculator's datas to the register a car's window
             if (txtPower.Text != ""
                 && txtWeight.Text != ""
                 && txtCO2Emission.Text != ""
@@ -196,11 +226,17 @@ namespace view
             form.ShowDialog();
         }
 
+        // Update fuel price view if combobox's value change
         private void cbxFuel_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtAverageFuelPricePerLiter.Text = dataManager.CalculFuelPrice(cbxFuel.Text).ToString();
         }
 
+        /// <summary>
+        /// Check if an entry is invalid
+        /// </summary>
+        /// <param name="entry">contain the entry that needs to be checked</param>
+        /// <param name="label">contain the entry label</param>
         private void entryVerification(TextBox entry, string label)
         {
             if (!Double.TryParse(entry.Text, out double convertEntry) && entry.Text != "")
@@ -213,7 +249,8 @@ namespace view
                 tmrCalculator.Enabled = true;
             }
         }
-        
+
+        // Get list of Calculator's all entries
         public string Email { get { return lblEmailView.Text; } }
         
         public string CantonRegistration { get { return cbxCantonRegistration.Text; } }

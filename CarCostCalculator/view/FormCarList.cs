@@ -12,6 +12,9 @@ using model;
 
 namespace view
 {
+    /// <summary>
+    /// This is used for all the interactions with the CarList
+    /// </summary>
     public partial class FormCarList : Form
     {
         DBConnect dBConnect = new DBConnect();
@@ -20,6 +23,7 @@ namespace view
         {
             InitializeComponent();
 
+            // Display tge car datas in listview
             var listViewItem = new ListViewItem();
 
             List<string> carList = dBConnect.GetCar(email);

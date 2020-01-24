@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Developer : Samuel Meyer
+ * Version : 1.0
+ * Creation date : 29.11.2019 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +20,9 @@ using model;
 
 namespace view
 {
+    /// <summary>
+    /// This is used for all the interactions with the Login/Register's view
+    /// </summary>
     public partial class FormLoginRegister : Form
     {
         string dataStringPath = @"..\..\..\data";
@@ -114,9 +123,6 @@ namespace view
             realConfirm = "";
 
             email = txtEmail.Text;
-            // Open calculator window.
-            FormCalculator form = new FormCalculator(email);
-            form.ShowDialog();
         }
 
         // Login/Register Quit button.

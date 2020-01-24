@@ -12,6 +12,9 @@ using model;
 
 namespace view
 {
+    /// <summary>
+    /// This is used for all the interactions with the Register a car
+    /// </summary>
     public partial class FormRegisterACar : Form
     {
         DBConnect dBConnect = new DBConnect();
@@ -42,16 +45,22 @@ namespace view
         {
             InitializeComponent();
 
+            // Initialize combobox default values
             cbxType.SelectedIndex = 5;
             cbxReleaseYear.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Insert car in database
+        /// </summary>
         private void btnRegisterCar_Click(object sender, EventArgs e)
         {
-            if(isNotNull(txtBrand, lblBrand.Text) &&
+            // Check entries
+            if (isNotNull(txtBrand, lblBrand.Text) &&
                 isNotNull(txtModel, lblModel.Text) &&
                 isNotNull(txtVersion, lblVersion.Text))
             {
+                // Insert datas in database
                 try
                 {
                     dBConnect.InsertLicensePlate(cantonRegistration, carPower, weight, cO2Emission, licenseResult);
@@ -70,6 +79,9 @@ namespace view
             else { }
         }
 
+        /// <summary>
+        /// Check the validity of entries every tick
+        /// </summary>
         private void tmr_Tick(object sender, EventArgs e)
         {
             entryVerification(txtBrand, lblBrand.Text);
@@ -77,6 +89,11 @@ namespace view
             entryVerification(txtVersion, lblVersion.Text);
         }
 
+        /// <summary>
+        /// Check if an entry is invalid
+        /// </summary>
+        /// <param name="entry">contain the entry that needs to be checked</param>
+        /// <param name="label">contain the entry label</param>
         private void entryVerification(TextBox entry, string label)
         {
             if (entry.Text.Contains("\"") || entry.Text.Contains("\'"))
@@ -90,6 +107,11 @@ namespace view
             }
         }
 
+        /// <summary>
+        /// Check if an entry is invalid
+        /// </summary>
+        /// <param name="text">contain the entry that needs to be checked</param>
+        /// <param name="label">contain the entry label</param>
         private bool isNotNull(TextBox text, string label)
         {
             if(text.Text != "") {
@@ -100,7 +122,10 @@ namespace view
                 return false;
             }
         }
-
+        
+        /// <summary>
+        /// Quit the window if click on button
+        /// </summary>
         private void btnRegisterACarCancel_Click(object sender, EventArgs e)
         {
             Close();
