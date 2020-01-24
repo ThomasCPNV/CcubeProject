@@ -35,6 +35,7 @@
             this.clmWeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmCO2Emission = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmLicenseResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmLicenseVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSelect = new System.Windows.Forms.Button();
             this.lstEssentials = new System.Windows.Forms.ListView();
             this.clmEssentialsId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,25 +43,24 @@
             this.clmTires = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmRevision = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmSupportResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmEssentialsVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lstInitialPurchase = new System.Windows.Forms.ListView();
             this.clmInitialId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmPurchasePrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmLifetimeEstimation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmInitialPriceResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmInitialVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lstConsommation = new System.Windows.Forms.ListView();
             this.clmConsommationId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmFuel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmCp100km = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmDpM = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmConsommationResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmConsommationVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.clmLicenseVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmEssentialsVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmInitialVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmConsommationVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lstLicense
@@ -102,6 +102,10 @@
             // clmLicenseResult
             // 
             this.clmLicenseResult.Text = "Result";
+            // 
+            // clmLicenseVanish
+            // 
+            this.clmLicenseVanish.Text = "";
             // 
             // btnSelect
             // 
@@ -147,6 +151,10 @@
             // 
             this.clmSupportResult.Text = "Result";
             // 
+            // clmEssentialsVanish
+            // 
+            this.clmEssentialsVanish.Text = "";
+            // 
             // lstInitialPurchase
             // 
             this.lstInitialPurchase.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -176,6 +184,10 @@
             // clmInitialPriceResult
             // 
             this.clmInitialPriceResult.Text = "Result";
+            // 
+            // clmInitialVanish
+            // 
+            this.clmInitialVanish.Text = "";
             // 
             // lstConsommation
             // 
@@ -211,6 +223,10 @@
             // clmConsommationResult
             // 
             this.clmConsommationResult.Text = "Result";
+            // 
+            // clmConsommationVanish
+            // 
+            this.clmConsommationVanish.Text = "";
             // 
             // label1
             // 
@@ -248,22 +264,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Consommation";
             // 
-            // clmLicenseVanish
-            // 
-            this.clmLicenseVanish.Text = "";
-            // 
-            // clmEssentialsVanish
-            // 
-            this.clmEssentialsVanish.Text = "";
-            // 
-            // clmInitialVanish
-            // 
-            this.clmInitialVanish.Text = "";
-            // 
-            // clmConsommationVanish
-            // 
-            this.clmConsommationVanish.Text = "";
-            // 
             // FormHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,6 +278,7 @@
             this.Controls.Add(this.lstEssentials);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lstLicense);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormHistory";
             this.Text = "History";
             this.ResumeLayout(false);

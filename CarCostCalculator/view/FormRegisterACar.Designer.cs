@@ -201,6 +201,7 @@
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblBrand);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormRegisterACar";
             this.Text = "Car register";
             this.ResumeLayout(false);

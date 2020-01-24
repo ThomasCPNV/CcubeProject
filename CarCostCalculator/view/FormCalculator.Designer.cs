@@ -988,6 +988,7 @@
             // 
             // btnCarList
             // 
+            this.btnCarList.Enabled = false;
             this.btnCarList.Location = new System.Drawing.Point(624, 302);
             this.btnCarList.Name = "btnCarList";
             this.btnCarList.Size = new System.Drawing.Size(57, 23);
@@ -998,6 +999,7 @@
             // 
             // btnHistory
             // 
+            this.btnHistory.Enabled = false;
             this.btnHistory.Location = new System.Drawing.Point(624, 331);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(57, 23);

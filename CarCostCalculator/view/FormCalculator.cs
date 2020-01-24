@@ -43,6 +43,8 @@ namespace view
             cbxFuel.SelectedIndex = 0;
 
             btnRegisterACar.Enabled = false;
+
+
         }
 
         /// <summary>
