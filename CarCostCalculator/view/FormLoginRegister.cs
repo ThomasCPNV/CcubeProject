@@ -200,6 +200,7 @@ namespace view
                     }
                 }
             }
+            
             txtEmail.Text = "";
 
             txtPassword.Text = "";
@@ -329,6 +330,11 @@ namespace view
             string jsonLocation = JsonConvert.SerializeObject(Location);
             // Write json in file
             File.WriteAllText(@"..\..\..\data\formLocation.json", jsonLocation);
+        }
+
+        private void FormLoginRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
