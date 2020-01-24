@@ -4,9 +4,15 @@ using model;
 
 namespace test
 {
+    /// <summary>
+    /// This class contain all the tests
+    /// </summary>
     [TestClass]
     public class TestLogin
     {
+        /// <summary>
+        /// Test correct login request
+        /// </summary>
         [TestMethod]
         public void TestLoginCorrect()
         {
@@ -27,6 +33,9 @@ namespace test
             Assert.AreEqual(loginVerify, true);
         }
 
+        /// <summary>
+        /// Test login with incorrect email
+        /// </summary>
         [TestMethod]
         public void TestLoginEmailIncorrect()
         {
@@ -37,6 +46,9 @@ namespace test
             Assert.AreEqual(loginVerify, false);
         }
 
+        /// <summary>
+        /// Test login with incorrect password
+        /// </summary>
         [TestMethod]
         public void TestLoginPasswordIncorrect()
         {
