@@ -34,6 +34,8 @@ namespace view
         {
             InitializeComponent();
 
+            DBConnect dBConnect = new DBConnect();
+
             // Email pin up
             lblEmailView.Text = email;
 
@@ -44,7 +46,24 @@ namespace view
 
             btnRegisterACar.Enabled = false;
 
+            if (dBConnect.GetCar(email).Any()){
+                btnCarList.Enabled = true;
+            }
+            else
+            {
+                btnCarList.Enabled = false;
+            }
 
+            if (dBConnect.GetLicensePlate(email).Any() &&
+                dBConnect.GetEssentialMaintain(email).Any() &&
+                dBConnect.GetInitialPrice(email).Any() &&
+                dBConnect.GetConsommation(email).Any()){
+                btnHistory.Enabled = true;
+            }
+            else
+            {
+                btnHistory.Enabled = false;
+            }
         }
 
         /// <summary>

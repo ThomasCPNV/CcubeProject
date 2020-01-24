@@ -35,8 +35,8 @@
             this.clmVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmRelease = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSelect = new System.Windows.Forms.Button();
             this.clmCarListVanish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstCar
@@ -84,6 +84,10 @@
             // 
             this.clmRelease.Text = "Release";
             // 
+            // clmCarListVanish
+            // 
+            this.clmCarListVanish.Text = "";
+            // 
             // btnSelect
             // 
             this.btnSelect.Location = new System.Drawing.Point(178, 281);
@@ -93,10 +97,6 @@
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
             // 
-            // clmCarListVanish
-            // 
-            this.clmCarListVanish.Text = "";
-            // 
             // FormCarList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +104,7 @@
             this.ClientSize = new System.Drawing.Size(265, 313);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lstCar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCarList";
             this.Text = "FormCarList";
             this.ResumeLayout(false);
