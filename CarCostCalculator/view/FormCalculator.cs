@@ -220,7 +220,6 @@ namespace view
         {
             this.Hide();
             MessageBox.Show("You are disconnected !");
-            Application.Exit();
             // Open Login/register window.
             FormLoginRegister form = new FormLoginRegister();
             form.ShowDialog();
@@ -269,5 +268,10 @@ namespace view
         public string Fuel { get { return cbxFuel.Text; } }
         public double CarSCp100km { get { return Convert.ToDouble(txtCarSCp100km.Text); } }
         public double DpM { get { return Convert.ToDouble(txtDpM.Text); } }
+
+        private void FormCalculator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
