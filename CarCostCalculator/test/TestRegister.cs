@@ -4,9 +4,15 @@ using model;
 
 namespace test
 {
+    /// <summary>
+    /// This class contain all the register tests
+    /// </summary>
     [TestClass]
     public class TestRegister
     {
+        /// <summary>
+        /// Test correct register request
+        /// </summary>
         [TestMethod]
         public void TestRegisterCorrect()
         {
@@ -20,6 +26,9 @@ namespace test
             Assert.AreEqual(registerVerify, true);
         }
 
+        /// <summary>
+        /// Test register with an email already existed in the DB
+        /// </summary>
         [TestMethod]
         public void TestRegisterUserAlreadyExist()
         {
@@ -30,6 +39,9 @@ namespace test
             Assert.AreEqual(registerVerify, false);
         }
 
+        /// <summary>
+        /// Test register two password who aren't the same
+        /// </summary>
         [TestMethod]
         public void TestRegisterPasswordNotLikeConfirmPassword()
         {
