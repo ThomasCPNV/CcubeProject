@@ -24,6 +24,7 @@ namespace view
     public partial class FormCalculator : Form
     {
         DataManager dataManager = new DataManager();
+        DBConnect dBConnect = new DBConnect();
         private double licenseResult;
         private double supportsResult;
         private double initialCarResult;
@@ -34,8 +35,6 @@ namespace view
         {
             InitializeComponent();
 
-            DBConnect dBConnect = new DBConnect();
-
             // Email pin up
             lblEmailView.Text = email;
 
@@ -45,30 +44,12 @@ namespace view
             cbxFuel.SelectedIndex = 0;
 
             btnRegisterACar.Enabled = false;
-
-            if (dBConnect.GetCar(email).Any()){
-                btnCarList.Enabled = true;
-            }
-            else
-            {
-                btnCarList.Enabled = false;
-            }
-
-            if (dBConnect.GetLicensePlate(email).Any() &&
-                dBConnect.GetEssentialMaintain(email).Any() &&
-                dBConnect.GetInitialPrice(email).Any() &&
-                dBConnect.GetConsommation(email).Any()){
-                btnHistory.Enabled = true;
-            }
-            else
-            {
-                btnHistory.Enabled = false;
-            }
         }
 
         /// <summary>
         /// Calculate and display results every tick
         /// </summary>
+        /// <param name="email">contain the user email</param>
         private void tmrCalculator_Tick(object sender, EventArgs e)
         {
             // Check all entries validity
@@ -161,6 +142,29 @@ namespace view
                 && txtDpM.Text != "")
             { btnRegisterACar.Enabled = true; }
             else { btnRegisterACar.Enabled = false; }
+
+            // Enable or Disable CarList button
+            if (dBConnect.GetCar(lblEmailView.Text).Any())
+            {
+                btnCarList.Enabled = true;
+            }
+            else
+            {
+                btnCarList.Enabled = false;
+            }
+
+            // Enable or Disable History button
+            if (dBConnect.GetLicensePlate(lblEmailView.Text).Any() &&
+                dBConnect.GetEssentialMaintain(lblEmailView.Text).Any() &&
+                dBConnect.GetInitialPrice(lblEmailView.Text).Any() &&
+                dBConnect.GetConsommation(lblEmailView.Text).Any())
+            {
+                btnHistory.Enabled = true;
+            }
+            else
+            {
+                btnHistory.Enabled = false;
+            }
         }
 
         /// <summary>
