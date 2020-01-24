@@ -148,6 +148,7 @@ namespace model
             if (reader.HasRows)
             {
                 reader.Close();
+                CloseConnection();
                 return true;
             }
 
@@ -168,10 +169,10 @@ namespace model
             }
             catch
             {
+                CloseConnection();
                 return false;
             }
             CloseConnection();
-
             return true;
         }
 
